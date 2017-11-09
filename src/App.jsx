@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import InputWithLabel from './InputText/InputWithLabel.js';
 
-// const style = {
-//   name:
-// };
-
 class App extends Component {
   render() {
     return ([

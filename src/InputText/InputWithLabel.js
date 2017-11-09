@@ -1,10 +1,11 @@
 import React from 'react';
-import BasicInput from './BasicInput.js';
+import Input from './Input.js';
+
 
 const InputTextWithLabel = ({ label, ...props}) => (
     <div>
         <label>{label}</label>
-        <BasicInput
+        <Input
            {...props} 
         />
     </div>
