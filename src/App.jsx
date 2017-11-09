@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import InputWithLabel from './InputText/InputWithLabel.js';
+import InputWithLabel from './components/ReactComponents/Input.js';
 
 class App extends Component {
   render() {
