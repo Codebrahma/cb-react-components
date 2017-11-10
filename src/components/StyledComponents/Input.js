@@ -22,3 +22,4 @@ export default styled.input.attrs({
 })`
 	${({customStyles} = props) => cssPropsSpreader(defaultInputCssProps, customStyles)}
 `;
+
