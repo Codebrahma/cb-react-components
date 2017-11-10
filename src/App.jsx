@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import InputWithLabel from './components/ReactComponents/Input.js';
+import { Form } from 'formsy-react';
+
+import InputText from './components/FormsyComponents/index.js';
 
 const style = {
   nameStyle: {
@@ -14,35 +16,32 @@ const style = {
 }
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(data) {
+    console.log('data ', data);
+  }
 
   render() {
     const {
       nameStyle
     } = style;
 
-    return ([
-      <InputWithLabel
-        label="Name"
-        color="green"
-        key={1}
-        {...nameStyle}
-      />,
-      <InputWithLabel
-        type="password"
-        label="password"
-        key={2}
-      />,
-      <InputWithLabel
-        type="radio"
-        label="gender"
-        key={3}
-      />,
-      <InputWithLabel
-        type="button"
-        value="Click me"
-        key={4}
-      />
-    ]);
+    return (
+      <Form
+        onSubmit={this.onSubmit}
+      >
+        <InputWithLabel
+          label="Name"
+          color="green"
+          {...nameStyle}
+        />
+      </Form>
+    )
   }
 }
 export default App;

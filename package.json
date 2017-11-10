@@ -40,8 +40,6 @@
   "dependencies": {
     "babel-loader": "^7.0.0",
     "formsy-react": "^0.19.5",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
     "styled-components": "^2.2.3"
   },
   "main": "server.js"
