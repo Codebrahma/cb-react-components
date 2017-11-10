@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
 import { Form } from 'formsy-react';
 
-import { InputText } from './components/FormsyComponents/index.js';
+import { 
+  InputText,
+  InputPassword,
+} from './components/FormsyComponents/index.js';
 
 const style = {
   nameStyle: {
     labelStyle: {
-      background: 'red',
+      background: 'white',
     },
     inputStyle: {
       background: 'red',
@@ -38,8 +41,13 @@ class App extends Component {
         <InputText
           name="name"
           label="Name"
-          color="green"
           value="Hello"
+          {...nameStyle}
+        />
+        <InputPassword
+          type="password"
+          name="password"
+          label="password"
           {...nameStyle}
         />
         <button>

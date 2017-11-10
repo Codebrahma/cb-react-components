@@ -3,7 +3,7 @@ import Formsy from 'formsy-react';
 
 import Input from '../ReactComponents/Input.js';
 
-class InputText extends React.Component {
+class InputPassword extends React.Component {
   constructor(props) {
     super(props);
 
@@ -18,7 +18,7 @@ class InputText extends React.Component {
     return (
       <div>
         <Input 
-          type="text" 
+          type="password" 
           onChange={this.changeValue} 
           {...this.props}
           value={this.props.getValue()}
@@ -28,4 +28,4 @@ class InputText extends React.Component {
   }
 }
 
-export default InputText;
+export default InputPassword;

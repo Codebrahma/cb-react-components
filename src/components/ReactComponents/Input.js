@@ -14,6 +14,7 @@ const InputTextWithLabel = ({ label, labelStyle, inputStyle, type = "text", ...p
       )
     }
     <Input
+      type={type}
       {...props}
       {...inputStyle} 
     />
