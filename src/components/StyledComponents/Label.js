@@ -1,9 +1,14 @@
 import styled from 'styled-components';
+import cssPropsSpreader from '../../lib/cssPropsSpreader.js';
+
+const defaultLabelCssProps = {
+  margin: '0px 0px',
+  padding: '0px 0px',
+  minWidth: '150px',
+  display: 'inline-block',
+  background: 'yellow',
+};
 
 export default styled.label`
-    margin: ${({ margin }) => margin ? margin : '0px 0px'};
-    padding: ${({ padding }) => padding ? padding : '0px 0px'};
-    min-width: ${({ minWidth }) => minWidth ? minWidth : '150px'};
-    display: inline-block;
-    background: ${({ background }) => background ? background : 'yellow'}
+  ${({customStyles} = props) => cssPropsSpreader(defaultLabelCssProps, customStyles)}
 `

@@ -1,19 +1,25 @@
 import styled from 'styled-components';
+import cssPropsSpreader from '../../lib/cssPropsSpreader.js';
+
+const defaultInputCssProps = {
+  "color": "white",
+  "backgroundColor": "blue",
+  "width": "auto",
+  "height": "auto",
+  "margin": "0 auto",
+  "padding": ".5rem 1rem",
+  "border": "1px solid transparent",
+  "borderRadius": ".25rem",
+  "borderColor": "blue",
+  "fontWeight": "400",
+  "fontSize": "1rem",
+  "lineHeight": "1.25",
+  "textAlign": "center"
+};
 
 export default styled.input.attrs({
-	type: props => props.type || 'text'		
+	type: props => props.type || 'text'
 })`
-	color: ${props => isValidParams(props, 'color') ? props.style.color: 'white'};
-	background-color: blue;
-	width: auto;
-	height: auto;
-	margin: 0 auto;
-	padding: .5rem 1rem;
-	border: 1px solid transparent;
-	border-radius: .25rem;
-	border-color: blue;
-	font-weight: 400;
-	font-size: 1rem;
-	line-height: 1.25;
-	text-align: center;
+	${({customStyles} = props) => cssPropsSpreader(defaultInputCssProps, customStyles)}
 `;
+

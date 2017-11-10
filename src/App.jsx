@@ -1,46 +1,65 @@
 import React, {Component} from 'react';
-import InputWithLabel from './components/ReactComponents/Input.js';
+import { Form } from 'formsy-react';
+
+import { 
+  InputText,
+  InputPassword,
+  InputCheck,
+} from './components/FormsyComponents/index.js';
 
 const style = {
   nameStyle: {
     labelStyle: {
-      background: 'red',
+      background: 'white',
     },
     inputStyle: {
-      background: 'green',
+      background: 'red',
+      textAlign: 'right',
     }
   }
 }
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(data) {
+    console.log('data ', data);
+  }
 
   render() {
     const {
       nameStyle
     } = style;
-    return ([
-      <InputWithLabel
-        label="Name"
-        color="green"
-        key={1}
-        {...nameStyle}
-      />,
-      <InputWithLabel
-        type="password"
-        label="password"
-        key={2}
-      />,
-      <InputWithLabel
-        type="radio"
-        label="gender"
-        key={3}
-      />,
-      <InputWithLabel
-        type="button"
-        value="Click me"
-        key={4}
-      />
-    ]);
+
+    return (
+      <Form
+        onSubmit={this.onSubmit}
+      >
+        <InputText
+          name="name"
+          label="Name"
+          value="Hello"
+          {...nameStyle}
+        />
+        <InputPassword
+          name="password"
+          label="password"
+          {...nameStyle}
+        />
+        <InputCheck
+          name="gender"
+          label="gender"
+        />
+        <button>
+          Submit
+        </button>
+      </Form>
+    )
   }
 }
+
 export default App;
