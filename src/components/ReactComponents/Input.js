@@ -1,16 +1,20 @@
 import React from 'react';
 import Input from '../StyledComponents/Input.js';
-import Label from '../StyledComponents/Label.js';
+import { Label } from '../StyledComponents/Label.js';
 
-const InputTextWithLabel = ({ label, type = "text", ...props}) => (
+const InputTextWithLabel = ({ label, labelStyle, inputStyle, type = "text", ...props}) => (
     <div>
         {
             label && (
-                <Label>{label}</Label>
+                <Label
+                  {...labelStyle}
+                >{label}
+                </Label>
             )
         }
         <Input
-           {...props} 
+           {...props}
+           {...inputStyle} 
         />
     </div>
 )

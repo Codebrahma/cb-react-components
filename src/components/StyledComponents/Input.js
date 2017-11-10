@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export default styled.input.attrs({
 	type: props => props.type || 'text'		
 })`
-	color: ${props => props.style && props.style.color ? props.style.color: 'white'};
+	color: ${props => isValidParams(props, 'color') ? props.style.color: 'white'};
 	background-color: blue;
 	width: auto;
 	height: auto;
