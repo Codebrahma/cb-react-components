@@ -7,7 +7,8 @@ const style = {
       background: 'red',
     },
     inputStyle: {
-      background: 'green',
+      background: 'red',
+      textAlign: 'right',
     }
   }
 }
@@ -18,6 +19,7 @@ class App extends Component {
     const {
       nameStyle
     } = style;
+
     return ([
       <InputWithLabel
         label="Name"
