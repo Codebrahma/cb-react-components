@@ -4,6 +4,7 @@ import { Form } from 'formsy-react';
 import { 
   InputText,
   InputPassword,
+  InputCheck,
 } from './components/FormsyComponents/index.js';
 
 const style = {
@@ -45,10 +46,13 @@ class App extends Component {
           {...nameStyle}
         />
         <InputPassword
-          type="password"
           name="password"
           label="password"
           {...nameStyle}
+        />
+        <InputCheck
+          name="gender"
+          label="gender"
         />
         <button>
           Submit
