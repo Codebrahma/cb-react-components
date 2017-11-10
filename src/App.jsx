@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { Form } from 'formsy-react';
 
-import InputText from './components/FormsyComponents/index.js';
+import { InputText } from './components/FormsyComponents/index.js';
 
 const style = {
   nameStyle: {
@@ -35,13 +35,19 @@ class App extends Component {
       <Form
         onSubmit={this.onSubmit}
       >
-        <InputWithLabel
+        <InputText
+          name="name"
           label="Name"
           color="green"
+          value="Hello"
           {...nameStyle}
         />
+        <button>
+          Submit
+        </button>
       </Form>
     )
   }
 }
+
 export default App;
