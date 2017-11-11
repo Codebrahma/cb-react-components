@@ -4,6 +4,7 @@ import { reduxForm, Field } from 'redux-form';
 
 import Button from './InputButton.js';
 import InputText from './InputText.js';
+import InputCheckbox from './InputCheckbox.js';
 
 const DemoForm = (props) => {
   const {
@@ -15,7 +16,11 @@ const DemoForm = (props) => {
       <Field
         name="name"
         component={InputText}
-        type="text"
+      />
+      <Field
+        name="category"
+        label="category"
+        component={InputCheckbox}
       />
       <Button
         label="submit"
