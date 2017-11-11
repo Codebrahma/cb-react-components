@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "babel-loader": "^7.0.0",
+    "classnames": "^2.2.5",
     "formsy-react": "^0.19.5",
     "lodash": "^4.17.4",
     "react": "^15.6.2",
