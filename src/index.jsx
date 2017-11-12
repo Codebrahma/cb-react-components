@@ -10,6 +10,8 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { reducer as formReducer } from 'redux-form';
 
+import 'react-dates/initialize';
+
 import App from './AppWithReduxForm.jsx';
 
 const rootReducer = combineReducers({

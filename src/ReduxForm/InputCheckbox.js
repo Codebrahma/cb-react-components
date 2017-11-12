@@ -2,10 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import map from 'lodash/map';
-
 const InputCheckbox = ({ input, meta, option, label, ...props }) => {
-
   return (
     <div>
       <input
