@@ -18,7 +18,7 @@ const SimpleInputSelect = ({ input: { onChange, ...input }, meta, options, ...pr
       {...props}
       onChange={handleChange}
     >
-      {map(selectOptions, ({ value, label }) => <option value={value} key={value}>{label}</option>)}
+      {map(selectOptions, ({ value, label }) => <option value={value} key={Math.random()}>{label}</option>)}
     </select>
   );
 };

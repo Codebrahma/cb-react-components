@@ -9,21 +9,36 @@ class InputDateRange extends React.Component {
     super(props);
 
     this.state = {
-      startDate: moment('12/11/2016', 'DD/MM/YYYY'),
-      endDate: moment('12/11/2018', 'DD/MM/YYYY')
-    }
+      focused: false,
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onFocusChange = this.onFocusChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.input.onChange(moment('12/11/2017', 'DD/MM/YYYY'));
+  }
+  onChange(date) {
+    this.props.input.onChange(date.format('DD/MM/YYYY'))
+  }
+
+  onFocusChange({ focused }) {
+    this.setState({
+      focused,
+    })
   }
 
   render() {
     const { input, meta, ...props } = this.props;
     return (
       <div>
-        <DateRangePicker
-          startDate={this.state.startDate}
-          endDate={this.state.endDate}
-          onDatesChange={({ startDate, endDate }) => this.setState({ startDate, endDate })}
-          focusedInput={this.state.focusedInput}
-          onFocusChange={focusedInput => this.setState({ focusedInput })}
+        <SingleDatePicker
+          date={moment(input.value, 'DD/MM/YYYY')}
+          onDateChange={this.onChange}
+          focused={this.state.focused}
+          onFocusChange={({ focused }) => this.setState({ focused })}
+          {...props}
         />
       </div>
     )
