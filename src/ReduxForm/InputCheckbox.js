@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import InputCheck from '../components/StyledComponents/InputCheckbox.js';
+
 const InputCheckbox = ({ input, meta, option, label, ...props }) => {
   return (
     <div>
-      <input
-        type="checkbox"
+      <InputCheck
         {...input}
         {...props}
       />

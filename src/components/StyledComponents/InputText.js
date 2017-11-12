@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import cssPropsSpreader from '../../lib/cssPropsSpreader.js';
 
 const defaultInputCssProps = {
-  "color": "white",
-  "backgroundColor": "blue",
+  "color": "black",
+  "backgroundColor": "white",
   "width": "auto",
   "height": "auto",
   "margin": "0 auto",
@@ -20,6 +20,5 @@ const defaultInputCssProps = {
 export default styled.input.attrs({
 	type: 'text'
 })`
-	${({customStyles} = props) => cssPropsSpreader(defaultInputCssProps, customStyles)}
+  ${({customStyles} = props) => cssPropsSpreader(defaultInputCssProps, customStyles)}
 `;
-

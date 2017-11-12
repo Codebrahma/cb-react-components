@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Input from '../components/StyledComponents/InputText.js';
+
 const InputText = ({ wrapperClass, input, meta, ...props }) => {
   const { valid, touched, warning } = meta;
   // Description for warning
@@ -11,7 +13,7 @@ const InputText = ({ wrapperClass, input, meta, ...props }) => {
   return (
     <div>
       <div className="text">
-        <input
+        <Input
           type="text"
           id={input.name}
           {...input}
