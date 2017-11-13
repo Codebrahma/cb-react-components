@@ -42,6 +42,7 @@
     "classnames": "^2.2.5",
     "formsy-react": "^0.19.5",
     "lodash": "^4.17.4",
+    "material-ui": "^0.19.4",
     "moment": "^2.19.1",
     "react": "^16.1.0",
     "react-addons-shallow-compare": "^15.6.2",

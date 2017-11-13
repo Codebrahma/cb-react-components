@@ -3,6 +3,13 @@ import moment from 'moment';
 import PropTypes from 'prop-types';
 
 import { DateRangePicker, SingleDatePicker, DayPickerRangeController } from 'react-dates';
+import Label from '../components/StyledComponents/Label.js';
+
+const styles = {
+  display: 'flex',
+  alignItems: 'center',
+  margin: '10px 0px',
+}
 
 class InputDateRange extends React.Component {
   constructor(props) {
@@ -32,7 +39,10 @@ class InputDateRange extends React.Component {
   render() {
     const { input, meta, ...props } = this.props;
     return (
-      <div>
+      <div style={styles}>
+        <Label>
+          {props.label}
+        </Label>
         <SingleDatePicker
           date={moment(input.value, 'DD/MM/YYYY')}
           onDateChange={this.onChange}

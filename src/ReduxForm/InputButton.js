@@ -2,11 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import FormButton from '../components/StyledComponents/InputButton.js';
+
 const Button = ({ label, ...props }) => (
   <div>
-    <button {...props}>
+    <FormButton {...props}>
       {label}
-    </button>
+    </FormButton>
   </div>
 );
 

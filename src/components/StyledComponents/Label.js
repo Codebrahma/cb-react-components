@@ -5,8 +5,10 @@ const defaultLabelCssProps = {
   margin: '0px 0px',
   padding: '0px 0px',
   minWidth: '150px',
-  display: 'inline-block',
-  background: 'yellow',
+  color: 'black',
+  fontSize: '20px',
+  fontFamily: 'latosemibold',
+  display: 'inline-block'
 };
 
 export default styled.label`

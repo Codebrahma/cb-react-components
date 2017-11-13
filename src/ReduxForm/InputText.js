@@ -2,6 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Input from '../components/StyledComponents/InputText.js';
+import Label from '../components/StyledComponents/Label.js';
+
+const styles = {
+  display: 'flex',
+  alignItems: 'center',
+  margin: '10px 0px',
+}
 
 const InputText = ({ wrapperClass, input, meta, ...props }) => {
   const { valid, touched, warning } = meta;
@@ -11,15 +18,14 @@ const InputText = ({ wrapperClass, input, meta, ...props }) => {
   const warningField = warning && !fieldInvalid;
   
   return (
-    <div>
-      <div className="text">
-        <Input
-          type="text"
-          id={input.name}
-          {...input}
-          {...props}
-        />
-      </div>
+    <div style={styles}>
+      <Label>
+        {props.label}
+      </Label>
+      <Input
+        {...input}
+        {...props}
+      />
     </div>
   );
 };

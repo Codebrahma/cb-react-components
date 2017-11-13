@@ -3,18 +3,23 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import InputCheck from '../components/StyledComponents/InputCheckbox.js';
+import Label from '../components/StyledComponents/Label.js';
 
+const styles = {
+  display: 'flex',
+  alignItems: 'center',
+  margin: '10px 0px',
+}
 const InputCheckbox = ({ input, meta, option, label, ...props }) => {
   return (
-    <div>
-      <InputCheck
-        {...input}
-        {...props}
-      />
-      <label>
+    <div style={styles}>
+      <Label>
         {label}
-        <span className="box" />
-      </label>
+      </Label>
+      <InputCheck
+          {...input}
+          {...props}
+      />
     </div>
   );
 }

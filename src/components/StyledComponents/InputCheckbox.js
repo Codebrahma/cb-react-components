@@ -18,9 +18,10 @@ export default styled.input.attrs({
   position: relative;
   appearance: none;
   &:checked {
-    background-color: blue;
-    border: 1px solid #adb8c0;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+    background-color: ${props => props.checkedColor ? props.checkedColor : '#72edff'};
     color: #99a1a7;
   };
+  &:focus {
+    outline: none;
+  }
 `;

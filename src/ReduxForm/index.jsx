@@ -12,6 +12,8 @@ import InputDateRange from './InputDateRange.js';
 
 import 'react-dates/lib/css/_datepicker.css';
 
+import formValidation from './formValidation.js';
+
 const selectOptions = [{
   label: 'US',
   value: 'us',
@@ -29,29 +31,37 @@ const DemoForm = (props) => {
     <form onSubmit={handleSubmit}>
       <Field
         name="name"
+        label="Name"
         component={InputText}
       />
       <Field
-        name="category.first"
-        label="category"
-        component={InputCheckbox}
+        name="email"
+        label="Email"
+        component={InputText}
+      />  
+      <Field
+        name="age"
+        label="Age"
+        component={InputText}
       />
       <Field
-        name="category.second"
-        label="category"
+        name="category"
+        label="Category"
         component={InputCheckbox}
       />
       <Field
         name="location"
+        label="Location"
         component={InputSelect}
         options={selectOptions}
       />
       <Field
-        name="date"
+        name="dob"
+        label="Date Of Birth"
         component={InputDateRange}
       />
       <Button
-        label="submit"
+        label="Submit"
       />
     </form>
   )
@@ -59,4 +69,5 @@ const DemoForm = (props) => {
 
 export default reduxForm({
   form: 'demo',
+  validate: formValidation,
 })(DemoForm)
