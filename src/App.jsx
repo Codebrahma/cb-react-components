@@ -16,7 +16,7 @@ class App extends Component {
         onSubmit={this.onSubmit}
       >
         <TextField 
-          name="emailAddress"
+          name="userName"
           validations="isEmail" 
           validationError="This is not a valid email"
           requiredError='Field Required Custom Message'
