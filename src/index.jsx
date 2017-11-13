@@ -6,6 +6,21 @@ require("../styles/application.scss");
 // Render the top-level React component
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App.jsx';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+import { reducer as formReducer } from 'redux-form';
 
-ReactDOM.render(<App />, document.getElementById('react-root'));
+import 'react-dates/initialize';
+
+import App from './AppWithReduxForm.jsx';
+
+const rootReducer = combineReducers({
+  form: formReducer,
+})
+
+const store = createStore(rootReducer, {}, applyMiddleware(logger));
+
+ReactDOM.render(<Provider store={store}>
+    <App />
+  </Provider>, document.getElementById('react-root'));

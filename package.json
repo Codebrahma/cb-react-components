@@ -39,10 +39,19 @@
   },
   "dependencies": {
     "babel-loader": "^7.0.0",
+    "classnames": "^2.2.5",
     "formsy-react": "^0.19.5",
     "lodash": "^4.17.4",
-    "react": "^15.6.2",
-    "react-dom": "^15.6.2",
+    "material-ui": "^0.19.4",
+    "moment": "^2.19.1",
+    "react": "^16.1.0",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-dates": "^15.1.0",
+    "react-dom": "^16.1.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-form": "^7.1.2",
+    "redux-logger": "^3.0.6",
     "styled-components": "^2.2.3"
   },
   "main": "server.js"
