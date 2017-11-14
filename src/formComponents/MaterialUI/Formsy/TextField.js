@@ -29,7 +29,7 @@ class FormsyMuiTextField extends React.Component {
     )
 
     const { isRequired, isPristine, isValid, isFormSubmitted } = formsyApiProps;
-    const isRequiredError = isRequired() && !isPristine() && !isValid() && isFormSubmitted() && requiredError;
+    const isRequiredError = isRequired() && !isPristine() && !isValid() && isFormSubmitted() && wrapperInputProps.requiredError;
     const errorText = this.props.getErrorMessage() || isRequiredError;
 
     return (
