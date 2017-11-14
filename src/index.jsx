@@ -3,6 +3,7 @@
 // Load up the application styles
 require("../styles/application.scss");
 
+import 'semantic-ui-css/semantic.min.css';
 // Render the top-level React component
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -24,3 +25,4 @@ const store = createStore(rootReducer, {}, applyMiddleware(logger));
 ReactDOM.render(<Provider store={store}>
     <App />
   </Provider>, document.getElementById('react-root'));
+
