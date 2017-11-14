@@ -1,7 +1,4 @@
-import { indexOf, pick, omitBy } from 'lodash';
+import { pick, omit } from 'lodash';
 
 export const extractObjectHavingKeys = (keys = [], entireObject = {}) => pick(entireObject, keys);
-
-export const extractObjectOmittingKeys = (keys = [], entireObject = {}) => {
-  return omitBy(entireObject, (value, key) => (indexOf(keys, key) !== -1))
-}
+export const extractObjectOmittingKeys = (keys = [], entireObject = {}) => omit(entireObject, keys);
