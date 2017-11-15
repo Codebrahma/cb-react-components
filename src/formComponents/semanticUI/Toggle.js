@@ -8,7 +8,7 @@ const InputCheckbox = ({ label, input, ...props}) => {
   return (
     <div>
       <label>
-        label
+        {label}
       </label>
       <Checkbox
         toggle 
