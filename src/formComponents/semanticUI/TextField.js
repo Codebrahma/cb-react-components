@@ -1,19 +1,29 @@
 import React from 'react'
 import { Input } from 'semantic-ui-react'
 
-const InputExampleInput = ({ placeholder, label, input, meta, ...props }) => (
-  <div>
-    <label>
+const InputExampleInput = ({ 
+  placeholder, 
+  label, 
+  input, 
+  labelStyle,
+  wrapperDivStyle,
+  inputDivStyle,
+  meta, 
+  ...props }) => (
+  <div style={wrapperDivStyle}>
+    <label style={labelStyle}>
       {label}
     </label>
-    <Input 
-      placeholder={placeholder}
-      {...input} 
-      >
-      <input
-        {...props}
-      />
-    </Input>
+    <div style={inputDivStyle}>
+      <Input 
+        placeholder={placeholder}
+        {...input} 
+        >
+        <input
+          {...props}
+        />
+      </Input>
+    </div>
   </div>
 )
 

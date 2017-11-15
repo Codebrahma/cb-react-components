@@ -6,17 +6,31 @@ import {
 import omit from 'lodash/omit';
 import 'rc-datepicker/lib/style.css';
 
-const InputDateRange = ({ input, meta, ...props }) => {
+const InputDateRange = ({ 
+  input, 
+  meta, 
+  label, 
+  labelStyle,
+  wrapperDivStyle,
+  inputDivStyle,
+  ...props 
+}) => {
   const onChange = (a, b) => {
     input.onChange(b);
   };
 
   return (
-    <div>
-      <DatePickerInput
-        onChange={onChange}
-        {...omit(props, ['date'])} 
-      />  
+    <div style={wrapperDivStyle}>
+      <label
+        style={labelStyle}
+      > {label}
+      </label>
+      <div style={inputDivStyle}>
+        <DatePickerInput
+          onChange={onChange}
+          {...omit(props, ['date'])} 
+        />  
+      </div>
     </div>
   )
 }

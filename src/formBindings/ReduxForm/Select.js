@@ -13,25 +13,20 @@ class InputSelect extends Component {
 
   render() {
     const {
-      label,
       options,
       name,
       ...props
     } = this.props
     return (
-      <div>
-        <label>
-          {label}
-        </label>
-        <Field
-          name={name}
-          component={Select}
-          selection
-          search
-          placeholder='State' 
-          options={options}
-        />
-      </div>
+      <Field
+        name={name}
+        component={Select}
+        selection
+        search
+        placeholder='State' 
+        options={options}
+        {...props}
+      />
     )
   }
 }

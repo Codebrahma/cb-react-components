@@ -10,6 +10,8 @@ import Select from './formBindings/ReduxForm/Select.js';
 import Toggle from './formBindings/ReduxForm/Toggle.js';
 import DatePicker from './formBindings/ReduxForm/DatePicker.js';
 
+import styles from './formBindings/ReduxForm/styles.js';
+
 const options = [{
   key: 'A',
   text: 'A',
@@ -20,37 +22,53 @@ const options = [{
   value: 'b',
 }]
 
+const style = {
+  formHolderStyle: {
+    margin: '40px 200px',
+  }
+}
 const Demo = (props) => {
+  const {
+    formHolderStyle 
+  } = style;
   return (
-    <form onSubmit={props.handleSubmit}>
-      <TextField
-        name="name"
-        label="Name"
-      />
-      <CheckBox
-        name="isHuman"
-        label="Are you a Human ?"
-      />
-      <RadioButtonGroup
-        name="category"
-        label="Category"
-        options={options}
-      />
-      <Select
-        name="selectValue"
-        label="Select"
-        options={options}
-      />
-      <Toggle
-        name="toggle"
-        label="Are you male ?"
-      />
-      <DatePicker
-        name="date"
-        label="Date"
-      />
-      <Button />
-    </form>  
+    <div style={formHolderStyle}>
+      <form onSubmit={props.handleSubmit}>
+        <TextField
+          name="name"
+          label="Name"
+          {...styles}
+        />
+        <CheckBox
+          name="isHuman"
+          label="Are you a Human ?"
+          {...styles}
+        />
+        <RadioButtonGroup
+          name="category"
+          label="Category"
+          options={options}
+          {...styles}
+        />
+        <Select
+          name="selectValue"
+          label="Select"
+          options={options}
+          {...styles}
+        />
+        <Toggle
+          name="toggle"
+          label="Are you male ?"
+          {...styles}
+        />
+        <DatePicker
+          name="date"
+          label="Date"
+          {...styles}
+        />
+        <Button />
+      </form>
+    </div>    
   )
 }
 

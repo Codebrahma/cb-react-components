@@ -1,15 +1,24 @@
 import React from 'react'
 import { Checkbox } from 'semantic-ui-react'
 
-const InputCheckbox = ({ label, input, meta, ...props }) => (
-  <div>
-    <label>
+const InputCheckbox = ({ 
+  label, 
+  labelStyle,
+  wrapperDivStyle,
+  inputDivStyle,
+  input, 
+  meta, 
+  ...props 
+}) => (
+  <div style={wrapperDivStyle}>
+    <label style={labelStyle}>
       {label}
     </label>
     <Checkbox
+      style={inputDivStyle} 
       {...input} 
     >
-      <input 
+      <input
         {...props}
       />
     </Checkbox>

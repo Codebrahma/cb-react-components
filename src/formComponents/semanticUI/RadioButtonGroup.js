@@ -3,6 +3,12 @@ import { Radio } from 'semantic-ui-react'
 
 import map from 'lodash/map';
 
+const style = {
+  radioStyle: {
+    marginRight: '25px', 
+  }
+}
+
 class RadioExampleRadioGroup extends Component {
   constructor(props) {
     super(props);
@@ -18,14 +24,22 @@ class RadioExampleRadioGroup extends Component {
     const {
       input,
       label,
+      labelStyle,
+      wrapperDivStyle,
+      inputDivStyle,
       ...props
     } = this.props
+    const {
+      radioStyle
+    } = style;
     return (
-      <div>
-        <label>
+      <div style={wrapperDivStyle}>
+        <label 
+          style={labelStyle}
+        >
           {label}
         </label>
-        <div>
+        <div style={inputDivStyle}>
           {
             map(props.options, ({ key, text, value }) => {
               return (
@@ -37,6 +51,7 @@ class RadioExampleRadioGroup extends Component {
                   value={value}
                   checked={input.value === value}
                   onChange={this.handleChange}
+                  style={radioStyle}
                 />
               )
             })
