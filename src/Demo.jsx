@@ -8,6 +8,7 @@ import CheckBox from './formBindings/ReduxForm/CheckBox.js';
 import RadioButtonGroup from './formBindings/ReduxForm/RadioButtonGroup.js';
 import Select from './formBindings/ReduxForm/Select.js';
 import Toggle from './formBindings/ReduxForm/Toggle.js';
+import DatePicker from './formBindings/ReduxForm/DatePicker.js';
 
 const options = [{
   key: 'A',
@@ -43,6 +44,10 @@ const Demo = (props) => {
       <Toggle
         name="toggle"
         label="Are you male ?"
+      />
+      <DatePicker
+        name="date"
+        label="Date"
       />
       <Button />
     </form>  

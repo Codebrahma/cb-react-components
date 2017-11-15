@@ -6,17 +6,19 @@ import {
 import omit from 'lodash/omit';
 import 'rc-datepicker/lib/style.css';
 
-const onChange = (a, b) => {
-  console.log('a and b', a, b);
-};
+const InputDateRange = ({ input, meta, ...props }) => {
+  const onChange = (a, b) => {
+    input.onChange(b);
+  };
 
-const InputDateRange = (props) => (
-  <div>
-    <DatePickerInput
-      onChange={onChange}
-      {...omit(props, ['date'])} 
-    />  
-  </div>
-)
+  return (
+    <div>
+      <DatePickerInput
+        onChange={onChange}
+        {...omit(props, ['date'])} 
+      />  
+    </div>
+  )
+}
 
 export default InputDateRange;
