@@ -1,12 +1,13 @@
 import React from 'react'
-import { Checkbox, Segment } from 'semantic-ui-react'
+import { Checkbox } from 'semantic-ui-react'
 
-const InputCheckbox = ({ label, ...props}) => (
+const InputCheckbox = ({ label, input, meta, ...props }) => (
   <div>
     <label>
-      label
+      {label}
     </label>
-    <Checkbox 
+    <Checkbox
+      {...input} 
     >
       <input 
         {...props}

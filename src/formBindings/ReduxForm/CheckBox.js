@@ -1,26 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
+import { Field } from 'redux-form';
 
-import InputCheck from '../components/StyledComponents/InputCheckbox.js';
-import Label from '../components/StyledComponents/Label.js';
+import CheckBox from '../../formComponents/SemanticUI/CheckBox.js';
 
 const styles = {
   display: 'flex',
   alignItems: 'center',
   margin: '10px 0px',
 }
-const InputCheckbox = ({ input, meta, option, label, ...props }) => {
+const InputCheckbox = (props) => {
   return (
-    <div style={styles}>
-      <Label>
-        {label}
-      </Label>
-      <InputCheck
-          {...input}
-          {...props}
-      />
-    </div>
+    <Field
+      {...props}
+      component={CheckBox}
+    />
   );
 }
 

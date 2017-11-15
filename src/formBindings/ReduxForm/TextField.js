@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Field } from 'redux-form';
 
-import Input from '../components/StyledComponents/InputText.js';
-import Label from '../components/StyledComponents/Label.js';
+import Input from '../../formComponents/SemanticUI/TextField.js';
 
 const styles = {
   display: 'flex',
@@ -10,23 +10,13 @@ const styles = {
   margin: '10px 0px',
 }
 
-const InputText = ({ wrapperClass, input, meta, ...props }) => {
-  const { valid, touched, warning } = meta;
-  // Description for warning
-  const fieldValid = !props.working && valid;
-  const fieldInvalid = !valid && touched;
-  const warningField = warning && !fieldInvalid;
+const InputText = (props) => {
   
   return (
-    <div style={styles}>
-      <Label>
-        {props.label}
-      </Label>
-      <Input
-        {...input}
-        {...props}
-      />
-    </div>
+    <Field
+      {...props}
+      component={Input}
+    />
   );
 };
 
