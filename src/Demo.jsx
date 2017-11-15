@@ -7,6 +7,7 @@ import TextField from './formBindings/ReduxForm/TextField.js';
 import CheckBox from './formBindings/ReduxForm/CheckBox.js';
 import RadioButtonGroup from './formBindings/ReduxForm/RadioButtonGroup.js';
 import Select from './formBindings/ReduxForm/Select.js';
+import Toggle from './formBindings/ReduxForm/Toggle.js';
 
 const options = [{
   key: 'A',
@@ -38,6 +39,10 @@ const Demo = (props) => {
         name="selectValue"
         label="Select"
         options={options}
+      />
+      <Toggle
+        name="toggle"
+        label="Are you male ?"
       />
       <Button />
     </form>  
