@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import FormButton from '../components/StyledComponents/InputButton.js';
+import InputButton from '../../formComponents/SemanticUI/Button.js';
 
 const Button = ({ label, ...props }) => (
   <div>
-    <FormButton {...props}>
+    <InputButton {...props}>
       {label}
-    </FormButton>
+    </InputButton>
   </div>
 );
 

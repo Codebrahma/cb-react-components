@@ -3,7 +3,7 @@ import { Form, Radio } from 'semantic-ui-react'
 
 import map from 'lodash/map';
 
-export default class RadioExampleRadioGroup extends Component {
+class RadioExampleRadioGroup extends Component {
   constructor(props) {
     super(props);
 
@@ -36,3 +36,5 @@ export default class RadioExampleRadioGroup extends Component {
     )
   }
 }
+
+export default RadioExampleRadioGroup;
