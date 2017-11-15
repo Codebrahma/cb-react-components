@@ -14,7 +14,7 @@ import { reducer as formReducer } from 'redux-form';
 
 import 'react-dates/initialize';
 
-import App from './AppWithReduxForm.jsx';
+import App from './App.jsx';
 
 const rootReducer = combineReducers({
   form: formReducer,
