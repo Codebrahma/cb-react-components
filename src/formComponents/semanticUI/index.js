@@ -3,6 +3,8 @@ import TextField from './TextField.js';
 import CheckBox from './CheckBox.js';
 import Select from './Select.js'; 
 import RadioButtonGroup from './RadioButtonGroup.js';
+import Toggle from './Toggle.js';
+import DatePicker from './DatePicker.js';
 
 const options = [{
   value: 'optionA',
@@ -31,6 +33,10 @@ const Form = () => (
     <RadioButtonGroup
       label="radio"
       options={options}
+    />
+    <DatePicker
+    />
+    <Toggle
     />
   </div>
 )

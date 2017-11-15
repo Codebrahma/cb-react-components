@@ -44,6 +44,7 @@
     "formsy-react": "^0.19.5",
     "image-webpack-loader": "^3.4.2",
     "lodash": "^4.17.4",
+<<<<<<< HEAD
     "material-ui": "^0.19.4",
     "moment": "^2.19.1",
     "react": "^16.1.0",
@@ -55,6 +56,9 @@
     "redux-form": "^7.1.2",
     "redux-logger": "^3.0.6",
     "styled-components": "^2.2.3",
+=======
+    "rc-datepicker": "^5.0.10",
+>>>>>>> added date picker and toggle
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
     "semantic-ui-css": "^2.2.12",
