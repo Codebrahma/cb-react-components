@@ -10,6 +10,6 @@ export default {
     minWidth: '150px',
   },
   inputDivStyle: {
-    float: 'left'
+    
   }
 }
