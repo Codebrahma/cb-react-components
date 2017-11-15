@@ -6,6 +6,7 @@ import Button from './formBindings/ReduxForm/Button.js';
 import TextField from './formBindings/ReduxForm/TextField.js';
 import CheckBox from './formBindings/ReduxForm/CheckBox.js';
 import RadioButtonGroup from './formBindings/ReduxForm/RadioButtonGroup.js';
+import Select from './formBindings/ReduxForm/Select.js';
 
 const options = [{
   key: 'A',
@@ -31,6 +32,11 @@ const Demo = (props) => {
       <RadioButtonGroup
         name="category"
         label="Category"
+        options={options}
+      />
+      <Select
+        name="selectValue"
+        label="Select"
         options={options}
       />
       <Button />
