@@ -5,6 +5,17 @@ import { reduxForm, Field } from 'redux-form';
 import Button from './formBindings/ReduxForm/Button.js';
 import TextField from './formBindings/ReduxForm/TextField.js';
 import CheckBox from './formBindings/ReduxForm/CheckBox.js';
+import RadioButtonGroup from './formBindings/ReduxForm/RadioButtonGroup.js';
+
+const options = [{
+  key: 'A',
+  text: 'A',
+  value: 'a',
+}, {
+  key: 'B',
+  text: 'B',
+  value: 'b',
+}]
 
 const Demo = (props) => {
   return (
@@ -16,6 +27,11 @@ const Demo = (props) => {
       <CheckBox
         name="isHuman"
         label="Are you a Human ?"
+      />
+      <RadioButtonGroup
+        name="category"
+        label="Category"
+        options={options}
       />
       <Button />
     </form>  
