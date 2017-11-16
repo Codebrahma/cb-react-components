@@ -1,10 +1,11 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react'
+import { Input } from 'semantic-ui-react';
+
+import TextFieldUI from '../../../formComponents/SemanticUI/TextField.js';
 
 const InputExampleInput = ({ 
   placeholder, 
   label, 
-  input, 
   labelStyle,
   wrapperDivStyle,
   inputDivStyle,
@@ -15,14 +16,10 @@ const InputExampleInput = ({
       {label}
     </label>
     <div style={inputDivStyle}>
-      <Input 
+      <TextFieldUI
         placeholder={placeholder}
-        {...input} 
-        >
-        <input
-          {...props}
-        />
-      </Input>
+        {...props}
+      />
     </div>
   </div>
 )
