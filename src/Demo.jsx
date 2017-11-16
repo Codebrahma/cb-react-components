@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { reduxForm, Field } from 'redux-form';
+import { Field } from 'redux-form';
+
+import FormHOC from './formBindings/ReduxForm/FormHOC.js';
+import Form from './formBindings/ReduxForm/Form.js';
 
 import Button from './formBindings/ReduxForm/Button.js';
 import TextField from './formBindings/ReduxForm/TextField.js';
@@ -33,7 +36,9 @@ const Demo = (props) => {
   } = style;
   return (
     <div style={formHolderStyle}>
-      <form onSubmit={props.handleSubmit}>
+      <Form
+        onSubmit={props.handleSubmit}
+      >
         <TextField
           name="name"
           label="Name"
@@ -67,11 +72,9 @@ const Demo = (props) => {
           {...styles}
         />
         <Button />
-      </form>
+      </Form>
     </div>    
   )
 }
 
-export default reduxForm({
-  form: 'simple'
-})(Demo)
+export default FormHOC(Demo);

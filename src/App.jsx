@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Demo from './Demo.jsx';
+import Form from './Demo.jsx';
 import DemoWithout from './DemoWithout.jsx';
 
 class App extends Component {
@@ -11,10 +11,9 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Demo 
+        <Form
+          name="demo" 
           onSubmit={(data) => { console.log('data is ', data)}}
-        />
-        <DemoWithout
         />
       </div>
     )
