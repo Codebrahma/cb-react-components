@@ -32,7 +32,7 @@ MuiCheckBox.propTypes = {
   disabled: PropTypes.bool,
   checked: PropTypes.bool,
   name: PropTypes.string,
-  onChange: PropTypes.func.isRequired,
+  onChange: PropTypes.func,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number,
