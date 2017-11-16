@@ -1,6 +1,8 @@
 import React from 'react'
 import { Dropdown } from 'semantic-ui-react'
 
+import InputSelectUI from '../../../formComponents/SemanticUI/Select.js';
+
 const InputSelect = ({ 
   label, 
   labelStyle,
@@ -11,7 +13,6 @@ const InputSelect = ({
   ...props
 }) => {
   const handleChange = (e, { value }) => {
-    console.log('value ', value);
     input.onChange(value);
   }
 
@@ -23,8 +24,7 @@ const InputSelect = ({
         {label}
       </label>
       <div style={inputDivStyle}>
-        <Dropdown 
-          {...input} 
+        <InputSelectUI
           {...props}
           onChange={handleChange}
         />
