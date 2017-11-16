@@ -16,8 +16,12 @@ class RadioExampleRadioGroup extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange (e, { value }) {
-    this.props.input.onChange(value);
+  handleChange (e, result) {
+    if (result && result.value) {
+      this.props.input.onChange(result.value);  
+    } else {
+      this.props.input.onChange(e.target.value)
+    }
   } 
 
   render() {

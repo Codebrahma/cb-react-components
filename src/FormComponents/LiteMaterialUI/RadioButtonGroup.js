@@ -1,12 +1,55 @@
 import React from 'react';
-
+import map from 'lodash/map';
 import { Radio, RadioGroup } from 'react-mdl';
 
-const RadioButtonGroup = (props) => (
-  <RadioGroup name="demo" value="opt1">
-    <Radio value="opt1" ripple>Ripple option</Radio>
-    <Radio value="opt2">Other option</Radio>
-  </RadioGroup>
-);
+const style = {
+  wrapperDivStyle: {
+    width: '100%',
+  },
+  radioStyle: {
+    marginRight: '15px', 
+  },
+  wrapperSpanStyle: {
+    marginRight: '10px'
+  }
+}
 
-export default RadioButtonGroup;
+const RadioButtonGroupUI = ({ 
+  options, 
+  input, 
+  inputDivStyle, 
+  handleChange, 
+  ...props 
+}) => {
+  return (
+    <div style={style.wrapperDivStyle}>
+      <RadioGroup
+
+        style={style.radioStyle}
+      >
+        {
+          map(options, ({ key, text, value }) => {
+            return (
+              <span style={style.wrapperSpanStyle}>
+                <Radio
+                  {...input}
+                  key={key}
+                  label={text}
+                  name={text}
+                  value={value}
+                  checked={input.value === value}
+                  onChange={handleChange}
+                  style={style.radioStyle}
+                >
+                  {text}
+                </Radio>
+              </span>
+            )
+          })
+        }
+      </RadioGroup>
+    </div>
+  )
+}
+
+export default RadioButtonGroupUI;
