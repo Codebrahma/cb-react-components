@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
-import CheckBox from '../../../formComponents/SemanticUI/CheckBox.js';
+import CheckBox from '../fields/CheckBox.js';
 
 const InputCheckbox = (props) => {
   return (

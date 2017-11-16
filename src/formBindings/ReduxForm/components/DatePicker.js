@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
-import DatePicker from '../../../formComponents/SemanticUI/DatePicker.js';
+import DatePicker from '../fields/DatePicker.js';
 
 const InputDate = (props) => {
   return (
