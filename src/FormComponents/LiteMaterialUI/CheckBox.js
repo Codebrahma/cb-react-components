@@ -8,7 +8,8 @@ const InputCheckboxUI = ({
 }) => (
   <Checkbox
     style={inputDivStyle} 
-    {...input} 
+    {...input}
+    {...props} 
   />
 )
 

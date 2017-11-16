@@ -2,18 +2,18 @@ import React from 'react';
 
 import { Field } from 'redux-form';
 
-import FormHOC from './formBindings/ReduxForm/FormHOC.js';
-import Form from './formBindings/ReduxForm/Form.js';
+import FormHOC from './FormBindings/ReduxForm/FormHOC.js';
+import Form from './FormBindings/ReduxForm/Form.js';
 
-import Button from './formBindings/ReduxForm/components/Button.js';
-import TextField from './formBindings/ReduxForm/components/TextField.js';
-import CheckBox from './formBindings/ReduxForm/components/CheckBox.js';
-import RadioButtonGroup from './formBindings/ReduxForm/components/RadioButtonGroup.js';
-import Select from './formBindings/ReduxForm/components/Select.js';
-import Toggle from './formBindings/ReduxForm/components/Toggle.js';
-import DatePicker from './formBindings/ReduxForm/components/DatePicker.js';
+import Button from './FormBindings/ReduxForm/Components/Button.js';
+import TextField from './FormBindings/ReduxForm/Components/TextField.js';
+import CheckBox from './FormBindings/ReduxForm/Components/CheckBox.js';
+import RadioButtonGroup from './FormBindings/ReduxForm/Components/RadioButtonGroup.js';
+import Select from './FormBindings/ReduxForm/Components/Select.js';
+import Toggle from './FormBindings/ReduxForm/Components/Toggle.js';
+import DatePicker from './FormBindings/ReduxForm/Components/DatePicker.js';
 
-import styles from './formBindings/ReduxForm/components/styles.js';
+import styles from './FormBindings/ReduxForm/Components/styles.js';
 
 const options = [{
   key: 'A',
@@ -66,11 +66,7 @@ const Demo = (props) => {
           label="Are you male ?"
           {...styles}
         />
-        <DatePicker
-          name="date"
-          label="Date"
-          {...styles}
-        />
+        
         <Button />
       </Form>
     </div>    

@@ -1,27 +1,25 @@
 import React from 'react';
 
-import Button from './FormComponents/LiteMaterialUI/button.js';
-import Checkbox from './FormComponents/LiteMaterialUI/Checkbox.js';
-import RadioButtonGroup from './FormComponents/LiteMaterialUI/RadioButtonGroup.js';
-import Select from './FormComponents/LiteMaterialUI/Select.js';
-import TextField from './FormComponents/LiteMaterialUI/TextField.js';
-import Toggle from './FormComponents/LiteMaterialUI/Toggle.js';
+import FormHOC from './FormBindings/ReduxForm/FormHOC.js';
+import Form from './FormBindings/ReduxForm/Form.js';
+
+import Button from './FormBindings/ReduxForm/Components/Button.js';
+import Checkbox from './FormBindings/ReduxForm/Components/CheckBox.js';
+import RadioButtonGroup from './FormBindings/ReduxForm/Components/RadioButtonGroup.js';
+import Select from './FormBindings/ReduxForm/Components/Select.js';
+import TextField from './FormBindings/ReduxForm/Components/TextField.js';
+import Toggle from './FormBindings/ReduxForm/Components/Toggle.js';
 
 const DemoML = (props) => (
   <div>
-  <TextField />
-  <Toggle />
-  <RadioButtonGroup
-  />
-  <Checkbox
-  />
-  <Select
-  />
-  <Button>
-    Click Me
-  </Button>
+    <Form
+      onSubmit={props.handleSubmit}
+    >
+      
+      
+    </Form>
   </div>
   
 )
 
-export default DemoML;
+export default FormHOC(DemoML);

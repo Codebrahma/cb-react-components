@@ -18,7 +18,7 @@ class App extends Component {
           onSubmit={(data) => { console.log('data is ', data)}}
         />
         <DemoML
-          
+          name="materialLite"
         />
       </div>
     )
