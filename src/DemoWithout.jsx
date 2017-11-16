@@ -18,7 +18,7 @@ import 'rc-datepicker/lib/style.css';
 
 import map from 'lodash/map';
 
-import styles from './formBindings/ReduxForm/styles.js';
+import styles from './formBindings/ReduxForm/components/styles.js';
 
 const options = [{
   key: 'A',

@@ -5,15 +5,15 @@ import { Field } from 'redux-form';
 import FormHOC from './formBindings/ReduxForm/FormHOC.js';
 import Form from './formBindings/ReduxForm/Form.js';
 
-import Button from './formBindings/ReduxForm/Button.js';
-import TextField from './formBindings/ReduxForm/TextField.js';
-import CheckBox from './formBindings/ReduxForm/CheckBox.js';
-import RadioButtonGroup from './formBindings/ReduxForm/RadioButtonGroup.js';
-import Select from './formBindings/ReduxForm/Select.js';
-import Toggle from './formBindings/ReduxForm/Toggle.js';
-import DatePicker from './formBindings/ReduxForm/DatePicker.js';
+import Button from './formBindings/ReduxForm/components/Button.js';
+import TextField from './formBindings/ReduxForm/components/TextField.js';
+import CheckBox from './formBindings/ReduxForm/components/CheckBox.js';
+import RadioButtonGroup from './formBindings/ReduxForm/components/RadioButtonGroup.js';
+import Select from './formBindings/ReduxForm/components/Select.js';
+import Toggle from './formBindings/ReduxForm/components/Toggle.js';
+import DatePicker from './formBindings/ReduxForm/components/DatePicker.js';
 
-import styles from './formBindings/ReduxForm/styles.js';
+import styles from './formBindings/ReduxForm/components/styles.js';
 
 const options = [{
   key: 'A',
