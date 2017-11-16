@@ -9,57 +9,33 @@ const style = {
   }
 }
 
-class RadioExampleRadioGroup extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange (e, { value }) {
-    this.props.input.onChange(value);
-  } 
-
-  render() {
-    const {
-      input,
-      label,
-      labelStyle,
-      wrapperDivStyle,
-      inputDivStyle,
-      ...props
-    } = this.props
-    const {
-      radioStyle
-    } = style;
-    return (
-      <div style={wrapperDivStyle}>
-        <label 
-          style={labelStyle}
-        >
-          {label}
-        </label>
-        <div style={inputDivStyle}>
-          {
-            map(props.options, ({ key, text, value }) => {
-              return (
-                <Radio
-                  {...input}
-                  key={key}
-                  label={text}
-                  name={text}
-                  value={value}
-                  checked={input.value === value}
-                  onChange={this.handleChange}
-                  style={radioStyle}
-                />
-              )
-            })
-          }
-        </div>
-      </div>
-    )
-  }
+const RadioExampleRadioUI = ({ 
+  options, 
+  input, 
+  inputDivStyle, 
+  handleChange, 
+  ...props 
+}) => {
+  return (
+    <div style={inputDivStyle}>
+    {
+      map(options, ({ key, text, value }) => {
+        return (
+          <Radio
+            {...input}
+            key={key}
+            label={text}
+            name={text}
+            value={value}
+            checked={input.value === value}
+            onChange={handleChange}
+            style={style.radioStyle}
+          />
+        )
+      })
+    }
+    </div>
+  )
 }
 
-export default RadioExampleRadioGroup;
+export default RadioExampleRadioUI;

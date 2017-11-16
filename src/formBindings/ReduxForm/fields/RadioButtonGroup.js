@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Radio } from 'semantic-ui-react'
+import RadioButtonUI from '../../../formComponents/SemanticUI/RadioButtonGroup.js';
 
 import map from 'lodash/map';
 
@@ -22,7 +22,6 @@ class RadioExampleRadioGroup extends Component {
 
   render() {
     const {
-      input,
       label,
       labelStyle,
       wrapperDivStyle,
@@ -39,24 +38,11 @@ class RadioExampleRadioGroup extends Component {
         >
           {label}
         </label>
-        <div style={inputDivStyle}>
-          {
-            map(props.options, ({ key, text, value }) => {
-              return (
-                <Radio
-                  {...input}
-                  key={key}
-                  label={text}
-                  name={text}
-                  value={value}
-                  checked={input.value === value}
-                  onChange={this.handleChange}
-                  style={radioStyle}
-                />
-              )
-            })
-          }
-        </div>
+        <RadioButtonUI
+          options={this.props.options}
+          handleChange={this.handleChange}
+          {...props}
+        />
       </div>
     )
   }
