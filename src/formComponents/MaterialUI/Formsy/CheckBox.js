@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-import { FormControlLabel } from 'material-ui/Form';
-import Checkbox from 'material-ui/Checkbox';
+import MuiCheckbox from '../CheckBox';
 import { formsyApiPropsKeys, wrapperCheckboxPropsKeys } from './utilConstants.js';
 import { extractObjectHavingKeys, extractObjectOmittingKeys } from './util.js';
 
-class FormsyMuiCheckbox extends React.Component {
+class FormsyMuiCheckBox extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  handleChange = (e) => {
-    this.props.setValue(e.currentTarget.checked);
+  handleChange = (event, checked) => {
+    this.props.setValue(checked);
   }
 
   render() {
@@ -22,7 +21,7 @@ class FormsyMuiCheckbox extends React.Component {
       ...extractedPropsForWrapperCheckbox,
       disabled: this.props.isFormDisabled(),
       onChange: this.handleChange,
-      checked: this.props.getValue(),
+      checked: this.props.getValue() || false,
     }
     const DOMInputProps = extractObjectOmittingKeys(
       [...formsyApiPropsKeys, ...wrapperCheckboxPropsKeys],
@@ -30,18 +29,14 @@ class FormsyMuiCheckbox extends React.Component {
     )
 
     return (
-      <FormControlLabel
-        disabled={wrapperCheckboxProps.disabled}
-        control={
-          <Checkbox
-            {...wrapperCheckboxProps}
-            {...DOMInputProps}
-          />
-        }
+      <MuiCheckbox
+        {...this.props}
         label={this.props.label}
+        {...wrapperCheckboxProps}
+        inputProps={DOMInputProps}
       />
     );
   }
 }
 
-export default HOC(FormsyMuiCheckbox);
+export default HOC(FormsyMuiCheckBox);
