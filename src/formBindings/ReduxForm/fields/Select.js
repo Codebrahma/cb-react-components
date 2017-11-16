@@ -1,6 +1,6 @@
 import React from 'react'
 
-import InputSelectUI from '../../../formComponents/SemanticUI/Select.js';
+import { SelectUI } from '../Config/UIPicker.js';
 
 const InputSelect = ({ 
   label, 
@@ -23,7 +23,7 @@ const InputSelect = ({
         {label}
       </label>
       <div style={inputDivStyle}>
-        <InputSelectUI
+        <SelectUI
           {...props}
           onChange={handleChange}
         />

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import RadioButtonUI from '../../../formComponents/SemanticUI/RadioButtonGroup.js';
+import { RadioButtonGroupUI } from '../Config/UIPicker.js';
 
 import map from 'lodash/map';
 
@@ -38,7 +38,7 @@ class RadioExampleRadioGroup extends Component {
         >
           {label}
         </label>
-        <RadioButtonUI
+        <RadioButtonGroupUI
           options={this.props.options}
           handleChange={this.handleChange}
           {...props}

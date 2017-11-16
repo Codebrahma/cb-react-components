@@ -1,5 +1,5 @@
 import React from 'react'
-import { CheckBoxUI } from '.formComponents/SemanticUI/index.js';
+import { CheckBoxUI } from '../Config/UIPicker.js';
 
 const InputCheckbox = ({ 
   label, 

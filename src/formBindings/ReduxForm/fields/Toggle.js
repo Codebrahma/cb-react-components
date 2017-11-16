@@ -1,5 +1,5 @@
 import React from 'react'
-import Toggle from '../../../formComponents/SemanticUI/Toggle.js';
+import { ToggleUI } from '../Config/UIPicker.js';
 
 const InputCheckbox = ({ 
   label, 
@@ -17,7 +17,7 @@ const InputCheckbox = ({
         {label}
       </label>
       <div style={inputDivStyle}>
-        <Toggle
+        <ToggleUI
           onChange={handleChange}
           {...props}
         />

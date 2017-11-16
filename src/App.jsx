@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
-import Form from './Demo.jsx';
+import Form from './DemoSemanticUI.jsx';
 import DemoWithout from './DemoWithout.jsx';
+
+import DemoML from './DemoML.jsx';
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +16,9 @@ class App extends Component {
         <Form
           name="demo" 
           onSubmit={(data) => { console.log('data is ', data)}}
+        />
+        <DemoML
+          
         />
       </div>
     )

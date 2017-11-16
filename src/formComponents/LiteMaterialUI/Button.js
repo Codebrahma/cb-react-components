@@ -1,9 +1,12 @@
 import React from 'react';
-import Button from 'react-mdl/lib/Button';
+import { Button } from 'react-mdl';
 
-const ButtonUI = () => (
-  <Button>
-    Click me
+const ButtonUI = ({ children }) => (
+  <Button
+    raised
+    ripple
+  >
+    {children}
   </Button>
 );
 
