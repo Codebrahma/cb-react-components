@@ -2,12 +2,16 @@ import React from 'react';
 
 import { Textfield } from 'react-mdl';
 
-const TextFieldUI = (props) => (
+const TextFieldUI = ({ 
+  placeholder, 
+  input,
+  ...props }) => (
   <Textfield
-    onChange={() => {}}
-    style={{width: '200px'}}
-    label="hello"
+    label="text"
+    placeholder={placeholder}
+    style={{width: '200px', padding: '0px'}}
+    {...input} 
   />
-)
+);
 
 export default TextFieldUI;
