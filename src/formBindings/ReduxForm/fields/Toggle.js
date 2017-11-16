@@ -1,16 +1,17 @@
 import React from 'react'
 import { Checkbox, Segment } from 'semantic-ui-react'
 
+import Toggle from '../../../formComponents/SemanticUI/Toggle.js';
+
 const InputCheckbox = ({ 
   label, 
-  input, 
   labelStyle,
   wrapperDivStyle,
   inputDivStyle,
   ...props
 }) => {
   const handleChange = (e, { checked }) => {
-    input.onChange(checked);
+    props.input.onChange(checked);
   }
   return (
     <div style={wrapperDivStyle}>
@@ -18,15 +19,10 @@ const InputCheckbox = ({
         {label}
       </label>
       <div style={inputDivStyle}>
-        <Checkbox
-          toggle 
+        <Toggle
           onChange={handleChange}
-        >
-          <input 
-            {...input}
-            {...props}
-          />
-        </Checkbox>
+          {...props}
+        />
       </div>
     </div>
   )
