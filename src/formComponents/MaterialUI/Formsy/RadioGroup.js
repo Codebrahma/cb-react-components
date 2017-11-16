@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-import { RadioGroup } from 'material-ui/Radio';
+import MuiRadioGroup from '../RadioGroup';
 import MuiRadio from './Radio.js';
 import { formsyApiPropsKeys, wrapperRadioButtonGroupPropsKeys } from './utilConstants.js';
 import { extractObjectHavingKeys, extractObjectOmittingKeys } from './util.js';
@@ -22,7 +22,7 @@ class FormsyMuiRadioGroup extends React.Component {
       ...extractedPropsForWrapperRadioGroup,
       disabled: this.props.isFormDisabled(),
       onChange: this.handleChange,
-      checked: this.props.getValue(),
+      value: this.props.getValue(),
     }
     const DOMInputProps = extractObjectOmittingKeys(
       [...formsyApiPropsKeys, ...wrapperRadioButtonGroupPropsKeys],
@@ -51,13 +51,17 @@ class FormsyMuiRadioGroup extends React.Component {
     })
 
     return (
-      <RadioGroup
+      <MuiRadioGroup
+        {...this.props}
         disabled={wrapperRadioButtonGroupProps.disabled}
         onChange={this.handleChange}
         value={this.props.getValue()}
+        radioOptions={this.props.radioOptions}
       >
-        {radioComponents}
-      </RadioGroup>
+        {/* children have higher precedence over `radioOptions` props 
+          Either children radio components or radioOptions props can be used
+        */}
+      </MuiRadioGroup>
     );
   }
 }
