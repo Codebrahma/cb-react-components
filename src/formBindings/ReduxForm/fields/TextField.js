@@ -1,5 +1,4 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react';
 
 import TextFieldUI from '../../../formComponents/SemanticUI/TextField.js';
 

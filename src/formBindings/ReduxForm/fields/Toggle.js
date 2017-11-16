@@ -1,6 +1,4 @@
 import React from 'react'
-import { Checkbox, Segment } from 'semantic-ui-react'
-
 import Toggle from '../../../formComponents/SemanticUI/Toggle.js';
 
 const InputCheckbox = ({ 
