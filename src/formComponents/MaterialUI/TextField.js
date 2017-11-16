@@ -10,13 +10,15 @@ const MuiTextField = ({ label, disabled, onChange, value, helperText, errorMessa
     value,
   };
 
+  const helperDescription = error ? errorMessage : helperText;
+
   return (
     <TextField
       label={label}
       type={type}
       InputProps={{...InputProps, ...restProps['InputProps']}}
       inputProps={restProps['inputProps']}
-      helperText={(errorMessage || helperText)}
+      helperText={helperDescription}
       error={error}
       {...(omit(restProps, ['InputProps', 'inputProps']))}
     />

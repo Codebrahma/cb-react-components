@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormControl, FormLabel } from 'material-ui/Form';
-import { Radio, RadioGroup } from 'material-ui/Radio';
+import { FormControl, FormLabel, FormHelperText } from 'material-ui/Form';
+import MuiRadio from './Radio';
+import { RadioGroup } from 'material-ui/Radio';
 import { omit, pick, concat } from 'lodash';
 
 const radioComponentsFromOptions = (radioOptions = [], selectedValue) => {
   return radioOptions.map((radioProps) => (
-    <Radio
+    <MuiRadio
       {...radioProps}
+      key={radioProps.value}
       checked={selectedValue === radioProps.value}
     />
   )); 
@@ -29,6 +31,7 @@ const MuiRadioGroup = ({
 
   const radioGroupSelectedValue = value;
   const radioComponents = children ? children : radioComponentsFromOptions(radioOptions, radioGroupSelectedValue);
+  const helperDescription = error ? errorMessage : helperText
 
   return (
     <FormControl component="fieldset" required={required} error={error} >
@@ -42,7 +45,7 @@ const MuiRadioGroup = ({
       >
         {radioComponents}
       </RadioGroup>
-      <FormHelperText>{(errorMessage || helperText)}</FormHelperText>
+      <FormHelperText>{helperDescription}</FormHelperText>
     </FormControl>
   )
 }
