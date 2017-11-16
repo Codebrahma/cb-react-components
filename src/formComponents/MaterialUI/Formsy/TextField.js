@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-import TextField from 'material-ui/TextField';
+import MuiTextField from '../TextField.js';
 import { formsyApiPropsKeys, wrapperTextInputPropsKeys } from './utilConstants.js';
 import { extractObjectHavingKeys, extractObjectOmittingKeys } from './util.js';
 
@@ -29,18 +29,18 @@ class FormsyMuiTextField extends React.Component {
     )
 
     const { isRequired, isPristine, isValid, isFormSubmitted } = formsyApiProps;
-    const isRequiredError = isRequired() && !isPristine() && !isValid() && isFormSubmitted() && wrapperInputProps.requiredError;
-    const errorText = this.props.getErrorMessage() || isRequiredError;
+    const errorMessage = this.props.getErrorMessage();
 
     return (
-      <TextField
+      <MuiTextField
+        {...this.props}
         label={this.props.label}
-        InputProps={{ ...wrapperInputProps }}
-        inputProps={{ ...DOMInputProps}}
+        { ...wrapperInputProps }
+        { ...DOMInputProps}
         error={!isValid()}
-        required
+        errorMessage={errorMessage}
       >
-      </TextField>
+      </MuiTextField>
     );
   }
 }
