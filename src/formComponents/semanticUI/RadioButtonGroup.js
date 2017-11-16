@@ -9,7 +9,7 @@ const style = {
   }
 }
 
-const RadioExampleRadioUI = ({ 
+const RadioButtonGroupUI = ({ 
   options, 
   input, 
   inputDivStyle, 
@@ -38,4 +38,4 @@ const RadioExampleRadioUI = ({
   )
 }
 
-export default RadioExampleRadioUI;
+export default RadioButtonGroupUI;

@@ -1,15 +1,15 @@
 import React from 'react'
 import { Checkbox, Segment } from 'semantic-ui-react'
 
-const InputCheckbox = ({ 
-  handleChange,
+const InputCheckboxUI = ({ 
+  onChange,
   input,
   ...props
 }) => {
   return (
     <Checkbox
       toggle 
-      onChange={handleChange}
+      onChange={onChange}
     >
       <input 
         {...input}
@@ -19,4 +19,4 @@ const InputCheckbox = ({
   )
 }
 
-export default InputCheckbox;
+export default InputCheckboxUI;

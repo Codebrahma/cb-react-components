@@ -1,7 +1,7 @@
 import React from 'react'
 import { Input } from 'semantic-ui-react'
 
-const InputExampleInput = ({ 
+const InputTextUI = ({ 
   placeholder, 
   input,
   ...props }) => (
@@ -15,4 +15,4 @@ const InputExampleInput = ({
   </Input>
 );
 
-export default InputExampleInput;
+export default InputTextUI;

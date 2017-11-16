@@ -1,7 +1,7 @@
 import React from 'react'
 import { Dropdown } from 'semantic-ui-react'
 
-const InputSelect = ({
+const InputSelectUI = ({
   input,
   onChange,  
   ...props
@@ -15,4 +15,4 @@ const InputSelect = ({
   )
 }
 
-export default InputSelect;
+export default InputSelectUI;

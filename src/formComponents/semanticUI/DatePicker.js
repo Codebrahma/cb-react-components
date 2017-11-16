@@ -5,7 +5,7 @@ import {
 } from 'rc-datepicker';
 import 'rc-datepicker/lib/style.css';
 
-const InputDateRange = ({ 
+const InputDateUI = ({ 
   onChange,
   ...props
 }) => {
@@ -18,4 +18,4 @@ const InputDateRange = ({
   )
 }
 
-export default InputDateRange;
+export default InputDateUI;
