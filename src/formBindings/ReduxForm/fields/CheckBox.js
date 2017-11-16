@@ -1,5 +1,5 @@
 import React from 'react'
-import Checkbox from '../../../formComponents/SemanticUI/Checkbox.js';
+import { CheckBoxUI } from '../../../formComponents/SemanticUI/index.js';
 
 const InputCheckbox = ({ 
   label, 
@@ -12,7 +12,7 @@ const InputCheckbox = ({
     <label style={labelStyle}>
       {label}
     </label>
-    <Checkbox
+    <CheckBoxUI
       {...props}
     />
   </div>
