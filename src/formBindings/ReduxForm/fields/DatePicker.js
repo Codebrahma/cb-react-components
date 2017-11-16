@@ -1,12 +1,9 @@
 import React from 'react';
-import {
-  DatePicker, 
-  DatePickerInput
-} from 'rc-datepicker';
 import omit from 'lodash/omit';
-import 'rc-datepicker/lib/style.css';
 
-const InputDateRange = ({ 
+import DatePicker from '../../../formComponents/SemanticUI/DatePicker.js';
+
+const InputDate = ({ 
   input, 
   meta, 
   label, 
@@ -26,7 +23,7 @@ const InputDateRange = ({
       > {label}
       </label>
       <div style={inputDivStyle}>
-        <DatePickerInput
+        <DatePicker
           onChange={onChange}
           {...omit(props, ['date'])} 
         />  
@@ -35,4 +32,4 @@ const InputDateRange = ({
   )
 }
 
-export default InputDateRange;
+export default InputDate;
