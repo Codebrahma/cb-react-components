@@ -11,7 +11,6 @@ const InputSelect = ({
   ...props
 }) => {
   const handleChange = (e, result) => {
-    console.log('e ', e, result);
     if (result && result.value) {
       props.input.onChange(result.value);  
     } else {

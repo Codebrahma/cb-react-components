@@ -62,7 +62,11 @@ const Demo = (props) => {
           label="Are you subscribed ?"
           {...styles}
         />
-        
+        <DatePicker
+          name="dob"
+          label="Date of Birth"
+          {...styles}
+        />      
         <Button />
       </Form>
     </div>    

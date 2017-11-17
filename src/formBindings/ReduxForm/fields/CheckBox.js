@@ -7,15 +7,25 @@ const InputCheckbox = ({
   wrapperDivStyle, 
   meta, 
   ...props 
-}) => (
-  <div style={wrapperDivStyle}>
-    <label style={labelStyle}>
-      {label}
-    </label>
-    <CheckBoxUI
-      {...props}
-    />
-  </div>
-)
+}) => {
+  const handleChange = (e, result) => {
+    if (result && result.checked) {
+      props.input.onChange(result.checked);  
+    } else {
+      props.input.onChange(e)
+    }
+  } 
+  return (
+    <div style={wrapperDivStyle}>
+      <label style={labelStyle}>
+        {label}
+      </label>
+      <CheckBoxUI
+        {...props}
+        handleChange={handleChange}
+      />
+    </div>
+  )
+}
 
 export default InputCheckbox;
