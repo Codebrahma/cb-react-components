@@ -7,13 +7,17 @@ const InputSelect = ({
   labelStyle,
   wrapperDivStyle,
   inputDivStyle,
-  input, 
   meta, 
   ...props
 }) => {
-  const handleChange = (e, { value }) => {
-    input.onChange(value);
-  }
+  const handleChange = (e, result) => {
+    console.log('e ', e, result);
+    if (result && result.value) {
+      props.input.onChange(result.value);  
+    } else {
+      props.input.onChange(e)
+    }
+  } 
 
   return (
     <div style={wrapperDivStyle}>
