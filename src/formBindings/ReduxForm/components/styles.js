@@ -2,12 +2,12 @@ export default {
   wrapperDivStyle: {
     display: 'flex',
     marginTop: '10px',
-    height: '50px'
+    height: '50px',
+    alignItems: 'center',
   },
   labelStyle: {
     display: 'inline-block',
     minWidth: '150px',
-    marginBottom: '15px',
   },
   inputDivStyle: {
     

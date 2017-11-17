@@ -1,7 +1,7 @@
 import React from 'react';
 import omit from 'lodash/omit';
 
-import DatePicker from '../../../formComponents/SemanticUI/DatePicker.js';
+import { DatePickerUI } from '../Config/UIPicker.js';
 
 const InputDate = ({ 
   input, 
@@ -23,7 +23,7 @@ const InputDate = ({
       > {label}
       </label>
       <div style={inputDivStyle}>
-        <DatePicker
+        <DatePickerUI
           onChange={onChange}
           {...omit(props, ['date'])} 
         />  

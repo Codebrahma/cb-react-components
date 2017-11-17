@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import RadioButtonUI from '../../../formComponents/SemanticUI/RadioButtonGroup.js';
+import { RadioButtonGroupUI } from '../Config/UIPicker.js';
 
 import map from 'lodash/map';
 
@@ -16,8 +16,12 @@ class RadioExampleRadioGroup extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange (e, { value }) {
-    this.props.input.onChange(value);
+  handleChange (e, result) {
+    if (result && result.value) {
+      this.props.input.onChange(result.value);  
+    } else {
+      this.props.input.onChange(e.target.value)
+    }
   } 
 
   render() {
@@ -38,7 +42,7 @@ class RadioExampleRadioGroup extends Component {
         >
           {label}
         </label>
-        <RadioButtonUI
+        <RadioButtonGroupUI
           options={this.props.options}
           handleChange={this.handleChange}
           {...props}

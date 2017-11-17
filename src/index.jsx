@@ -11,6 +11,8 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { reducer as formReducer } from 'redux-form';
+import 'react-mdl/extra/material.css';
+import 'react-mdl/extra/material.js';
 
 import 'react-dates/initialize';
 
