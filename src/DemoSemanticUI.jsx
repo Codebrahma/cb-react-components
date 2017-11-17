@@ -13,23 +13,19 @@ import Select from './FormBindings/ReduxForm/Components/Select.js';
 import Toggle from './FormBindings/ReduxForm/Components/Toggle.js';
 import DatePicker from './FormBindings/ReduxForm/Components/DatePicker.js';
 
-import styles from './FormBindings/ReduxForm/Components/styles.js';
+import { 
+  countryOptions,
+  genderOptions,
+} from './MockData.js';
 
-const options = [{
-  key: 'A',
-  text: 'A',
-  value: 'a',
-}, {
-  key: 'B',
-  text: 'B',
-  value: 'b',
-}]
+import styles from './FormBindings/ReduxForm/Components/styles.js';
 
 const style = {
   formHolderStyle: {
     margin: '40px 200px',
   }
-}
+};
+
 const Demo = (props) => {
   const {
     formHolderStyle 
@@ -45,25 +41,25 @@ const Demo = (props) => {
           {...styles}
         />
         <CheckBox
-          name="isHuman"
-          label="Are you a Human ?"
+          name="isRegistered"
+          label="Registered Already ?"
           {...styles}
         />
         <RadioButtonGroup
-          name="category"
-          label="Category"
-          options={options}
+          name="gender"
+          label="Gender"
+          options={genderOptions}
           {...styles}
         />
         <Select
-          name="selectValue"
-          label="Select"
-          options={options}
+          name="country"
+          label="Country"
+          options={countryOptions}
           {...styles}
         />
         <Toggle
-          name="toggle"
-          label="Are you male ?"
+          name="Subscription"
+          label="Are you subscribed ?"
           {...styles}
         />
         
