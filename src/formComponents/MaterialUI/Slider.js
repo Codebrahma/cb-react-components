@@ -7,12 +7,8 @@ import lightBaseTheme from 'material-ui-stable/styles/baseThemes/lightBaseTheme'
 import MuiThemeProvider from 'material-ui-stable/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui-stable/styles/getMuiTheme';
 import Slider from 'material-ui-slider-label/Slider';;
-import Subheader from 'material-ui-stable/Subheader';
 
 const styles = {
-  subheader: {
-    textTransform: 'capitalize',
-  },
   labelStyleOuter: {
     width: '30px',
     height: '30px',
@@ -32,23 +28,32 @@ const styles = {
     right: '0px',
     fontSize: '10px',
   },
+  labelTextStyle: {
+    fontFamily: ["Roboto", "Helvetica", "Arial", "sans-serif"],
+    color: 'rgba(0, 0, 0, 0.54)',
+    padding: 0,
+    fontSize: '1rem',
+    lineHeight: 1,
+  }
 };
 
 const MuiSlider = (props) => {
+  const toolTipElement = props.showTooltip ? (
+    <div style={styles.labelStyleOuter}>
+      <div style={styles.labelStyleInner}>
+        {props.value}
+      </div>
+    </div>
+  ) : '';
+
   return (
     <div>
-      <Subheader style={styles.subheader}>
+      <label style={styles.labelTextStyle}>
         {props.label}
-      </Subheader>
+      </label>
       <Slider 
         {...props}
-        label={
-          <div style={styles.labelStyleOuter}>
-            <div style={styles.labelStyleInner}>
-              {props.value}
-            </div>
-          </div>
-        }
+        label={toolTipElement}
       />
     </div>
   );
@@ -93,7 +98,10 @@ MuiSlider.contextTypes = {
 }
 
 MuiSlider.propTypes = {
-  label: PropTypes.string,
+  label: PropTypes.oneOfType(
+    PropTypes.string,
+    PropTypes.node,
+  ),
   name: PropTypes.string,
   value: PropTypes.number,
   onChange: PropTypes.func,
