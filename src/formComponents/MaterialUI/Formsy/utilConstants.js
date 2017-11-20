@@ -3,3 +3,4 @@ export const wrapperTextInputPropsKeys = [''];
 export const wrapperCheckboxPropsKeys = [];
 export const wrapperRadioButtonGroupPropsKeys = [];
 export const wrapperTogglePropsKeys = [];
+export const wrapperSliderPropsKeys = [];
