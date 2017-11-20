@@ -5,11 +5,13 @@ import { reduxForm } from 'redux-form';
 
 
 export default (Form) => (compose(
-  connect((state, props) => ({ 
-    form: props.name,
-    validate: props.validate,
-  })), 
+  connect((state, props) => {
+    console.log('props ', state, props); 
+    return {
+      form: props.name,
+    }
+  }), 
   reduxForm({ 
     destroyOnUnmount: false, 
-    asyncBlurFields: []
+    asyncBlurFields: [],
   }))(Form));

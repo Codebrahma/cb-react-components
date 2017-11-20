@@ -26,14 +26,56 @@ const style = {
   }
 };
 
+const handleReduxFormValidation = (validation) => (values) => {
+  console.log('values', values);
+  const error = {};
+  Object
+    .entries(validation)
+    .forEach((entry) => {
+      if (typeof entry[0] === 'string' && typeof entry[1] === 'function') {
+        error[entry[0]] = entry[1](values[entry[0]], values);
+      }
+    });
+    console.log('error ', error);
+  return error;  
+}
+
+const validate = {
+  name: (value, values) => {
+    if (value.length < 3) {
+      return 'Length < 3';
+    } else if (value.length > 8) {
+      return 'Length > 8';
+    }
+  },
+  isRegistered: (value, values) => {
+
+  },
+  gender: (value, values) => {
+
+  },
+  country: (value, values) => {
+
+  },
+  subscription: (value, values) => {
+
+  },
+  dob: (value, values) => {
+
+  }
+}
+
 const Demo = (props) => {
   const {
     formHolderStyle 
   } = style;
+
   return (
     <div style={formHolderStyle}>
       <Form
         onSubmit={props.handleSubmit}
+        validate={handleReduxFormValidation(validate)}
+        a="a"
       >
         <TextField
           name="name"
@@ -58,7 +100,7 @@ const Demo = (props) => {
           {...styles}
         />
         <Toggle
-          name="Subscription"
+          name="subscription"
           label="Are you subscribed ?"
           {...styles}
         />
