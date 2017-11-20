@@ -6,11 +6,51 @@ Since slider is not implemented in latest beta version
 import lightBaseTheme from 'material-ui-stable/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui-stable/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui-stable/styles/getMuiTheme';
-import Slider from 'material-ui-stable/Slider';
+import Slider from 'material-ui-slider-label/Slider';;
+import Subheader from 'material-ui-stable/Subheader';
+
+const styles = {
+  subheader: {
+    textTransform: 'capitalize',
+  },
+  labelStyleOuter: {
+    width: '30px',
+    height: '30px',
+    borderRadius: '50% 50% 50% 0',
+    background: 'blue',
+    position: 'absolute',
+    transform: 'rotate(-45deg)',
+    top: '-40px',
+    left: '-9px',
+  },
+  labelStyleInner: {
+    transform: 'rotate(45deg)',
+    color: 'white',
+    textAlign: 'center',
+    position: 'relative',
+    top: '3px',
+    right: '0px',
+    fontSize: '10px',
+  },
+};
 
 const MuiSlider = (props) => {
   return (
-    <Slider {...props} />
+    <div>
+      <Subheader style={styles.subheader}>
+        {props.label}
+      </Subheader>
+      <Slider 
+        {...props}
+        label={
+          <div style={styles.labelStyleOuter}>
+            <div style={styles.labelStyleInner}>
+              {props.value}
+            </div>
+          </div>
+        }
+      />
+    </div>
   );
 }
 
@@ -25,7 +65,7 @@ const MuiWrappedSlider = ({sliderColors = {}, ...restProps}) => {
     As props are not applied to child elements
   */
   
-  const defaultMuiSliderColour = 'rgb(0, 188, 212)';
+  const defaultMuiSliderColour = 'blue';
 
   const sliderCustomColors = {
     slider: {
