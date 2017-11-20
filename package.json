@@ -45,6 +45,7 @@
     "image-webpack-loader": "^3.4.2",
     "lodash": "^4.17.4",
     "material-ui": "^1.0.0-beta.21",
+    "material-ui-stable": "npm:material-ui@latest",
     "moment": "^2.19.1",
     "rc-datepicker": "^5.0.10",
     "react": "^15.6.2",
