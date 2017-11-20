@@ -2,3 +2,4 @@ export const formsyApiPropsKeys = ['name', 'value', 'validations', 'validationEr
 export const wrapperTextInputPropsKeys = [''];
 export const wrapperCheckboxPropsKeys = [];
 export const wrapperRadioButtonGroupPropsKeys = [];
+export const wrapperTogglePropsKeys = [];
