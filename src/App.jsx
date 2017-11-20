@@ -8,6 +8,7 @@ import RadioGroup from './formComponents/MaterialUI/Formsy/RadioGroup.js';
 import MuiTextField from './formComponents/MaterialUI/TextField';
 import MuiRadio from './formComponents/MaterialUI/Radio';
 import MuiRadioGroup from './formComponents/MaterialUI/RadioGroup';
+import MuiSelect from './formComponents/MaterialUI/Select';
 
 class App extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Form
+        {/*<Form
         onSubmit={this.onSubmit}
         >
           <div style={{paddingBottom: '40px'}}>
@@ -69,6 +70,18 @@ class App extends Component {
             </button>
           </div>
         </Form>
+            */}
+      <MuiSelect
+            selectOptions={
+              [
+                { label: 'React', value: 'react', disabled: false },
+                { label: 'Redux', value: 'redux', disabled: false },
+                { label: 'Flux', value: 'flux', disabled: false },
+              ]
+            }
+            value={'react'}
+            native
+      />
       </div>
     )
   }

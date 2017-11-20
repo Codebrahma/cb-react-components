@@ -31,7 +31,7 @@ const MuiRadioGroup = ({
 
   const radioGroupSelectedValue = value;
   const radioComponents = children ? children : radioComponentsFromOptions(radioOptions, radioGroupSelectedValue);
-  const helperDescription = error ? errorMessage : helperText
+  const helperDescription = error ? errorMessage : helperText;
 
   return (
     <FormControl component="fieldset" required={required} error={error} >

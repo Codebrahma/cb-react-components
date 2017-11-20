@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
 import MuiRadioGroup from '../RadioGroup';
-import MuiRadio from './Radio.js';
+import MuiRadio from '../Radio';
 import { formsyApiPropsKeys, wrapperRadioButtonGroupPropsKeys } from './utilConstants.js';
 import { extractObjectHavingKeys, extractObjectOmittingKeys } from './util.js';
 
