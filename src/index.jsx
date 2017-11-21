@@ -11,8 +11,12 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import { reducer as formReducer } from 'redux-form';
+
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
+
+import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
+
 
 import 'react-dates/initialize';
 
@@ -22,9 +26,13 @@ const rootReducer = combineReducers({
   form: formReducer,
 })
 
+const theme = createMuiTheme();
+
 const store = createStore(rootReducer, {}, applyMiddleware(logger));
 
 ReactDOM.render(<Provider store={store}>
-    <App />
+    <MuiThemeProvider theme={theme}>
+      <App />
+    </MuiThemeProvider>
   </Provider>, document.getElementById('react-root'));
 
