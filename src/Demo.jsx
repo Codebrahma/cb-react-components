@@ -20,6 +20,8 @@ import {
 
 import styles from './FormBindings/ReduxForm/Components/styles.js';
 
+import { reduxForm } from 'redux-form';
+
 const style = {
   formHolderStyle: {
     margin: '40px 200px',
@@ -73,4 +75,6 @@ const Demo = (props) => {
   )
 }
 
-export default FormHOC(Demo);
+export default reduxForm({
+  form: 'fieldLevelValidation',
+})(Demo)

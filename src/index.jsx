@@ -20,7 +20,7 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 import 'react-dates/initialize';
 
-import App from './App.jsx';
+import App from './Demo.jsx';
 
 const rootReducer = combineReducers({
   form: formReducer,
