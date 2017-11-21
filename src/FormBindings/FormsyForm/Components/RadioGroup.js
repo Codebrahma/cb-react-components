@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
 
 import { RadioButtonGroupUI } from '../Config/UIPicker.js';
-import MuiRadio from '../../../FormComponents/MaterialUI/Radio';
+import { RadioUI } from '../Config/UIPicker.js';
 
 import { formsyApiPropsKeys, wrapperRadioButtonGroupPropsKeys } from '../Common/utilConstants.js';
 import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
@@ -42,7 +42,7 @@ class FormsyMuiRadioGroup extends React.Component {
       const checked = radioOption.value === this.props.getValue;
 
       return (
-        <MuiRadio
+        <RadioUI
           name={name}
           value={value}
           onChange={onChange}
