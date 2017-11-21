@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-import MuiToggle from '../Toggle';
-import { formsyApiPropsKeys, wrapperTogglePropsKeys } from './utilConstants.js';
-import { extractObjectHavingKeys, extractObjectOmittingKeys } from './util.js';
+
+import MuiToggle from '../../../FormComponents/MaterialUI/Toggle';
+
+import { formsyApiPropsKeys, wrapperTogglePropsKeys } from '../Common/utilConstants.js';
+import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
 
 class FormsyMuiToggle extends React.Component {
   constructor(props) {

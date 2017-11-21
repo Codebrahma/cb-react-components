@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-import MuiCheckbox from '../CheckBox';
-import { formsyApiPropsKeys, wrapperCheckboxPropsKeys } from './utilConstants.js';
-import { extractObjectHavingKeys, extractObjectOmittingKeys } from './util.js';
+
+import { CheckBoxUI } from '../Config/UIPicker.js';
+
+import { formsyApiPropsKeys, wrapperCheckboxPropsKeys } from '../Common/utilConstants.js';
+import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
 
 class FormsyMuiCheckBox extends React.Component {
   constructor(props) {
