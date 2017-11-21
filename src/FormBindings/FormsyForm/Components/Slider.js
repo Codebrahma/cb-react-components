@@ -22,6 +22,20 @@ class FormsyMuiSlider extends React.Component {
       onChange: this.handleChange,
       value: this.props.getValue() || 0,
     }
+
+    const styleProps = {
+      sliderStyle: {
+        width: '200px',
+        height: '200px'
+      },
+      axis: 'x',
+      sliderColors: {
+        handleFiller: 'yellow',
+        handleBorder: 'green',
+        selectedPortion: 'blue',
+      },
+      showTooltip: true,
+    }
     const {
       wrapperStyle,
       labelStyle,
@@ -39,6 +53,7 @@ class FormsyMuiSlider extends React.Component {
         }
         <div style={inputDivStyle}>
           <SliderUI
+            {...styleProps}
             {...this.props}
             {...wrapperSliderProps}
           />
