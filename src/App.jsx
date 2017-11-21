@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import { Form } from 'formsy-react';
 
-import TextField from './FormBindings/FormsyForm/TextField.js';
-import CheckBox from './FormBindings/FormsyForm/CheckBox.js';
-import RadioGroup from './FormBindings/FormsyForm/RadioGroup.js';
-import Toggle from './FormBindings/FormsyForm/Toggle.js';
+import TextField from './FormBindings/FormsyForm/Components/TextField.js';
+import CheckBox from './FormBindings/FormsyForm/Components/CheckBox.js';
+import RadioGroup from './FormBindings/FormsyForm/Components/RadioGroup.js';
+import Toggle from './FormBindings/FormsyForm/Components/Toggle.js';
 
-import Slider from './FormBindings/FormsyForm/Slider';
+import Slider from './FormBindings/FormsyForm/Components/Slider';
 
 class App extends Component {
   constructor(props) {

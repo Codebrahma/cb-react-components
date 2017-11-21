@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-import MuiToggle from '../../FormComponents/MaterialUI/Toggle';
-import { formsyApiPropsKeys, wrapperTogglePropsKeys } from '../../common/FormsyForm/utilConstants.js';
-import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../../common/FormsyForm/util.js';
 
-class FormsyMuiToggle extends React.Component {
+import { CheckBoxUI } from '../Config/UIPicker.js';
+
+import { formsyApiPropsKeys, wrapperCheckboxPropsKeys } from '../Common/utilConstants.js';
+import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
+
+class FormsyMuiCheckBox extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -16,27 +18,27 @@ class FormsyMuiToggle extends React.Component {
 
   render() {
     const formsyApiProps = extractObjectHavingKeys(formsyApiPropsKeys, this.props);
-    const extractedPropsForWrapperToggle = extractObjectHavingKeys(wrapperTogglePropsKeys, this.props);
-    const wrapperToggleProps = {
-      ...extractedPropsForWrapperToggle,
+    const extractedPropsForWrapperCheckbox = extractObjectHavingKeys(wrapperCheckboxPropsKeys, this.props);
+    const wrapperCheckboxProps = {
+      ...extractedPropsForWrapperCheckbox,
       disabled: this.props.isFormDisabled(),
       onChange: this.handleChange,
       checked: this.props.getValue() || false,
     }
     const DOMInputProps = extractObjectOmittingKeys(
-      [...formsyApiPropsKeys, ...wrapperTogglePropsKeys],
+      [...formsyApiPropsKeys, ...wrapperCheckboxPropsKeys],
       this.props,
     )
 
     return (
-      <MuiToggle
+      <MuiCheckbox
         {...this.props}
         label={this.props.label}
-        {...wrapperToggleProps}
+        {...wrapperCheckboxProps}
         inputProps={DOMInputProps}
       />
     );
   }
 }
 
-export default HOC(FormsyMuiToggle);
+export default HOC(FormsyMuiCheckBox);
