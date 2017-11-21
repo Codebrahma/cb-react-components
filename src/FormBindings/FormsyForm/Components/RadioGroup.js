@@ -53,7 +53,7 @@ class FormsyMuiRadioGroup extends React.Component {
     })
 
     return (
-      <MuiRadioGroup
+      <RadioButtonGroupUI
         {...this.props}
         disabled={wrapperRadioButtonGroupProps.disabled}
         onChange={this.handleChange}
@@ -63,7 +63,7 @@ class FormsyMuiRadioGroup extends React.Component {
         {/* children have higher precedence over `radioOptions` props 
           Either children radio components or radioOptions props can be used
         */}
-      </MuiRadioGroup>
+      </RadioButtonGroupUI>
     );
   }
 }

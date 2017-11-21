@@ -29,14 +29,30 @@ class FormsyMuiCheckBox extends React.Component {
       [...formsyApiPropsKeys, ...wrapperCheckboxPropsKeys],
       this.props,
     )
-
+    const {
+      wrapperStyle,
+      labelStyle,
+      inputDivStyle,
+      label,
+      loadDefaultStyle,
+    } = this.props;
     return (
-      <MuiCheckbox
-        {...this.props}
-        label={this.props.label}
-        {...wrapperCheckboxProps}
-        inputProps={DOMInputProps}
-      />
+      <div style={wrapperStyle}>
+        {
+          !loadDefaultStyle ?
+          <label>
+            {label}
+          </label> : null
+        }
+        <div style={inputDivStyle}>
+          <CheckBoxUI
+            {...this.props}
+            label={loadDefaultStyle ? undefined : label}
+            {...wrapperCheckboxProps}
+            inputProps={DOMInputProps}
+          />
+        </div>
+      </div>
     );
   }
 }

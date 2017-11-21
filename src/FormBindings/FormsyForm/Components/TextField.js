@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
 
-import MuiTextField from '../../../FormComponents/MaterialUI/TextField.js';
+import { TextFieldUI } from '../Config/UIPicker.js';
 
 import { formsyApiPropsKeys, wrapperTextInputPropsKeys } from '../Common/utilConstants.js';
 import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
@@ -34,7 +34,7 @@ class FormsyMuiTextField extends React.Component {
     const errorMessage = this.props.getErrorMessage();
 
     return (
-      <MuiTextField
+      <TextFieldUI
         {...this.props}
         label={this.props.label}
         { ...wrapperInputProps }
@@ -42,7 +42,7 @@ class FormsyMuiTextField extends React.Component {
         error={!isValid()}
         errorMessage={errorMessage}
       >
-      </MuiTextField>
+      </TextFieldUI>
     );
   }
 }
