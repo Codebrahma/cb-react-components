@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-import MuiRadioGroup from '../RadioGroup';
-import MuiRadio from '../Radio';
-import { formsyApiPropsKeys, wrapperRadioButtonGroupPropsKeys } from './utilConstants.js';
-import { extractObjectHavingKeys, extractObjectOmittingKeys } from './util.js';
+import MuiRadioGroup from '../../FormComponents/MaterialUI/RadioGroup';
+import MuiRadio from '../../FormComponents/MaterialUI/Radio';
+import { formsyApiPropsKeys, wrapperRadioButtonGroupPropsKeys } from '../../common/FormsyForm/utilConstants.js';
+import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../../common/FormsyForm/util.js';
 
 class FormsyMuiRadioGroup extends React.Component {
   constructor(props) {

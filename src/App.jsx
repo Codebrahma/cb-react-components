@@ -1,18 +1,12 @@
 import React, {Component} from 'react';
 import { Form } from 'formsy-react';
 
-import TextField from './formComponents/MaterialUI/Formsy/TextField.js';
-import CheckBox from './formComponents/MaterialUI/Formsy/CheckBox.js';
-import RadioGroup from './formComponents/MaterialUI/Formsy/RadioGroup.js';
-import Toggle from './formComponents/MaterialUI/Formsy/Toggle.js';
+import TextField from './FormBindings/FormsyForm/TextField.js';
+import CheckBox from './FormBindings/FormsyForm/CheckBox.js';
+import RadioGroup from './FormBindings/FormsyForm/RadioGroup.js';
+import Toggle from './FormBindings/FormsyForm/Toggle.js';
 
-import MuiTextField from './formComponents/MaterialUI/TextField';
-import MuiRadio from './formComponents/MaterialUI/Radio';
-import MuiRadioGroup from './formComponents/MaterialUI/RadioGroup';
-import MuiSelect from './formComponents/MaterialUI/Select';
-import MuiToggle from './formComponents/MaterialUI/Toggle';
-
-import Slider from './formComponents/MaterialUI/Formsy/Slider';
+import Slider from './FormBindings/FormsyForm/Slider';
 
 class App extends Component {
   constructor(props) {
