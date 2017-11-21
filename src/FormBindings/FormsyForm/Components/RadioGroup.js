@@ -60,9 +60,12 @@ class FormsyMuiRadioGroup extends React.Component {
     } = this.props;
     return (
       <div style={wrapperStyle}>
-        <label style={labelStyle}>
-          {label}
-        </label>
+        {
+          !loadDefaultStyle ?
+          <label>
+            {label}
+          </label> : null
+        }
         <div style={inputDivStyle}>
           <RadioButtonGroupUI
             {...this.props}

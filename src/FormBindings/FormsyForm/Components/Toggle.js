@@ -29,14 +29,30 @@ class FormsyMuiToggle extends React.Component {
       [...formsyApiPropsKeys, ...wrapperTogglePropsKeys],
       this.props,
     )
-
+    const {
+      wrapperStyle,
+      labelStyle,
+      inputDivStyle,
+      label,
+      loadDefaultStyle,
+    } = this.props;
     return (
-      <ToggleUI
-        {...this.props}
-        label={this.props.label}
-        {...wrapperToggleProps}
-        inputProps={DOMInputProps}
-      />
+      <div style={wrapperStyle}>
+        {
+          !loadDefaultStyle ?
+          <label>
+            {label}
+          </label> : null
+        }
+        <div style={inputDivStyle}>
+          <ToggleUI
+            {...this.props}
+            label={this.props.label}
+            {...wrapperToggleProps}
+            inputProps={DOMInputProps}
+          />
+        </div>
+      </div>  
     );
   }
 }

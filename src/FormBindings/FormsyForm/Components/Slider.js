@@ -22,12 +22,28 @@ class FormsyMuiSlider extends React.Component {
       onChange: this.handleChange,
       value: this.props.getValue() || 0,
     }
-
+    const {
+      wrapperStyle,
+      labelStyle,
+      inputDivStyle,
+      label,
+      loadDefaultStyle,
+    } = this.props;
     return (
-      <SliderUI
-        {...this.props}
-        {...wrapperSliderProps}
-      />
+      <div style={wrapperStyle}>
+        {
+          !loadDefaultStyle ?
+          <label>
+            {label}
+          </label> : null
+        }
+        <div style={inputDivStyle}>
+          <SliderUI
+            {...this.props}
+            {...wrapperSliderProps}
+          />
+        </div>
+      </div>  
     );
   }
 }
