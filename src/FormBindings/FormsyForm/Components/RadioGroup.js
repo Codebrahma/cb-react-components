@@ -40,7 +40,7 @@ class FormsyMuiRadioGroup extends React.Component {
       } = radioOption;
 
       const checked = radioOption.value === this.props.getValue;
-
+      
       return (
         <RadioUI
           name={name}
@@ -51,19 +51,28 @@ class FormsyMuiRadioGroup extends React.Component {
         />
       )
     })
-
+    const {
+      wrapperStyle,
+      labelStyle,
+      inputDivStyle,
+      label,
+      loadDefaultStyle,
+    } = this.props;
     return (
-      <RadioButtonGroupUI
-        {...this.props}
-        disabled={wrapperRadioButtonGroupProps.disabled}
-        onChange={this.handleChange}
-        value={this.props.getValue()}
-        radioOptions={this.props.radioOptions}
-      >
-        {/* children have higher precedence over `radioOptions` props 
-          Either children radio components or radioOptions props can be used
-        */}
-      </RadioButtonGroupUI>
+      <div style={wrapperStyle}>
+        <label style={labelStyle}>
+          {label}
+        </label>
+        <div style={inputDivStyle}>
+          <RadioButtonGroupUI
+            {...this.props}
+            disabled={wrapperRadioButtonGroupProps.disabled}
+            onChange={this.handleChange}
+            value={this.props.getValue()}
+            radioOptions={this.props.radioOptions}
+          />
+        </div>      
+      </div>
     );
   }
 }
