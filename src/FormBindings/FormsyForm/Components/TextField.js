@@ -33,26 +33,27 @@ class FormsyMuiTextField extends React.Component {
     const { isRequired, isPristine, isValid, isFormSubmitted } = formsyApiProps;
     const errorMessage = this.props.getErrorMessage();
     const {
-      wrapperStyle,
+      wrapperDivStyle,
       labelStyle,
       inputDivStyle,
       label,
       loadDefaultStyle,
     } = this.props;
+
     return (
-      <div style={wrapperStyle}>
+      <div style={wrapperDivStyle}>
         {
           !loadDefaultStyle ?
-          <label>
+          <label style={labelStyle}>
             {label}
           </label> : null
         }
         <div style={inputDivStyle}>
           <TextFieldUI
             {...this.props}
-            label={this.props.label}
             { ...wrapperInputProps }
             { ...DOMInputProps}
+            label={loadDefaultStyle ? this.props.label : undefined}
             error={!isValid()}
             errorMessage={errorMessage}
           />

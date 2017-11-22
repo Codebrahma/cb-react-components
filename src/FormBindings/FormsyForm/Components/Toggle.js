@@ -30,26 +30,26 @@ class FormsyMuiToggle extends React.Component {
       this.props,
     )
     const {
-      wrapperStyle,
+      wrapperDivStyle,
       labelStyle,
       inputDivStyle,
       label,
       loadDefaultStyle,
     } = this.props;
     return (
-      <div style={wrapperStyle}>
+      <div style={wrapperDivStyle}>
         {
           !loadDefaultStyle ?
-          <label>
+          <label style={labelStyle}>
             {label}
           </label> : null
         }
         <div style={inputDivStyle}>
           <ToggleUI
             {...this.props}
-            label={this.props.label}
             {...wrapperToggleProps}
             inputProps={DOMInputProps}
+            label={loadDefaultStyle ? this.props.label : undefined}
           />
         </div>
       </div>  

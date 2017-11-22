@@ -25,8 +25,8 @@ class FormsyMuiSlider extends React.Component {
 
     const styleProps = {
       sliderStyle: {
-        width: '200px',
-        height: '200px'
+        height: '100%',
+        width: '100%'
       },
       axis: 'x',
       sliderColors: {
@@ -37,17 +37,17 @@ class FormsyMuiSlider extends React.Component {
       showTooltip: true,
     }
     const {
-      wrapperStyle,
+      wrapperDivStyle,
       labelStyle,
       inputDivStyle,
       label,
       loadDefaultStyle,
     } = this.props;
     return (
-      <div style={wrapperStyle}>
+      <div style={wrapperDivStyle}>
         {
           !loadDefaultStyle ?
-          <label>
+          <label style={labelStyle}>
             {label}
           </label> : null
         }
@@ -56,6 +56,7 @@ class FormsyMuiSlider extends React.Component {
             {...styleProps}
             {...this.props}
             {...wrapperSliderProps}
+            label={loadDefaultStyle ? this.props.label : undefined}
           />
         </div>
       </div>  

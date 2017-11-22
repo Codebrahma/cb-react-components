@@ -7,12 +7,24 @@ import RadioGroup from './FormBindings/FormsyForm/Components/RadioGroup.js';
 import Toggle from './FormBindings/FormsyForm/Components/Toggle.js';
 
 import Slider from './FormBindings/FormsyForm/Components/Slider';
+import { countryOptions } from './MockData.js';
 
-const options = [
-  { label: 'React', value: 'react', disabled: false },
-  { label: 'Redux', value: 'redux', disabled: false },
-  { label: 'Flux', value: 'flux', disabled: false },
-]
+const styles = {
+  wrapperDivStyle: {
+    display: 'flex',
+    marginTop: '10px',
+    height: '100px',
+    
+    alignItems: 'center',
+  },
+  labelStyle: {
+    display: 'inline-block',
+    minWidth: '150px',
+  },
+  inputDivStyle: {
+    width: '250px',
+  }
+};
 
 class App extends Component {
   constructor(props) {
@@ -33,25 +45,28 @@ class App extends Component {
           <TextField
             name="emailAddress"
             label="Email Address"
+            {...styles}
           />
           <RadioGroup
             label="RadioGroup"
             name="optionSelected"
-            options={options}
+            options={countryOptions}
+            {...styles}
           />
           <CheckBox
             name="Checkbox"
             label="CBox Label"
-            value={false}
+            {...styles}
           />
           <Toggle
             name='Switch'  
             label='Toggle Switch'
+            {...styles}
           />
           <Slider
             name="slider"
             label="slider"
-            showToolTip={true}
+            {...styles}
           />
           <div>
             <button>

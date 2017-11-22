@@ -30,7 +30,7 @@ class FormsyMuiRadioGroup extends React.Component {
       [...formsyApiPropsKeys, ...wrapperRadioButtonGroupPropsKeys],
       this.props,
     )
-
+    console.log('props ', this.props.options)
     const radioComponents = this.props.options.map(({ key, text: name , value, ...radioOption }) => {
       const {
         onChange,
@@ -41,33 +41,35 @@ class FormsyMuiRadioGroup extends React.Component {
       
       return (
         <RadioUI
+          {...rest}
           key={key}
           name={name}
+          label={name}
           value={value}
           onChange={onChange}
           checked={checked}
-          {...rest}
         />
       )
     })
     const {
-      wrapperStyle,
+      wrapperDivStyle,
       labelStyle,
       inputDivStyle,
       label,
       loadDefaultStyle,
     } = this.props;
     return (
-      <div style={wrapperStyle}>
+      <div style={wrapperDivStyle}>
         {
           !loadDefaultStyle ?
-          <label>
+          <label style={labelStyle}>
             {label}
           </label> : null
         }
         <div style={inputDivStyle}>
           <RadioButtonGroupUI
             {...this.props}
+            label={loadDefaultStyle ? this.props.label : undefined}
             disabled={wrapperRadioButtonGroupProps.disabled}
             onChange={this.handleChange}
             value={this.props.getValue()}

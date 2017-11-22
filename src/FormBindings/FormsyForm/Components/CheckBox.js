@@ -30,26 +30,26 @@ class FormsyMuiCheckBox extends React.Component {
       this.props,
     )
     const {
-      wrapperStyle,
+      wrapperDivStyle,
       labelStyle,
       inputDivStyle,
       label,
       loadDefaultStyle,
     } = this.props;
     return (
-      <div style={wrapperStyle}>
+      <div style={wrapperDivStyle}>
         {
           !loadDefaultStyle ?
-          <label>
+          <label style={labelStyle}>
             {label}
           </label> : null
         }
         <div style={inputDivStyle}>
           <CheckBoxUI
-            {...this.props}
-            label={loadDefaultStyle ? undefined : label}
+            {...this.props}            
             {...wrapperCheckboxProps}
             inputProps={DOMInputProps}
+            label={loadDefaultStyle ? label : undefined}
           />
         </div>
       </div>
