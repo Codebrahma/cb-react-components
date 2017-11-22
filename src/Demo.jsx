@@ -32,10 +32,15 @@ const Demo = (props) => {
   const {
     formHolderStyle 
   } = style;
+
+  const { handleSubmit, validationObject } = props;
+
   return (
     <div style={formHolderStyle}>
       <Form
-        onSubmit={props.handleSubmit}
+        {...props}
+        onSubmit={handleSubmit}
+        validationObject={validationObject}
       >
         <TextField
           name="name"
@@ -75,6 +80,5 @@ const Demo = (props) => {
   )
 }
 
-export default reduxForm({
-  form: 'fieldLevelValidation',
-})(Demo)
+export default FormHOC(Demo);
+

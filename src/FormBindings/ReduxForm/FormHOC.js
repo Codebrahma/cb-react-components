@@ -3,11 +3,11 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 
-
 export default (Form) => (compose(
   connect((state, props) => ({ 
     form: props.name,
-    validate: props.validate,
+    validate: props.validateFunction,
+    validationObject: props.validationObject,
   })), 
   reduxForm({ 
     destroyOnUnmount: false, 
