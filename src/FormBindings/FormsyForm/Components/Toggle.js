@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
 
-import MuiToggle from '../../../FormComponents/MaterialUI/Toggle';
+import { ToggleUI } from '../Config/UIPicker.js';
 
 import { formsyApiPropsKeys, wrapperTogglePropsKeys } from '../Common/utilConstants.js';
 import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
@@ -29,14 +29,30 @@ class FormsyMuiToggle extends React.Component {
       [...formsyApiPropsKeys, ...wrapperTogglePropsKeys],
       this.props,
     )
-
+    const {
+      wrapperDivStyle,
+      labelStyle,
+      inputDivStyle,
+      label,
+      loadDefaultStyle,
+    } = this.props;
     return (
-      <MuiToggle
-        {...this.props}
-        label={this.props.label}
-        {...wrapperToggleProps}
-        inputProps={DOMInputProps}
-      />
+      <div style={wrapperDivStyle}>
+        {
+          !loadDefaultStyle ?
+          <label style={labelStyle}>
+            {label}
+          </label> : null
+        }
+        <div style={inputDivStyle}>
+          <ToggleUI
+            {...this.props}
+            {...wrapperToggleProps}
+            inputProps={DOMInputProps}
+            label={loadDefaultStyle ? this.props.label : undefined}
+          />
+        </div>
+      </div>  
     );
   }
 }

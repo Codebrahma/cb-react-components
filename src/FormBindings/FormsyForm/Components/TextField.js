@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
 
-import MuiTextField from '../../../FormComponents/MaterialUI/TextField.js';
+import { TextFieldUI } from '../Config/UIPicker.js';
 
 import { formsyApiPropsKeys, wrapperTextInputPropsKeys } from '../Common/utilConstants.js';
 import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
@@ -32,17 +32,33 @@ class FormsyMuiTextField extends React.Component {
 
     const { isRequired, isPristine, isValid, isFormSubmitted } = formsyApiProps;
     const errorMessage = this.props.getErrorMessage();
+    const {
+      wrapperDivStyle,
+      labelStyle,
+      inputDivStyle,
+      label,
+      loadDefaultStyle,
+    } = this.props;
 
     return (
-      <MuiTextField
-        {...this.props}
-        label={this.props.label}
-        { ...wrapperInputProps }
-        { ...DOMInputProps}
-        error={!isValid()}
-        errorMessage={errorMessage}
-      >
-      </MuiTextField>
+      <div style={wrapperDivStyle}>
+        {
+          !loadDefaultStyle ?
+          <label style={labelStyle}>
+            {label}
+          </label> : null
+        }
+        <div style={inputDivStyle}>
+          <TextFieldUI
+            {...this.props}
+            { ...wrapperInputProps }
+            { ...DOMInputProps}
+            label={loadDefaultStyle ? this.props.label : undefined}
+            error={!isValid()}
+            errorMessage={errorMessage}
+          />
+        </div>
+      </div>
     );
   }
 }
