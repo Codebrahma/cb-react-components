@@ -63,9 +63,29 @@ ReactDOM.render(<Provider store={store}>
         validationObject={
           {
             'name': {
-              validations: [(v) => {console.log('VName', v)}],
-              warnings: [(v) => { console.log('WName', v) }],
-            }
+              validations: [(v) =>((`VName ${v}`))],
+              warnings: [(v) => ((`WName ${v}`))],
+            },
+            'gender': {
+              validations: [(v) =>((`VName ${v}`))],
+              warnings: [(v) => ((`WName ${v}`))],
+            },
+            'dob': {
+              validations: [(v) =>((`VName ${v}`))],
+              warnings: [(v) => ((`WName ${v}`))],
+            },
+            'Subscription': {
+              validations: [(v) =>((`VName ${v}`))],
+              warnings: [(v) => ((`WName ${v}`))],
+            },
+            'country': {
+              validations: [(v) =>((`VName ${v}`))],
+              warnings: [(v) => ((`WName ${v}`))],
+            },
+            'isRegistered': {
+              validations: [(v) =>((`VName ${v}`))],
+              warnings: [(v) => ((`WName ${v}`))],
+            },
           }
         }
       />

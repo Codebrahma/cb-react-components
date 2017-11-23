@@ -1,11 +1,15 @@
 import React from 'react'
 import { CheckBoxUI } from '../Config/UIPicker.js';
+import FormInputHelperText from '../Components/Common/FormInputHelper.js';
 
 const InputCheckbox = ({ 
   label, 
   labelStyle,
   wrapperDivStyle, 
-  meta, 
+  meta,
+  wrapperHelperStyle,
+  errorSpanStyle,
+  warningSpanStyle,
   ...props 
 }) => {
   const handleChange = (e, result) => {
@@ -14,7 +18,8 @@ const InputCheckbox = ({
     } else {
       props.input.onChange(e)
     }
-  } 
+  }
+
   return (
     <div style={wrapperDivStyle}>
       <label style={labelStyle}>
@@ -24,6 +29,16 @@ const InputCheckbox = ({
         {...props}
         handleChange={handleChange}
       />
+      <div style={wrapperHelperStyle}>
+        <FormInputHelperText
+          {...props}
+          meta={meta}
+          style={{
+            errorSpanStyle: errorSpanStyle,
+            warningSpanStyle: warningSpanStyle,
+          }}
+        />
+      </div>
     </div>
   )
 }

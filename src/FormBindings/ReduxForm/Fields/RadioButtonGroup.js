@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { RadioButtonGroupUI } from '../Config/UIPicker.js';
+import FormInputHelperText from '../Components/Common/FormInputHelper.js';
 
 import map from 'lodash/map';
 
@@ -18,7 +19,7 @@ class RadioExampleRadioGroup extends Component {
 
   handleChange (e, result) {
     if (result && result.value) {
-      this.props.input.onChange(result.value);  
+      this.props.input.onChange(result.value);
     } else {
       this.props.input.onChange(e.target.value)
     }
@@ -30,6 +31,10 @@ class RadioExampleRadioGroup extends Component {
       labelStyle,
       wrapperDivStyle,
       inputDivStyle,
+      meta,
+      wrapperHelperStyle,
+      errorSpanStyle,
+      warningSpanStyle,
       ...props
     } = this.props
     const {
@@ -47,6 +52,16 @@ class RadioExampleRadioGroup extends Component {
           handleChange={this.handleChange}
           {...props}
         />
+        <div style={wrapperHelperStyle}>
+          <FormInputHelperText
+            {...props}
+            meta={meta}
+            style={{
+              errorSpanStyle: errorSpanStyle,
+              warningSpanStyle: warningSpanStyle,
+            }}
+          />
+        </div>
       </div>
     )
   }
