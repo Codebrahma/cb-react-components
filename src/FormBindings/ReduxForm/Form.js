@@ -1,14 +1,14 @@
 import React from 'react';
-import ValidationInjector from '../Validations/Injector.jsx';
+import FieldValidationInjector from '../Validations/Injector.jsx';
 
 
-const Form = ({ handleSubmit, children, validationObject }) => (
+const Form = ({ handleSubmit, children, fieldsValidationConfig }) => (
   <form
     onSubmit={handleSubmit}
     children={children}
   >
     {
-      ValidationInjector(children, validationObject)
+      FieldValidationInjector(children, fieldsValidationConfig)
     }
   </form>
 )

@@ -33,14 +33,14 @@ const Demo = (props) => {
     formHolderStyle 
   } = style;
 
-  const { handleSubmit, validationObject } = props;
+  const { handleSubmit, fieldsValidationConfig } = props;
 
   return (
     <div style={formHolderStyle}>
       <Form
         {...props}
         onSubmit={handleSubmit}
-        validationObject={validationObject}
+        fieldsValidationConfig={fieldsValidationConfig}
       >
         <TextField
           name="name"

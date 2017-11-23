@@ -36,3 +36,4 @@ export const minLength = (min, message = '') => value =>
 
 export const minValue = (min, message = '') => value =>
   value && value < min ? (message || `Must be at least ${min}`) : undefined
+ 

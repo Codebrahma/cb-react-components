@@ -6,8 +6,8 @@ import { reduxForm } from 'redux-form';
 export default (Form) => (compose(
   connect((state, props) => ({ 
     form: props.name,
-    validate: props.validateFunction,
-    validationObject: props.validationObject,
+    validate: props.formValidator,
+    fieldsValidationConfig: props.fieldsValidationConfig,
   })), 
   reduxForm({ 
     destroyOnUnmount: false, 

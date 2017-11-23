@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Injector = (formChildren, validationObject) => (
+const Injector = (formChildren, fieldsValidationConfig) => (
   React.Children.map(formChildren, (child) => (
     React.cloneElement(
       child,
       {
-        validate: (validationObject[child.props.name] || {}).validations,
-        warn: (validationObject[child.props.name] || {}).warnings,
+        validate: (fieldsValidationConfig[child.props.name] || {}).validations,
+        warn: (fieldsValidationConfig[child.props.name] || {}).warnings,
       }
     )
   ))

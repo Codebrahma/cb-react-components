@@ -56,7 +56,7 @@ const validate = values => {
 
 */}
 
-const validationObject = {
+const fieldsValidationConfig = {
   'name': {
     validations: [(v) =>((`VName ${v}`))],
     warnings: [(v) => ((`WName ${v}`))],
@@ -88,8 +88,8 @@ ReactDOM.render(<Provider store={store}>
       <App
         onSubmit={onSubmit}
         name='DemoForm'
-        validateFunction={validate}
-        validationObject={validationObject}
+        formValidator={validate}
+        fieldsValidationConfig={fieldsValidationConfig}
       />
     </MuiThemeProvider>
   </Provider>, document.getElementById('react-root'));
