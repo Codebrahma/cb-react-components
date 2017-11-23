@@ -4,7 +4,7 @@
 */
 
 /*
-  Pass custom error message to these functions to override
+  Pass custom error message to override
   default error messages
 */
 
@@ -28,11 +28,11 @@ export const isMobileNumber = (message = 'Invalid phone number, must be 10 digit
     ? message
     : undefined
 
-export const maxLength = (max) => value =>
-  value && value.length > max ? `Must be ${max} characters or less` : undefined
+export const maxLength = (max, message = '') => value =>
+  value && value.length > max ? (message || `Must be ${max} characters or less`) : undefined
 
-export const minLength = min => value =>
-  value && value.length < min ? `Must be ${min} characters or more` : undefined
+export const minLength = (min, message = '') => value =>
+  value && value.length < min ? (message || `Must be ${min} characters or more`) : undefined
 
-export const minValue = min => value =>
-  value && value < min ? `Must be at least ${min}` : undefined
+export const minValue = (min, message = '') => value =>
+  value && value < min ? (message || `Must be at least ${min}`) : undefined

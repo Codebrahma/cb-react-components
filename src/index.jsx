@@ -39,20 +39,49 @@ const validate = values => {
   } else if (values.name.length > 15) {
     errors.name = 'Must be 15 characters or less'
   }
-  // if (!values.email) {
-  //   errors.email = 'Required'
-  // } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-  //   errors.email = 'Invalid email address'
-  // }
-  // if (!values.age) {
-  //   errors.age = 'Required'
-  // } else if (isNaN(Number(values.age))) {
-  //   errors.age = 'Must be a number'
-  // } else if (Number(values.age) < 18) {
-  //   errors.age = 'Sorry, you must be at least 18 years old'
-  // }
   return errors
-}
+};
+
+{/*
+  Structure of Validation Object for Field Level Validation
+
+  {
+    `elementName`: {
+      validations: [validationFunctions],
+      warnings: [warningFunctions],
+    },
+    ...,
+    ,..
+  }
+
+*/}
+
+const validationObject = {
+  'name': {
+    validations: [(v) =>((`VName ${v}`))],
+    warnings: [(v) => ((`WName ${v}`))],
+  },
+  'gender': {
+    validations: [(v) =>((`VName ${v}`))],
+    warnings: [(v) => ((`WName ${v}`))],
+  },
+  'dob': {
+    validations: [(v) =>((`VName ${v}`))],
+    warnings: [(v) => ((`WName ${v}`))],
+  },
+  'Subscription': {
+    validations: [(v) =>((`VName ${v}`))],
+    warnings: [(v) => ((`WName ${v}`))],
+  },
+  'country': {
+    validations: [(v) =>((`VName ${v}`))],
+    warnings: [(v) => ((`WName ${v}`))],
+  },
+  'isRegistered': {
+    validations: [(v) =>((`VName ${v}`))],
+    warnings: [(v) => ((`WName ${v}`))],
+  },
+};
 
 ReactDOM.render(<Provider store={store}>
     <MuiThemeProvider theme={theme}>
@@ -60,34 +89,7 @@ ReactDOM.render(<Provider store={store}>
         onSubmit={onSubmit}
         name='DemoForm'
         validateFunction={validate}
-        validationObject={
-          {
-            'name': {
-              validations: [(v) =>((`VName ${v}`))],
-              warnings: [(v) => ((`WName ${v}`))],
-            },
-            'gender': {
-              validations: [(v) =>((`VName ${v}`))],
-              warnings: [(v) => ((`WName ${v}`))],
-            },
-            'dob': {
-              validations: [(v) =>((`VName ${v}`))],
-              warnings: [(v) => ((`WName ${v}`))],
-            },
-            'Subscription': {
-              validations: [(v) =>((`VName ${v}`))],
-              warnings: [(v) => ((`WName ${v}`))],
-            },
-            'country': {
-              validations: [(v) =>((`VName ${v}`))],
-              warnings: [(v) => ((`WName ${v}`))],
-            },
-            'isRegistered': {
-              validations: [(v) =>((`VName ${v}`))],
-              warnings: [(v) => ((`WName ${v}`))],
-            },
-          }
-        }
+        validationObject={validationObject}
       />
     </MuiThemeProvider>
   </Provider>, document.getElementById('react-root'));
