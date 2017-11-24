@@ -9,6 +9,8 @@ import Toggle from './FormBindings/FormsyForm/Components/Toggle.js';
 import Slider from './FormBindings/FormsyForm/Components/Slider';
 import { countryOptions } from './MockData.js';
 
+import FormsyFormHOC from './FormBindings/FormsyForm/FormHOC.js';
+
 const styles = {
   wrapperDivStyle: {
     display: 'flex',
@@ -24,6 +26,24 @@ const styles = {
   inputDivStyle: {
     width: '250px',
   }
+};
+
+const fieldsValidationConfig = {
+  'emailAddress': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'RadioGroup': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'Checkbox': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'Switch': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'slider': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
 };
 
 class App extends Component {
@@ -79,4 +99,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default FormsyFormHOC(App, fieldsValidationConfig);
