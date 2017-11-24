@@ -1,6 +1,6 @@
 A set of Universal React Components that can be plug and played in any project.
 
-Inspiration:
+## Inspiration:
 
 A common API for creation, validation and error handling across any form library and across any material library
 Why to create a new component for every project and to bind with a form library every single time.
@@ -10,7 +10,7 @@ You can build 70% of your forms with this and style it with custom styling.
 
 Currently it supports
 
-Material UI
+## UI libraries
 1. Material UI
 2. Semantic UI
 3. Material Lite UI
@@ -20,7 +20,7 @@ Form Libraries
 2. Redux Form
 3. Formik
 
-So how does this works ?
+## So how does this works ?
 
 ```javascript
 import React, {Component} from 'react';
@@ -114,7 +114,7 @@ class App extends Component {
 export default App;
 ```
 
-How validations work ?
+## How validations work ?
 
 ```javascript
 const fieldsValidationConfig = {
