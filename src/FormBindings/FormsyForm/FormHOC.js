@@ -7,11 +7,12 @@ import FieldValidationInjector from './FieldValidationInjector.js';
 */}
 
 const FormsyFormHOC = (FormsyForm, fieldsValidationConfig) => (
-  <FormsyForm>
+  React.cloneElement(
+    FormsyForm,
     {
-      FieldValidationInjector(FormsyForm.children, fieldsValidationConfig)
+      children: FieldValidationInjector(FormsyForm.children, fieldsValidationConfig),
     }
-  </FormsyForm>
+  )
 )
 
 export default FormsyFormHOC;
