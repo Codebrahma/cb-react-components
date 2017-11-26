@@ -8,7 +8,7 @@
   default error messages
 */
 
-export const isRequired = (message = 'Required') = value => (value ? undefined : message)
+export const isRequired = (message = 'Required') => value => (value ? undefined : message)
 
 export const isNumber = (message = 'Must be a number') => value =>
   value && isNaN(Number(value)) ? message : undefined
