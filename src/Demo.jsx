@@ -1,26 +1,40 @@
 import React from 'react';
 
-import { Field } from 'redux-form';
+import {
+  Form, 
+  FormHOC,
+} from './FormBindings/ReduxForm';
 
-import FormHOC from './FormBindings/ReduxForm/FormHOC.js';
-import Form from './FormBindings/ReduxForm/Form.js';
-
-import Button from './FormBindings/ReduxForm/Components/Button.js';
-import TextField from './FormBindings/ReduxForm/Components/TextField.js';
-import CheckBox from './FormBindings/ReduxForm/Components/CheckBox.js';
-import RadioButtonGroup from './FormBindings/ReduxForm/Components/RadioButtonGroup.js';
-import Select from './FormBindings/ReduxForm/Components/Select.js';
-import Toggle from './FormBindings/ReduxForm/Components/Toggle.js';
-import DatePicker from './FormBindings/ReduxForm/Components/DatePicker.js';
+import {
+  Button,
+  TextField,
+  CheckBox,
+  RadioButtonGroup,
+  Select,
+  Toggle,
+  DatePicker,
+} from './FormBindings/ReduxForm/Components';
 
 import { 
   countryOptions,
   genderOptions,
 } from './MockData.js';
 
-import styles from './FormBindings/ReduxForm/Components/styles.js';
-
-import { reduxForm } from 'redux-form';
+const styles = {
+  wrapperDivStyle: {
+    display: 'flex',
+    marginTop: '10px',
+    height: '50px',
+    alignItems: 'center',
+  },
+  labelStyle: {
+    display: 'inline-block',
+    minWidth: '150px',
+  },
+  inputDivStyle: {
+    
+  }
+}
 
 const style = {
   formHolderStyle: {
