@@ -20,6 +20,17 @@ import 'react-dates/initialize';
 
 import App from './Demo.jsx';
 
+import {
+  isRequired,
+  isNumber,
+  isEmail,
+  isAlphaNumeric, 
+  isMobileNumber, 
+  maxLength,
+  minLength,
+  minValue,
+} from './FormBindings/Validations/index.jsx';
+
 const rootReducer = combineReducers({
   form: formReducer,
 })
@@ -58,8 +69,8 @@ const validate = values => {
 
 const fieldsValidationConfig = {
   'name': {
-    validations: [(v) =>((`VName ${v}`))],
-    warnings: [(v) => ((`WName ${v}`))],
+    validations: [isRequired('Custom is Required'), minLength('Custom min length')(3)],
+    warnings: [(v) =>((`VName ${v}`))]
   },
   'gender': {
     validations: [(v) =>((`VName ${v}`))],
@@ -88,7 +99,6 @@ ReactDOM.render(<Provider store={store}>
       <App
         onSubmit={onSubmit}
         name='DemoForm'
-        formValidator={validate}
         fieldsValidationConfig={fieldsValidationConfig}
       />
     </MuiThemeProvider>
