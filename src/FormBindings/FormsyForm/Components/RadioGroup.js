@@ -1,12 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-
 import { RadioButtonGroupUI } from '../Config/UIPicker.js';
 import { RadioUI } from '../Config/UIPicker.js';
-
-import { formsyApiPropsKeys, wrapperRadioButtonGroupPropsKeys } from '../Common/utilConstants.js';
-import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
 
 class FormsyMuiRadioGroup extends React.Component {
   constructor(props) {
@@ -18,39 +14,14 @@ class FormsyMuiRadioGroup extends React.Component {
   }
 
   render() {
-    const formsyApiProps = extractObjectHavingKeys(formsyApiPropsKeys, this.props);
-    const extractedPropsForWrapperRadioGroup = extractObjectHavingKeys(wrapperRadioButtonGroupPropsKeys, this.props);
     const wrapperRadioButtonGroupProps = {
-      ...extractedPropsForWrapperRadioGroup,
       disabled: this.props.isFormDisabled(),
       onChange: this.handleChange,
       value: this.props.getValue(),
     }
-    const DOMInputProps = extractObjectOmittingKeys(
-      [...formsyApiPropsKeys, ...wrapperRadioButtonGroupPropsKeys],
-      this.props,
-    )
 
-    const radioComponents = this.props.options.map(({ key, text: name , value, ...radioOption }) => {
-      const {
-        onChange,
-        ...rest,
-      } = radioOption;
+    const { isRequired, isPristine, isValid, isFormSubmitted } = this.props;
 
-      const checked = radioOption.value === this.props.getValue;
-      
-      return (
-        <RadioUI
-          {...rest}
-          key={key}
-          name={name}
-          label={name}
-          value={value}
-          onChange={onChange}
-          checked={checked}
-        />
-      )
-    })
     const {
       wrapperDivStyle,
       labelStyle,
@@ -58,6 +29,7 @@ class FormsyMuiRadioGroup extends React.Component {
       label,
       loadDefaultStyle,
     } = this.props;
+    
     return (
       <div style={wrapperDivStyle}>
         {
@@ -74,6 +46,8 @@ class FormsyMuiRadioGroup extends React.Component {
             onChange={this.handleChange}
             value={this.props.getValue()}
             radioOptions={this.props.options}
+            error={!this.props.isValid()}
+            errorMessage={this.props.getErrorMessage()}
           />
         </div>      
       </div>

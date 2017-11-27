@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-
 import { TextFieldUI } from '../Config/UIPicker.js';
-
-import { formsyApiPropsKeys, wrapperTextInputPropsKeys } from '../Common/utilConstants.js';
-import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
 
 class FormsyMuiTextField extends React.Component {
   constructor(props) {
@@ -17,21 +13,14 @@ class FormsyMuiTextField extends React.Component {
   }
 
   render() {
-    const formsyApiProps = extractObjectHavingKeys(formsyApiPropsKeys, this.props);
-    const extractedPropsForWrapperInput = extractObjectHavingKeys(wrapperTextInputPropsKeys, this.props);
     const wrapperInputProps = {
-      ...extractedPropsForWrapperInput,
       disabled: this.props.isFormDisabled(),
       onChange: this.handleChange,
       value: this.props.getValue() || '',
     }
-    const DOMInputProps = extractObjectOmittingKeys(
-      [...formsyApiPropsKeys, ...wrapperTextInputPropsKeys],
-      this.props,
-    )
 
-    const { isRequired, isPristine, isValid, isFormSubmitted } = formsyApiProps;
-    const errorMessage = this.props.getErrorMessage();
+    const { isRequired, isPristine, isValid, isFormSubmitted } = this.props;
+
     const {
       wrapperDivStyle,
       labelStyle,
@@ -52,10 +41,9 @@ class FormsyMuiTextField extends React.Component {
           <TextFieldUI
             {...this.props}
             { ...wrapperInputProps }
-            { ...DOMInputProps}
             label={loadDefaultStyle ? this.props.label : undefined}
-            error={!isValid()}
-            errorMessage={errorMessage}
+            error={!this.props.isValid()}
+            errorMessage={this.props.getErrorMessage()}
           />
         </div>
       </div>
