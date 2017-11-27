@@ -1,4 +1,5 @@
 import React from 'react';
+import Formsy from 'formsy-react';
 import FieldValidationInjector from './FieldValidationInjector.js';
 
 {/*
@@ -6,13 +7,14 @@ import FieldValidationInjector from './FieldValidationInjector.js';
   Injects Field Validation as custom function validation for each form element compatible with Formsy API structure
 */}
 
-const FormsyFormHOC = (FormsyForm, fieldsValidationConfig) => (
-  React.cloneElement(
-    FormsyForm,
+const FormsyFormHOC = ({onSubmit: handleSubmit, fieldsValidationConfig, children}) => (
+  <Formsy.Form
+    onSubmit={handleSubmit}
+  >
     {
-      children: FieldValidationInjector(FormsyForm.children, fieldsValidationConfig),
+      FieldValidationInjector(children, fieldsValidationConfig)
     }
-  )
+  </Formsy.Form>
 )
 
 export default FormsyFormHOC;

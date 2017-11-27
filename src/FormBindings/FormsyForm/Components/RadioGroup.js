@@ -30,7 +30,7 @@ class FormsyMuiRadioGroup extends React.Component {
       [...formsyApiPropsKeys, ...wrapperRadioButtonGroupPropsKeys],
       this.props,
     )
-    console.log('props ', this.props.options)
+
     const radioComponents = this.props.options.map(({ key, text: name , value, ...radioOption }) => {
       const {
         onChange,

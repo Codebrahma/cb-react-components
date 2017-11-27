@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Form } from 'formsy-react';
 
 import TextField from './FormBindings/FormsyForm/Components/TextField.js';
 import CheckBox from './FormBindings/FormsyForm/Components/CheckBox.js';
@@ -9,7 +8,7 @@ import Toggle from './FormBindings/FormsyForm/Components/Toggle.js';
 import Slider from './FormBindings/FormsyForm/Components/Slider';
 import { countryOptions } from './MockData.js';
 
-import FormsyFormHOC from './FormBindings/FormsyForm/FormHOC.js';
+import { Form } from './FormBindings/FormsyForm';
 
 const styles = {
   wrapperDivStyle: {
@@ -32,13 +31,13 @@ const fieldsValidationConfig = {
   'emailAddress': {
     validations: [(v) => ((`VName ${v}`))],
   },
-  'RadioGroup': {
+  'optionSelected': {
     validations: [(v) => ((`VName ${v}`))],
   },
-  'Checkbox': {
+  'checkbox': {
     validations: [(v) => ((`VName ${v}`))],
   },
-  'Switch': {
+  'switch': {
     validations: [(v) => ((`VName ${v}`))],
   },
   'slider': {
@@ -49,10 +48,9 @@ const fieldsValidationConfig = {
 class App extends Component {
   constructor(props) {
     super(props);
-
   }
 
-  onSubmit = (data) => {
+  handleSubmit = (data) => {
     console.log(data);
   }
 
@@ -60,7 +58,8 @@ class App extends Component {
     return (
       <div>
         <Form
-          onSubmit={this.onSubmit}
+          onSubmit={this.handleSubmit}
+          fieldsValidationConfig={fieldsValidationConfig}          
         >
           <TextField
             name="emailAddress"
@@ -74,12 +73,12 @@ class App extends Component {
             {...styles}
           />
           <CheckBox
-            name="Checkbox"
+            name="checkbox"
             label="CBox Label"
             {...styles}
           />
           <Toggle
-            name='Switch'  
+            name='switch'  
             label='Toggle Switch'
             {...styles}
           />
@@ -99,5 +98,4 @@ class App extends Component {
   }
 }
 
-// export default App;
-export default FormsyFormHOC(App, fieldsValidationConfig);
+export default App;
