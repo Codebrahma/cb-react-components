@@ -26,6 +26,7 @@ const MuiRadioGroup = ({
   radioOptions,
   helperText,
   errorMessage,
+  disabled,
   ...restProps,
 }) => {
 
@@ -34,7 +35,7 @@ const MuiRadioGroup = ({
   const helperDescription = error ? errorMessage : helperText;
 
   return (
-    <FormControl component="fieldset" required={required} error={error} >
+    <FormControl component="fieldset" required={required} error={error} disabled={disabled}>
       <FormLabel component="legend">{label}</FormLabel>
       <RadioGroup
         aria-label={name}
