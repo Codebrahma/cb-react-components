@@ -69,7 +69,7 @@ const validate = values => {
 
 const fieldsValidationConfig = {
   'name': {
-    validations: [isRequired('Custom is Required'), minLength('Custom min length')(3)],
+    validations: [(v) => ((`VName ${v}`))],
     warnings: [(v) =>((`VName ${v}`))]
   },
   'gender': {
