@@ -50,6 +50,8 @@ class FormsyMuiCheckBox extends React.Component {
             {...wrapperCheckboxProps}
             inputProps={DOMInputProps}
             label={loadDefaultStyle ? label : undefined}
+            error={!this.props.isValid()}
+            errorMessage={this.props.getErrorMessage()}
           />
         </div>
       </div>

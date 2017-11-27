@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-
 import { SliderUI } from '../Config/UIPicker.js';
-
-import { formsyApiPropsKeys, wrapperSliderPropsKeys } from '../Common/utilConstants.js';
-import { extractObjectHavingKeys, extractObjectOmittingKeys } from '../Common/util.js';
 
 class FormsyMuiSlider extends React.Component {
   constructor(props) {
@@ -35,7 +31,8 @@ class FormsyMuiSlider extends React.Component {
         selectedPortion: 'blue',
       },
       showTooltip: true,
-    }
+    };
+
     const {
       wrapperDivStyle,
       labelStyle,
@@ -43,6 +40,7 @@ class FormsyMuiSlider extends React.Component {
       label,
       loadDefaultStyle,
     } = this.props;
+
     return (
       <div style={wrapperDivStyle}>
         {
@@ -57,6 +55,8 @@ class FormsyMuiSlider extends React.Component {
             {...this.props}
             {...wrapperSliderProps}
             label={loadDefaultStyle ? this.props.label : undefined}
+            error={!this.props.isValid()}
+            errorMessage={this.props.getErrorMessage()}
           />
         </div>
       </div>  

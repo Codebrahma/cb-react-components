@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { HOC } from 'formsy-react';
-
 import { ToggleUI } from '../Config/UIPicker.js';
 
 import { formsyApiPropsKeys, wrapperTogglePropsKeys } from '../Common/utilConstants.js';
@@ -50,6 +49,8 @@ class FormsyMuiToggle extends React.Component {
             {...wrapperToggleProps}
             inputProps={DOMInputProps}
             label={loadDefaultStyle ? this.props.label : undefined}
+            error={!this.props.isValid()}
+            errorMessage={this.props.getErrorMessage()}
           />
         </div>
       </div>  
