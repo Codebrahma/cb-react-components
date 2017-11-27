@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { TextFieldUI } from '../Config/UIPicker.js';
+import FormInputHelperText from '../Components/Common/FormInputHelper.js';
 
 const InputExampleInput = ({ 
   placeholder, 
@@ -8,7 +9,10 @@ const InputExampleInput = ({
   labelStyle,
   wrapperDivStyle,
   inputDivStyle,
-  meta, 
+  wrapperHelperStyle,
+  meta,
+  errorSpanStyle,
+  warningSpanStyle,
   ...props }) => (
   <div style={wrapperDivStyle}>
     <label style={labelStyle}>
@@ -18,6 +22,16 @@ const InputExampleInput = ({
       <TextFieldUI
         placeholder={placeholder}
         {...props}
+      />
+    </div>
+    <div style={wrapperHelperStyle}>
+      <FormInputHelperText
+        {...props}
+        meta={meta}
+        style={{
+          errorSpanStyle: errorSpanStyle,
+          warningSpanStyle: warningSpanStyle,
+        }}
       />
     </div>
   </div>

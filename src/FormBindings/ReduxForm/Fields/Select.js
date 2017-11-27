@@ -1,13 +1,17 @@
 import React from 'react'
 
 import { SelectUI } from '../Config/UIPicker.js';
+import FormInputHelperText from '../Components/Common/FormInputHelper.js';
 
 const InputSelect = ({ 
   label, 
   labelStyle,
   wrapperDivStyle,
   inputDivStyle,
-  meta, 
+  meta,
+  wrapperHelperStyle,
+  errorSpanStyle,
+  warningSpanStyle,  
   ...props
 }) => {
   const handleChange = (e, result) => {
@@ -29,6 +33,16 @@ const InputSelect = ({
         <SelectUI
           {...props}
           onChange={handleChange}
+        />
+      </div>
+      <div style={wrapperHelperStyle}>
+        <FormInputHelperText
+          {...props}
+          meta={meta}
+          style={{
+            errorSpanStyle: errorSpanStyle,
+            warningSpanStyle: warningSpanStyle,
+          }}
         />
       </div>
     </div>
