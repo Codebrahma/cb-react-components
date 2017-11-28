@@ -35,7 +35,11 @@ const MuiCheckBoxGroup = ({
   const helperDescription = error ? errorMessage : helperText;
 
   return (
-    <FormControl component="fieldset" required={required} error={error} disabled={disabled}>
+    <FormControl component="fieldset" 
+      required={required}
+      error={error}
+      disabled={disabled}
+    >
       <FormLabel component="legend">{label}</FormLabel>
       <FormGroup>
         {checkBoxComponents}

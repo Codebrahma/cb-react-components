@@ -10,7 +10,6 @@ const validationFuncsMapper = (validationFuncs = []) => {
       return mapperFuncResult; 
     }
   ))
-
   return (Object.assign({}, mappedFunctions));
 };
 

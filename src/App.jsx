@@ -45,6 +45,9 @@ const fieldsValidationConfig = {
   'slider': {
     validations: [(v) => ((`VName ${v}`))],
   },
+  'chkbxgrp': {
+    validations: [(v) => ((`VName ${JSON.stringify(v)}`))],
+  },
 };
 
 class App extends Component {
@@ -74,11 +77,6 @@ class App extends Component {
             options={countryOptions}
             {...styles}
           />
-          <CheckBox
-            name="checkbox"
-            label="CBox Label"
-            {...styles}
-          />
           <Toggle
             name='switch'  
             label='Toggle Switch'
@@ -93,16 +91,15 @@ class App extends Component {
           <CheckboxGroup
             label='CheckBox Group'
             name='chkbxgrp'
-            error={false}
-            errorMessage={'Error'}
-            helperText={'Help'}
+            helperText={'Helper Text'}
             required={true}
             disabled={false}
             checkBoxOptions={
               [
-                { label: 'A', value: 'Rails', disabled: false },
-                { label: 'B', value: 'Ruby', disabled: true },
-                { label: 'C', value: 'React', disabled: false },
+                { label: 'Rails', value: 'rails', disabled: false },
+                { label: 'Ruby', value: 'ruby', disabled: false },
+                { label: 'Electron', value: 'electron', disabled: true },
+                { label: 'React', value: 'react', disabled: false },
               ]
             }
           />

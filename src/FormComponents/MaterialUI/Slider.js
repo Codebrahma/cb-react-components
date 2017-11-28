@@ -48,6 +48,7 @@ const MuiSlider = (props) => {
   ) : '';
 
   const { error, errorMessage, helperText } = props;
+  const { disabled, required } = props;
   const helperDescription = error ? errorMessage : helperText;
 
   return (
@@ -58,8 +59,16 @@ const MuiSlider = (props) => {
       <Slider 
         {...props}
         label={toolTipElement}
+        disabled={disabled}
+        error={error}
+        required={required}
       />
-      <FormHelperText>{helperDescription}</FormHelperText>
+      <FormHelperText
+        disabled={disabled}
+        error={error}
+      >
+        {helperDescription}
+      </FormHelperText>
     </div>
   );
 }

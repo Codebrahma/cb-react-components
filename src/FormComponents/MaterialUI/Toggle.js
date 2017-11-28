@@ -35,7 +35,12 @@ const MuiToggle = ({
           label={label}
           disabled={disabled}
         />
-        <FormHelperText>{helperDescription}</FormHelperText>
+        <FormHelperText
+          error={error}
+          disabled={disabled}
+        >
+          {helperDescription}
+        </FormHelperText>
       </div>
     );
 }
