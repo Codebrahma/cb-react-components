@@ -10,6 +10,8 @@ import { countryOptions } from './MockData.js';
 
 import { Form } from './FormBindings/FormsyForm';
 
+import CheckboxGroup from './FormBindings/FormsyForm/Components/CheckBoxGroup';
+
 const styles = {
   wrapperDivStyle: {
     display: 'flex',
@@ -86,6 +88,23 @@ class App extends Component {
             name="slider"
             label="slider"
             {...styles}
+          />
+
+          <CheckboxGroup
+            label='CheckBox Group'
+            name='chkbxgrp'
+            error={false}
+            errorMessage={'Error'}
+            helperText={'Help'}
+            required={true}
+            disabled={false}
+            checkBoxOptions={
+              [
+                { label: 'A', value: 'Rails', disabled: false },
+                { label: 'B', value: 'Ruby', disabled: true },
+                { label: 'C', value: 'React', disabled: false },
+              ]
+            }
           />
           <div>
             <button>
