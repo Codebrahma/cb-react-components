@@ -18,7 +18,7 @@ class FormyMuiCheckBoxGroup extends React.Component {
   render() {
     const wrapperCheckBoxGroupProps = {
       disabled: this.props.isFormDisabled(),
-      value: this.props.getValue() || [],
+      value: this.props.getValue() || {},
     }
 
     const {
@@ -30,6 +30,7 @@ class FormyMuiCheckBoxGroup extends React.Component {
     } = this.props;
 
     const { checkBoxOptions } = this.props;
+    {/* Injecting onChange handler for each checkbox in group */}
     const checkBoxOptionsWithHandler = checkBoxOptions.map((checkBoxOption) => (
       {
         ...checkBoxOption,

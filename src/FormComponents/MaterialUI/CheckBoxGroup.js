@@ -48,12 +48,7 @@ const MuiCheckBoxGroup = ({
 MuiCheckBoxGroup.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
-  value: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-    ]),
-  ),
+  value: PropTypes.object,
   children: PropTypes.node,
   onChange: PropTypes.func,
   required: PropTypes.bool,
