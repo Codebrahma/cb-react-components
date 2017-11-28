@@ -4,13 +4,13 @@ import { FormControl, FormLabel, FormHelperText, FormGroup } from 'material-ui/F
 import MuiCheckBox from './CheckBox';
 import { omit, pick, concat } from 'lodash';
 
-const checkBoxComponentsFromOptions = (checkBoxOptions = [], selectedValues = [], onChange) => {
+const checkBoxComponentsFromOptions = (checkBoxOptions = [], groupValues = {}, onChange) => {
   return checkBoxOptions.map((checkBoxProps) => (
     <MuiCheckBox
+      onChange={onChange}
       {...checkBoxProps}
       key={checkBoxProps.value}
-      checked={selectedValues.indexOf(checkBoxProps.value) !== -1}
-      onChange={onChange}
+      checked={groupValues[checkBoxProps.value]}
     />
   ));
 }
@@ -30,8 +30,8 @@ const MuiCheckBoxGroup = ({
   ...restProps,
 }) => {
 
-  const checkBoxGroupSelectedValues = value;
-  const checkBoxComponents = children ? children : checkBoxComponentsFromOptions(checkBoxOptions, checkBoxGroupSelectedValues, onChange);
+  const checkBoxGroupValues = value;
+  const checkBoxComponents = children ? children : checkBoxComponentsFromOptions(checkBoxOptions, checkBoxGroupValues, onChange);
   const helperDescription = error ? errorMessage : helperText;
 
   return (
