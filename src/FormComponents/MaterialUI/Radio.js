@@ -14,6 +14,7 @@ const MuiRadio = (muiRadioProps) => {
 
   return (
     <FormControlLabel
+      label={formControlLabelProps['text']}
       {...formControlLabelProps}
       control={(
         <Radio
