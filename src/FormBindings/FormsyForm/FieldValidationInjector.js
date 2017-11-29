@@ -13,7 +13,7 @@ const validationFuncsMapper = (validationFuncs = []) => {
   return (Object.assign({}, mappedFunctions));
 };
 
-const FormsyFormFieldValidationInjector = (formyFormChildren, fieldsValidationConfig) => (
+const FormsyFormFieldValidationInjector = (formyFormChildren, fieldsValidationConfig = {}) => (
   React.Children.map(formyFormChildren, (child) => (
     React.cloneElement(
       child,
