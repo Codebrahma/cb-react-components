@@ -1,8 +1,4 @@
 // Application entrypoint.
-
-// Load up the application styles
-require("../styles/application.scss");
-
 import 'semantic-ui-css/semantic.min.css';
 // Render the top-level React component
 import React from 'react';
@@ -22,15 +18,17 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 // Required for DatePicker
 import 'react-dates/initialize';
 
+// Root file
 import App from './Demo';
 
+// Required for Redux Forms
 const rootReducer = combineReducers({
   form: formReducer,
 })
-
-const theme = createMuiTheme();
-
 const store = createStore(rootReducer, {}, applyMiddleware(logger));
+
+// Required for Material UI
+const theme = createMuiTheme();
 
 ReactDOM.render(<Provider store={store}>
     <MuiThemeProvider theme={theme}>

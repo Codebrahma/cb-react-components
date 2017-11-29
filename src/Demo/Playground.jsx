@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 
-import TextField from './FormBindings/FormsyForm/Components/TextField.js';
-import CheckBox from './FormBindings/FormsyForm/Components/CheckBox.js';
-import RadioGroup from './FormBindings/FormsyForm/Components/RadioGroup.js';
-import Toggle from './FormBindings/FormsyForm/Components/Toggle.js';
+import TextField from '../FormBindings/FormsyForm/Components/TextField.js';
+import CheckBox from '../FormBindings/FormsyForm/Components/CheckBox.js';
+import RadioGroup from '../FormBindings/FormsyForm/Components/RadioGroup.js';
+import Toggle from '../FormBindings/FormsyForm/Components/Toggle.js';
 
-import Slider from './FormBindings/FormsyForm/Components/Slider';
+import Slider from '../FormBindings/FormsyForm/Components/Slider';
 import { countryOptions } from './MockData.js';
 
-import { Form } from './FormBindings/FormsyForm';
+import { Form } from '../FormBindings/FormsyForm';
 
-import CheckboxGroup from './FormBindings/FormsyForm/Components/CheckBoxGroup';
+import CheckboxGroup from '../FormBindings/FormsyForm/Components/CheckBoxGroup';
 
 const styles = {
   wrapperDivStyle: {
