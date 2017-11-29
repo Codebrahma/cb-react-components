@@ -14,7 +14,7 @@ const MuiCheckBox = ({ label, disabled, checked, name, onChange, value, ...restP
 
   return (
     <FormControlLabel
-      disabled={restProps.disabled}
+      disabled={disabled}
       control={
         <Checkbox
           {...wrapperCheckboxProps}

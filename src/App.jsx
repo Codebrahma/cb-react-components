@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Form } from 'formsy-react';
 
 import TextField from './FormBindings/FormsyForm/Components/TextField.js';
 import CheckBox from './FormBindings/FormsyForm/Components/CheckBox.js';
@@ -8,6 +7,10 @@ import Toggle from './FormBindings/FormsyForm/Components/Toggle.js';
 
 import Slider from './FormBindings/FormsyForm/Components/Slider';
 import { countryOptions } from './MockData.js';
+
+import { Form } from './FormBindings/FormsyForm';
+
+import CheckboxGroup from './FormBindings/FormsyForm/Components/CheckBoxGroup';
 
 const styles = {
   wrapperDivStyle: {
@@ -26,13 +29,33 @@ const styles = {
   }
 };
 
+const fieldsValidationConfig = {
+  'emailAddress': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'optionSelected': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'checkbox': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'switch': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'slider': {
+    validations: [(v) => ((`VName ${v}`))],
+  },
+  'chkbxgrp': {
+    validations: [(v) => ((`VName ${JSON.stringify(v)}`))],
+  },
+};
+
 class App extends Component {
   constructor(props) {
     super(props);
-
   }
 
-  onSubmit = (data) => {
+  handleSubmit = (data) => {
     console.log(data);
   }
 
@@ -40,7 +63,8 @@ class App extends Component {
     return (
       <div>
         <Form
-          onSubmit={this.onSubmit}
+          onSubmit={this.handleSubmit}
+          fieldsValidationConfig={fieldsValidationConfig}          
         >
           <TextField
             name="emailAddress"
@@ -53,13 +77,8 @@ class App extends Component {
             options={countryOptions}
             {...styles}
           />
-          <CheckBox
-            name="Checkbox"
-            label="CBox Label"
-            {...styles}
-          />
           <Toggle
-            name='Switch'  
+            name='switch'  
             label='Toggle Switch'
             {...styles}
           />
@@ -67,6 +86,22 @@ class App extends Component {
             name="slider"
             label="slider"
             {...styles}
+          />
+
+          <CheckboxGroup
+            label='CheckBox Group'
+            name='chkbxgrp'
+            helperText={'Helper Text'}
+            required={true}
+            disabled={false}
+            checkBoxOptions={
+              [
+                { label: 'Rails', value: 'rails', disabled: false },
+                { label: 'Ruby', value: 'ruby', disabled: false },
+                { label: 'Electron', value: 'electron', disabled: true },
+                { label: 'React', value: 'react', disabled: false },
+              ]
+            }
           />
           <div>
             <button>

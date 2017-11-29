@@ -6,7 +6,8 @@ Since slider is not implemented in latest beta version
 import lightBaseTheme from 'material-ui-stable/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui-stable/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui-stable/styles/getMuiTheme';
-import Slider from 'material-ui-slider-label/Slider';;
+import Slider from 'material-ui-slider-label/Slider';
+import { FormHelperText } from 'material-ui/Form';
 
 const styles = {
   labelStyleOuter: {
@@ -46,6 +47,10 @@ const MuiSlider = (props) => {
     </div>
   ) : '';
 
+  const { error, errorMessage, helperText } = props;
+  const { disabled, required } = props;
+  const helperDescription = error ? errorMessage : helperText;
+
   return (
     <div>
       <label style={styles.labelTextStyle}>
@@ -54,7 +59,16 @@ const MuiSlider = (props) => {
       <Slider 
         {...props}
         label={toolTipElement}
+        disabled={disabled}
+        error={error}
+        required={required}
       />
+      <FormHelperText
+        disabled={disabled}
+        error={error}
+      >
+        {helperDescription}
+      </FormHelperText>
     </div>
   );
 }
@@ -123,6 +137,9 @@ MuiSlider.propTypes = {
     selectedPortion: PropTypes.string,
     ripple: PropTypes.string,
   }),
+  helperText: PropTypes.string,
+  error: PropTypes.bool,
+  errorMessage: PropTypes.string,
 };
 
 export default MuiWrappedSlider;

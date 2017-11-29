@@ -18,7 +18,7 @@ import 'react-mdl/extra/material.js';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import 'react-dates/initialize';
 
-import App from './Demo.jsx';
+import App from './App.jsx';
 
 import {
   isRequired,
@@ -99,7 +99,8 @@ ReactDOM.render(<Provider store={store}>
       <App
         onSubmit={onSubmit}
         name='DemoForm'
-        fieldsValidationConfig={fieldsValidationConfig}
+        // formValidator={validate}
+        // fieldsValidationConfig={fieldsValidationConfig}
       />
     </MuiThemeProvider>
   </Provider>, document.getElementById('react-root'));
