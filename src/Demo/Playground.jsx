@@ -6,11 +6,30 @@ import RadioGroup from '../FormBindings/FormsyForm/Components/RadioGroup.js';
 import Toggle from '../FormBindings/FormsyForm/Components/Toggle.js';
 
 import Slider from '../FormBindings/FormsyForm/Components/Slider';
-import { countryOptions } from './MockData.js';
 
 import { Form } from '../FormBindings/FormsyForm';
 
 import CheckboxGroup from '../FormBindings/FormsyForm/Components/CheckBoxGroup';
+
+export const countryOptions = [{
+  key: 'India',
+  text: 'India',
+  value: 'India',
+}, {
+  key: 'USA',
+  text: 'USA',
+  value: 'USA',
+}];
+
+export const genderOptions = [{
+  key: 'male',
+  text: 'male',
+  value: 'male',
+}, {
+  key: 'female',
+  text: 'female',
+  value: 'female',
+}];
 
 const styles = {
   wrapperDivStyle: {
