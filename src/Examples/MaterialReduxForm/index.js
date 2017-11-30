@@ -1,5 +1,7 @@
 import React from 'react';
 
+import pick from 'lodash/omit';
+
 import {
   Form,
   FormHOC
@@ -18,32 +20,43 @@ import {
   fieldsValidationConfig
 } from './validations';
 
-const MaterialReduxForm = ({ onSubmit }) => {
-  return (
-    <Form
-      fieldsValidationConfig={fieldsValidationConfig}
-    >
-      <TextField
-        name="username"
+class MaterialReduxForm extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onSubmit(values) {
+    console.log('values', values);
+  }
+  render() {
+    return (
+      <Form
+        {...this.props}
         fieldsValidationConfig={fieldsValidationConfig}
-        label="UserName"
-      />
-      <TextField
-        name="email"
-        label="Email"
-      />
-      <TextField
-        name="age"
-        label="Age"
-      />
-      <button
-        type="submit"
       >
-        Submit
-      </button>
-    </Form>
-  )
+        <TextField
+          name="username"
+          fieldsValidationConfig={fieldsValidationConfig}
+          label="UserName"
+        />
+        <TextField
+          name="email"
+          label="Email"
+        />
+        <TextField
+          name="age"
+          label="Age"
+        />
+        <button
+          type="submit"
+        >
+          Submit
+        </button>
+      </Form>
+    )
+  }
 }
-  
 
 export default FormHOC(MaterialReduxForm);
