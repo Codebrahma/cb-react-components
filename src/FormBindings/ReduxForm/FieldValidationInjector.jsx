@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Injector = (formChildren, fieldsValidationConfig) => (
+const FieldValidationInjector = (formChildren, fieldsValidationConfig = {}) => (
   React.Children.map(formChildren, (child) => (
     React.cloneElement(
       child,
@@ -12,4 +12,4 @@ const Injector = (formChildren, fieldsValidationConfig) => (
   ))
 );
 
-export default Injector;
+export default FieldValidationInjector;
