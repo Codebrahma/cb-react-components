@@ -1,7 +1,5 @@
 import React from 'react';
 
-import pick from 'lodash/omit';
-
 import {
   Form,
   FormHOC
