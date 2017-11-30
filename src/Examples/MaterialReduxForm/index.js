@@ -1,9 +1,38 @@
 import React from 'react';
 
-const MaterialReduxForm = () => (
-  <div>
-    Hello
-  </div>
-)
+import {
+  Form,
+  FormHOC
+} from '../../FormBindings/ReduxForm';
 
-export default MaterialReduxForm;
+import {
+  Button,
+  CheckBox,
+  DatePicker,
+  RadioButtonGroup,
+  Select,
+  TextField,
+  Toggle
+} from '../../FormBindings/ReduxForm/Components';
+
+import { 
+  fieldsValidationConfig
+} from './validations';
+
+const MaterialReduxForm = ({ onSubmit }) => {
+  return (
+    <Form
+      onSubmit={onSubmit}
+      fieldsValidationConfig={fieldsValidationConfig}
+    >
+      <TextField
+        name="username"
+        label="UserName"
+      />
+    </Form>
+  )
+}
+  
+
+
+export default FormHOC(MaterialReduxForm);
