@@ -8,7 +8,6 @@ import {
 import {
   Button,
   CheckBox,
-  DatePicker,
   RadioButtonGroup,
   Select,
   TextField,
@@ -22,11 +21,11 @@ import {
 const MaterialReduxForm = ({ onSubmit }) => {
   return (
     <Form
-      onSubmit={onSubmit}
       fieldsValidationConfig={fieldsValidationConfig}
     >
       <TextField
         name="username"
+        fieldsValidationConfig={fieldsValidationConfig}
         label="UserName"
       />
       <TextField
@@ -37,14 +36,14 @@ const MaterialReduxForm = ({ onSubmit }) => {
         name="age"
         label="Age"
       />
-      <DatePicker
-        name="dob"
-        label="Date of Birth"
-      />
+      <button
+        type="submit"
+      >
+        Submit
+      </button>
     </Form>
   )
 }
   
-
 
 export default FormHOC(MaterialReduxForm);
