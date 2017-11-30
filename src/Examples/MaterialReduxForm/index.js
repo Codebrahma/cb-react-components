@@ -29,6 +29,14 @@ const MaterialReduxForm = ({ onSubmit }) => {
         name="username"
         label="UserName"
       />
+      <TextField
+        name="email"
+        label="Email"
+      />
+      <TextField
+        name="age"
+        label="Age"
+      />
     </Form>
   )
 }
