@@ -3,7 +3,8 @@ import Playground from './MaterialReduxForm';
 
 const Demo = () => {
   const onSubmit = (values) => {
-    console.log('submit is ', values);
+    debugger
+    console.log('values', values);
   }
 
   return (

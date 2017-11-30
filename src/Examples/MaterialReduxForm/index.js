@@ -22,12 +22,8 @@ class MaterialReduxForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onSubmit = this.onSubmit.bind(this);
   }
 
-  onSubmit(values) {
-    console.log('values', values);
-  }
   render() {
     return (
       <Form
@@ -36,7 +32,6 @@ class MaterialReduxForm extends React.Component {
       >
         <TextField
           name="username"
-          fieldsValidationConfig={fieldsValidationConfig}
           label="UserName"
         />
         <TextField
