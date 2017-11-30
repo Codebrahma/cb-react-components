@@ -37,6 +37,10 @@ const MaterialReduxForm = ({ onSubmit }) => {
         name="age"
         label="Age"
       />
+      <DatePicker
+        name="dob"
+        label="Date of Birth"
+      />
     </Form>
   )
 }
