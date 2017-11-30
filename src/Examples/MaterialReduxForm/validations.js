@@ -1,9 +1,11 @@
 import {
-  isRequired
+  isRequired,
+  minLength,
+  maxLength,
 } from '../../FormBindings/Validations';
 
 export const fieldsValidationConfig = {
   'username': {
-    validations: [isRequired()],
+    validations: [isRequired(), minLength(3), maxLength(10)],
   }
 };
