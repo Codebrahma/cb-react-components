@@ -1,5 +1,5 @@
 import React from 'react';
-import Playground from './Playground.jsx';
+import Playground from './MaterialReduxForm';
 
 const Demo = () => {
   const onSubmit = (values) => {
