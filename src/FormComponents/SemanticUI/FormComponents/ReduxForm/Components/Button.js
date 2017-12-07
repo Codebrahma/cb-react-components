@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
-import InputButton from '../../../FormComponents/SemanticUI/Button.js';
+import InputButton from '../../../UIComponents/Button.js';
 
 const Button = ({ label, ...props }) => (
   <div>

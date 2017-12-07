@@ -8,9 +8,11 @@ import {
   Slider,
   Select,
   DatePicker,
-} from '../FormBindings/FormsyForm/Components/';
+} from '../FormComponents/SemanticUI/FormComponents/ReduxForm/Components/index.js';
 
-import { Form } from '../FormBindings/FormsyForm';
+import { Form, FormHOC } from '../FormComponents/SemanticUI/FormComponents/ReduxForm/';
+
+import { isRequired } from '../FormBindings/Validations/index.js';
 
 export const countryOptions = [{
   key: 'India',
@@ -51,22 +53,22 @@ const styles = {
 
 const fieldsValidationConfig = {
   'emailAddress': {
-    validations: [(v) => ((`VName ${v}`))],
+    validations: [isRequired("Enter a valid email")],
   },
   'optionSelected': {
-    validations: [(v) => ((`VName ${v}`))],
+    validations: [(v) => ((`Invalid ${v}`))],
   },
   'checkbox': {
-    validations: [(v) => ((`VName ${v}`))],
+    validations: [(v) => ((`Invalid ${v}`))],
   },
   'switch': {
-    validations: [(v) => ((`VName ${v}`))],
+    validations: [(v) => ((`Invalid ${v}`))],
   },
   'slider': {
-    validations: [(v) => ((`VName ${v}`))],
+    validations: [(v) => ((`Invalid ${v}`))],
   },
   'chkbxgrp': {
-    validations: [(v) => ((`VName ${JSON.stringify(v)}`))],
+    validations: [(v) => ((`Invalid ${JSON.stringify(v)}`))],
   },
 };
 
@@ -83,7 +85,7 @@ class App extends Component {
     return (
       <div>
         <Form
-          onSubmit={this.handleSubmit}
+          handleSubmit={this.handleSubmit}
           fieldsValidationConfig={fieldsValidationConfig}          
         >
           <TextField
@@ -102,26 +104,17 @@ class App extends Component {
             label='Toggle Switch'
             {...styles}
           />
-          <Slider
-            name="slider"
-            label="slider"
+          <Select
+            name='Country'  
+            label='Country'
+            options={countryOptions}
             {...styles}
           />
 
-          <CheckBoxGroup
-            label='CheckBox Group'
-            name='chkbxgrp'
-            helperText={'Helper Text'}
-            required={true}
-            disabled={false}
-            checkBoxOptions={
-              [
-                { label: 'Rails', value: 'rails', disabled: false },
-                { label: 'Ruby', value: 'ruby', disabled: false },
-                { label: 'Electron', value: 'electron', disabled: true },
-                { label: 'React', value: 'react', disabled: false },
-              ]
-            }
+          <DatePicker
+            name='dob'  
+            label='Born On'
+            {...styles}
           />
           <div>
             <button>
@@ -134,4 +127,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default FormHOC(App);
