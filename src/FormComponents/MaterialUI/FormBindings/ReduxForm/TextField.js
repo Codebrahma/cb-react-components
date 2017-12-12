@@ -4,7 +4,7 @@ import { Field } from 'redux-form';
 
 import Input from './Fields/TextField.js';
 
-const InputText = (props) => {
+const InputText = ({ ...props }) => {
   
   return (
     <Field

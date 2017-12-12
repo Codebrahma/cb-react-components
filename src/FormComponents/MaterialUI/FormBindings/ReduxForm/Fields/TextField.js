@@ -10,6 +10,7 @@ const InputExampleInput = ({
   wrapperDivStyle,
   inputDivStyle,
   wrapperHelperStyle,
+  input,
   meta,
   errorSpanStyle,
   warningSpanStyle,
@@ -22,6 +23,7 @@ const InputExampleInput = ({
       <TextFieldUI
         placeholder={placeholder}
         {...props}
+        {...input}
       />
     </div>
     <div style={wrapperHelperStyle}>
@@ -35,6 +37,6 @@ const InputExampleInput = ({
       />
     </div>
   </div>
-)
+);
 
-export default InputExampleInput
+export default InputExampleInput;
