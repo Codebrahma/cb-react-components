@@ -9,10 +9,13 @@ import {
   Toggle,
   Slider,
   Select,
-} from '../FormComponents/SemanticUI/FormBindings/ReduxForm';
+  DatePicker,
+} from '../FormComponents/MaterialUI/Components';
 
-import { Form, FormHOC } from '../FormComponents/SemanticUI/FormBindings/ReduxForm/api';
-
+import { 
+  Form,
+  FormHOC, 
+} from '../FormComponents/MaterialUI';
 
 export const countryOptions = [{
   key: 'India',
@@ -100,3 +103,5 @@ class App extends Component {
 export default reduxForm({
   form: 'demo',
 })(App);
+
+
