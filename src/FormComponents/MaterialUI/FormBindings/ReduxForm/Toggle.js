@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
-import DatePicker from '../Fields/DatePicker.js';
+import Toggle from './Fields/Toggle.js';
 
-const InputDate = (props) => {
+const InputToggle = (props) => {
   return (
     <Field
       {...props}
-      component={DatePicker}
+      component={Toggle}
     />
   );
 }
 
-export default InputDate;
+export default InputToggle;

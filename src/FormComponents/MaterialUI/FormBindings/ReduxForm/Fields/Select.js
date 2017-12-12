@@ -1,34 +1,39 @@
 import React from 'react'
-import { CheckBoxUI } from '../Config/UIPicker.js';
-import FormInputHelperText from '../Components/Common/FormInputHelper.js';
 
-const InputCheckbox = ({ 
+import FormInputHelperText from '../Common/FormInputHelper.js';
+
+const InputSelect = ({ 
   label, 
   labelStyle,
-  wrapperDivStyle, 
+  wrapperDivStyle,
+  inputDivStyle,
   meta,
   wrapperHelperStyle,
   errorSpanStyle,
-  warningSpanStyle,
-  ...props 
+  warningSpanStyle,  
+  ...props
 }) => {
   const handleChange = (e, result) => {
-    if (result && result.checked) {
-      props.input.onChange(result.checked);  
+    if (result && result.value) {
+      props.input.onChange(result.value);  
     } else {
       props.input.onChange(e)
     }
-  }
+  } 
 
   return (
     <div style={wrapperDivStyle}>
-      <label style={labelStyle}>
+      <label
+        style={labelStyle}
+      >
         {label}
       </label>
-      <CheckBoxUI
-        {...props}
-        handleChange={handleChange}
-      />
+      <div style={inputDivStyle}>
+        <SelectUI
+          {...props}
+          onChange={handleChange}
+        />
+      </div>
       <div style={wrapperHelperStyle}>
         <FormInputHelperText
           {...props}
@@ -43,4 +48,4 @@ const InputCheckbox = ({
   )
 }
 
-export default InputCheckbox;
+export default InputSelect;

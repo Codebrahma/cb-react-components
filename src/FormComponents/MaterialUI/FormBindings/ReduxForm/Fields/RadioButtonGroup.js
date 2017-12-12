@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { RadioButtonGroupUI } from '../Config/UIPicker.js';
-import FormInputHelperText from '../Components/Common/FormInputHelper.js';
+
+import FormInputHelperText from '../Common/FormInputHelper.js';
 
 import map from 'lodash/map';
 

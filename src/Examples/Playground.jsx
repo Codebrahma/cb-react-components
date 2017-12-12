@@ -10,7 +10,7 @@ import {
   Slider,
   Select,
   DatePicker,
-} from '../FormComponents/MaterialUI/Components';
+} from '../FormComponents/MaterialUI/Formbindings/ReduxForm';
 
 import { 
   Form,

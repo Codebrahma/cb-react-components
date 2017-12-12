@@ -1,6 +1,6 @@
 import React from 'react'
-import { ToggleUI } from '../Config/UIPicker.js';
-import FormInputHelperText from '../Components/Common/FormInputHelper.js';
+
+import FormInputHelperText from '../Common/FormInputHelper.js';
 
 const InputCheckbox = ({ 
   label, 
