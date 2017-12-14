@@ -8,11 +8,10 @@ import {
   Slider,
   Select,
   DatePicker,
-} from '../FormComponents/SemanticUI/FormComponents/ReduxForm/Components/index.js';
+} from '../FormComponents/SemanticUI/FormBindings/ReduxForm';
 
-import { Form, FormHOC } from '../FormComponents/SemanticUI/FormComponents/ReduxForm/';
+import { Form, FormHOC } from '../FormComponents/SemanticUI/FormBindings/ReduxForm/';
 
-import { isRequired } from '../FormBindings/Validations/index.js';
 
 export const countryOptions = [{
   key: 'India',
@@ -49,27 +48,6 @@ const styles = {
   inputDivStyle: {
     width: '250px',
   }
-};
-
-const fieldsValidationConfig = {
-  'emailAddress': {
-    validations: [isRequired("Enter a valid email")],
-  },
-  'optionSelected': {
-    validations: [(v) => ((`Invalid ${v}`))],
-  },
-  'checkbox': {
-    validations: [(v) => ((`Invalid ${v}`))],
-  },
-  'switch': {
-    validations: [(v) => ((`Invalid ${v}`))],
-  },
-  'slider': {
-    validations: [(v) => ((`Invalid ${v}`))],
-  },
-  'chkbxgrp': {
-    validations: [(v) => ((`Invalid ${JSON.stringify(v)}`))],
-  },
 };
 
 class App extends Component {
