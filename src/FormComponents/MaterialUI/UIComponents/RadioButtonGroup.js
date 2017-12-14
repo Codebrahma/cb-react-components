@@ -5,12 +5,13 @@ import MuiRadio from './Radio';
 import { RadioGroup } from 'material-ui/Radio';
 import { omit, pick, concat } from 'lodash';
 
-const radioComponentsFromOptions = (radioOptions = [], selectedValue) => {
-  return radioOptions.map((radioProps) => (
-    <MuiRadio
-      {...radioProps}
-      key={radioProps.value}
-      checked={selectedValue === radioProps.value}
+const radioComponentsFromOptions = (options = [], selectedOption) => {
+  return options.map((option) => (
+    <MuiRadio 
+      label={option} 
+      value={option}
+      checked={option === selectedOption}
+      key={option}
     />
   )); 
 }
@@ -18,73 +19,49 @@ const radioComponentsFromOptions = (radioOptions = [], selectedValue) => {
 const MuiRadioGroup = ({
   label,
   name,
+  input,
   value,
   children,
   onChange,
   required,
   error,
-  radioOptions,
+  options,
   helperText,
   errorMessage,
   disabled,
   ...restProps,
 }) => {
-
-  const radioGroupSelectedValue = value;
-  const radioComponents = children ? children : radioComponentsFromOptions(radioOptions, radioGroupSelectedValue);
+  const selectedOption = input.value;
+  const radioComponents = children ? children : radioComponentsFromOptions(options, selectedOption);
   const helperDescription = error ? errorMessage : helperText;
-
   return (
-    <FormControl component="fieldset" required={required} error={error} disabled={disabled}>
-      <FormLabel component="legend">{label}</FormLabel>
-      <RadioGroup
-        aria-label={name}
-        name={name}
-        value={value}
-        onChange={onChange}
-        {...restProps}
-      >
-        {radioComponents}
-      </RadioGroup>
-      <FormHelperText>{helperDescription}</FormHelperText>
-    </FormControl>
+    <RadioGroup
+      aria-label={name}
+      name={name}
+      value={selectedOption}
+      onChange={onChange}
+    >
+      {radioComponents}
+    </RadioGroup>
   )
 }
 
 MuiRadioGroup.propTypes = {
   label: PropTypes.string,
   name: PropTypes.string,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  value: PropTypes.bool,
   children: PropTypes.node,
   onChange: PropTypes.func,
   required: PropTypes.bool,
   error: PropTypes.bool,
-  radioOptions: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      disabled: PropTypes.bool,
-      name: PropTypes.string,
-      onChange: PropTypes.func,
-      inputProps: PropTypes.object,
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-      ]),
-    }),
-  ),
+  options: PropTypes.arrayOf(PropTypes.string),
   helperText: PropTypes.string,
   errorMessage: PropTypes.string,
 }
 
 MuiRadioGroup.defaultProps = {
   label: '',
-  radioOptions: {
-    disabled: false,
-    label: '',
-  }
+  options: ['']
 }
 
 export default MuiRadioGroup;

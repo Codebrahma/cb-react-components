@@ -88,6 +88,10 @@ class App extends Component {
             label='Country'
             options={countryOptions}
             {...styles}
+          <RadioButtonGroup 
+            name="tshirtSize"
+            label="T-shirt Size"
+            options={['S', 'M', 'L', 'XL', 'XXL']}
           />
           <CheckBox 
             name="acceptTerms"
