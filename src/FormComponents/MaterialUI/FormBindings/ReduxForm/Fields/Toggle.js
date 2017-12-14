@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { ToggleUI } from '../../../UIComponents';
 import FormInputHelperText from '../Common/FormInputHelper.js';
 
 const InputCheckbox = ({ 
@@ -13,7 +13,7 @@ const InputCheckbox = ({
   warningSpanStyle,
   ...props
 }) => {
-  const handleChange = (e, { checked }) => {
+  const handleChange = (e, checked) => {
     props.input.onChange(checked);
   }
   return (

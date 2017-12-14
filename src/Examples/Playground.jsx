@@ -93,6 +93,10 @@ class App extends Component {
             label="T-shirt Size"
             options={['S', 'M', 'L', 'XL', 'XXL']}
           />
+          <Toggle 
+            name="toggle"
+            label="Include Special surprise?"
+          />
           <CheckBox 
             name="acceptTerms"
             label="I accept the terms and conditions"
