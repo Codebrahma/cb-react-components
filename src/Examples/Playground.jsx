@@ -7,10 +7,9 @@ import {
   Toggle,
   Slider,
   Select,
-  DatePicker,
 } from '../FormComponents/SemanticUI/FormBindings/ReduxForm';
 
-import { Form, FormHOC } from '../FormComponents/SemanticUI/FormBindings/ReduxForm/';
+import { Form, FormHOC } from '../FormComponents/SemanticUI/FormBindings/ReduxForm/api';
 
 
 export const countryOptions = [{
@@ -64,7 +63,6 @@ class App extends Component {
       <div>
         <Form
           handleSubmit={this.handleSubmit}
-          fieldsValidationConfig={fieldsValidationConfig}          
         >
           <TextField
             name="emailAddress"
@@ -89,11 +87,6 @@ class App extends Component {
             {...styles}
           />
 
-          <DatePicker
-            name='dob'  
-            label='Born On'
-            {...styles}
-          />
           <div>
             <button>
               Submit
