@@ -1,3 +1,4 @@
+// Form elements to be imported
 import CheckBoxFormBinder from './CheckBox.js';
 import DatePickerFormBinder from './DatePicker.js';
 import RadioButtonGroupFormBinder from './RadioButtonGroup.js';

@@ -1,28 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FormControlLabel } from 'material-ui/Form';
 import Checkbox from 'material-ui/Checkbox';
-import { omit } from 'lodash';
 
-const MuiCheckBox = ({ label, disabled, checked, name, onChange, value, ...restProps }) => {
-  const wrapperCheckboxProps = {
-    checked,
-    name,
-    onChange,
-    value,
-  };
-
+const MuiCheckBox = ({ disabled, value, name, onChange }) => {
   return (
-    <FormControlLabel
-      disabled={disabled}
-      control={
-        <Checkbox
-          {...wrapperCheckboxProps}
-          inputProps={restProps['inputProps']}
-          {...(omit(restProps, ['inputProps'])) }
-        />
-      }
-      label={label}
+    <Checkbox
+      checked={value}
+      name={name}
+      onChange={onChange}
+      disabled={disabled}  
     />
   )
 }
@@ -33,16 +19,13 @@ MuiCheckBox.propTypes = {
   checked: PropTypes.bool,
   name: PropTypes.string,
   onChange: PropTypes.func,
-  value: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.number,
-  ]),
+  value: PropTypes.bool,
 }
 
 MuiCheckBox.defaultProps = {
   disabled: false,
-  checked: false,
   label: '',
+  value: false,
 }
 
 export default MuiCheckBox;

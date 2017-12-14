@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import {
   TextField,
+  CheckBox,
   CheckBoxGroup,
   RadioButtonGroup,
   Toggle,
@@ -54,11 +55,11 @@ const styles = {
   }
 };
 
+
 class App extends Component {
   constructor(props) {
     super(props);
   }
-
 
   render() {
     return (
@@ -88,7 +89,11 @@ class App extends Component {
             options={countryOptions}
             {...styles}
           />
-
+          <CheckBox 
+            name="acceptTerms"
+            label="I accept the terms and conditions"
+            {...styles}
+          />
           <div>
             <button>
               Submit

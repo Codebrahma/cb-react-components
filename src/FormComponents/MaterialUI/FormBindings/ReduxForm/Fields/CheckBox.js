@@ -1,24 +1,21 @@
 import React from 'react'
-
+import { CheckBoxUI } from '../../../UIComponents';
 import FormInputHelperText from '../Common/FormInputHelper.js';
-
+import isBoolean from 'lodash/isBoolean';
 
 const InputCheckbox = ({ 
   label, 
   labelStyle,
   wrapperDivStyle, 
+  input,
   meta,
   wrapperHelperStyle,
   errorSpanStyle,
   warningSpanStyle,
   ...props 
 }) => {
-  const handleChange = (e, result) => {
-    if (result && result.checked) {
-      props.input.onChange(result.checked);  
-    } else {
-      props.input.onChange(e)
-    }
+  const handleChange = (e, checked) => {
+    input.onChange(checked);
   }
 
   return (
@@ -28,7 +25,8 @@ const InputCheckbox = ({
       </label>
       <CheckBoxUI
         {...props}
-        handleChange={handleChange}
+        {...input}
+        onChange={handleChange}
       />
       <div style={wrapperHelperStyle}>
         <FormInputHelperText
