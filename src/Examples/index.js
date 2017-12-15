@@ -1,5 +1,5 @@
 import React from 'react';
-import Playground from './Playground.jsx';
+import Playground from './Demo';
 
 const Demo = () => {
   const onSubmit = (values) => {
