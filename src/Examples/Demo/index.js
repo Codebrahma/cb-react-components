@@ -7,7 +7,7 @@ import {
   Toggle,
   CheckBox,
   Select,
-} from '../../FormComponents/MaterialUI/FormBindings/ReduxForm';
+} from '../../FormComponents/SemanticUI/FormBindings/ReduxForm';
 
 import { 
   styles
