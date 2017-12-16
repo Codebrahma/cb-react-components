@@ -4,15 +4,18 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import {
   TextField,
+  CheckBox,
   CheckBoxGroup,
   RadioButtonGroup,
   Toggle,
   Slider,
   Select,
-} from '../FormComponents/SemanticUI/FormBindings/ReduxForm';
+} from '../FormComponents/MaterialUI/Formbindings/ReduxForm';
 
-import { Form, FormHOC } from '../FormComponents/SemanticUI/FormBindings/ReduxForm/api';
-
+import { 
+  Form,
+  FormHOC, 
+} from '../FormComponents/MaterialUI';
 
 export const countryOptions = [{
   key: 'India',
@@ -34,6 +37,22 @@ export const genderOptions = [{
   value: 'female',
 }];
 
+export const tShirtOptions = [{
+  key: 'L',
+  text: 'L',
+  value: 'L'
+},
+{
+  key: 'XL',
+  text: 'XL',
+  value: 'XL'
+},
+{
+  key: 'XXL',
+  text: 'XXL',
+  value: 'XXL'
+}
+]
 const styles = {
   wrapperDivStyle: {
     display: 'flex',
@@ -51,11 +70,11 @@ const styles = {
   }
 };
 
+
 class App extends Component {
   constructor(props) {
     super(props);
   }
-
 
   render() {
     return (
@@ -68,24 +87,33 @@ class App extends Component {
             label="Email Address"
             {...styles}
           />
-          <RadioButtonGroup
-            label="RadioGroup"
-            name="optionSelected"
-            options={countryOptions}
-            {...styles}
-          />
+          
           <Toggle
             name='switch'  
             label='Toggle Switch'
             {...styles}
           />
+          <RadioButtonGroup 
+            name="tshirtSize"
+            label="T-shirt Size"
+            options={tShirtOptions}
+            {...styles}            
+          />
+          <Toggle 
+            name="toggle"
+            label="Include Special surprise?"
+            {...styles}
+          />
+          <CheckBox 
+            name="acceptTerms"
+            label="I accept the terms and conditions"
+            {...styles}
+          />
           <Select
-            name='Country'  
-            label='Country'
+            name="country"
             options={countryOptions}
             {...styles}
           />
-
           <div>
             <button>
               Submit
@@ -100,3 +128,5 @@ class App extends Component {
 export default reduxForm({
   form: 'demo',
 })(App);
+
+

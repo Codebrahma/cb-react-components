@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { FormControlLabel } from 'material-ui/Form';
 import Radio from 'material-ui/Radio';
-import { omit, pick, concat } from 'lodash';
+import pick from 'lodash/pick';
 
 const MuiRadio = (muiRadioProps) => {
   const radioPropsKeys = ['name', 'onChange', 'checked', 'disabled', 'inputProps'];
@@ -10,16 +10,14 @@ const MuiRadio = (muiRadioProps) => {
 
   const wrapperRadioProps = pick(muiRadioProps, radioPropsKeys);
   const formControlLabelProps = pick(muiRadioProps, formControlLabelPropsKeys);
-  const restProps = omit(muiRadioProps, concat(radioPropsKeys, formControlLabelPropsKeys));
 
   return (
     <FormControlLabel
-      label={formControlLabelProps['text']}
+      label={formControlLabelProps['value']}
       {...formControlLabelProps}
       control={(
         <Radio
           {...wrapperRadioProps}
-          {...restProps}
         />
       )} 
     />
