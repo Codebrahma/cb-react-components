@@ -62,7 +62,7 @@ class App extends Component {
     return (
       <div>
         <Form
-          handleSubmit={this.handleSubmit}
+          onSubmit={this.handleSubmit}
         >
           <TextField
             name="emailAddress"

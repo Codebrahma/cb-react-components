@@ -40,28 +40,34 @@ class App extends Component {
           <TextField
             name="name"
             label="Name"
+            {...styles}
           />
           <TextField
             name="email"
             label="email"
+            {...styles}
           />
           <TextField
             name="age"
             label="Age"
+            {...styles}
           />
           <RadioButtonGroup
             label="Gender"
             name="gender"
             options={genderOptions}
+            {...styles}
           />
           <Toggle
             name='isMember'  
             label='Already a member ?'
+            {...styles}
           />
           <Select
             name="country"
             label="country"
             options={countryOptions}
+            {...styles}
           />
           <div>
             <button>
