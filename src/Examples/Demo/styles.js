@@ -11,6 +11,9 @@ export const styles = {
     
     alignItems: 'center',
   },
+  wrapperHelperStyle: {
+    minWidth: '200px',
+  },
   labelStyle: {
     display: 'inline-block',
     minWidth: '150px',

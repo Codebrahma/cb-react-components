@@ -55,7 +55,7 @@ const MuiSelect = ({
 
   const helperDescription = error ? errorMessage : helperText;
   return (
-    <FormControl error={wrapperFormProps.error} disabled={wrapperFormProps.disabled}>
+    <FormControl error={wrapperFormProps.error} disabled={wrapperFormProps.disabled} fullWidth>
       <InputLabel htmlFor="select-input">{label}</InputLabel>
       <Select
         value={input.value}

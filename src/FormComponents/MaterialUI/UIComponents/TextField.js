@@ -20,6 +20,7 @@ const MuiTextField = ({ label, disabled, onChange, value, helperText, errorMessa
       inputProps={restProps['inputProps']}
       helperText={helperDescription}
       error={error}
+      fullWidth
       {...(omit(restProps, ['InputProps', 'inputProps']))}
     />
   )

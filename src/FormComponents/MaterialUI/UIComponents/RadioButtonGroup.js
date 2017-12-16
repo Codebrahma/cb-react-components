@@ -40,6 +40,7 @@ const MuiRadioGroup = ({
       name={name}
       value={selectedOption}
       onChange={onChange}
+      fullWidth
     >
       {radioComponents}
     </RadioGroup>
