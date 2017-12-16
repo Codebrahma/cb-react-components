@@ -43,7 +43,6 @@
     "file-loader": "^1.1.5",
     "lodash": "^4.17.4",
     "material-ui": "^1.0.0-beta.23",
-    "material-ui-slider-label": "git+https://github.com/tariqwest/material-ui-slider-label.git",
     "material-ui-stable": "^0.19.5",
     "rc-datepicker": "^5.0.10",
     "react": "^15.6.2",
