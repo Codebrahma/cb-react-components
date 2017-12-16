@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { TextFieldUI } from '../Config/UIPicker.js';
-import FormInputHelperText from '../Components/Common/FormInputHelper.js';
+import { TextFieldUI } from '../../../UIComponents';
+import FormInputHelperText from '../Common/FormInputHelper.js';
 
 const InputExampleInput = ({ 
   placeholder, 

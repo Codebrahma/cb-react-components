@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
-import Toggle from '../Fields/Toggle.js';
+import CheckBox from './Fields/CheckBox.js';
 
-const InputToggle = (props) => {
+const InputCheckbox = (props) => {
   return (
     <Field
       {...props}
-      component={Toggle}
+      component={CheckBox}
     />
   );
 }
 
-export default InputToggle;
+export default InputCheckbox;

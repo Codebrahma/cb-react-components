@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Field } from 'redux-form';
 
-import CheckBox from '../Fields/CheckBox.js';
+import DatePicker from './Fields/DatePicker.js';
 
-const InputCheckbox = (props) => {
+const InputDate = (props) => {
   return (
     <Field
       {...props}
-      component={CheckBox}
+      component={DatePicker}
     />
   );
 }
 
-export default InputCheckbox;
+export default InputDate;

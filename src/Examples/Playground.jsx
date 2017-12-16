@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 
+import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form';
 import {
   TextField,
   CheckBoxGroup,
@@ -7,10 +9,10 @@ import {
   Toggle,
   Slider,
   Select,
-  DatePicker,
-} from '../FormBindings/FormsyForm/Components/';
+} from '../FormComponents/SemanticUI/FormBindings/ReduxForm';
 
-import { Form } from '../FormBindings/FormsyForm';
+import { Form, FormHOC } from '../FormComponents/SemanticUI/FormBindings/ReduxForm/api';
+
 
 export const countryOptions = [{
   key: 'India',
@@ -49,42 +51,17 @@ const styles = {
   }
 };
 
-const fieldsValidationConfig = {
-  'emailAddress': {
-    validations: [(v) => ((`VName ${v}`))],
-  },
-  'optionSelected': {
-    validations: [(v) => ((`VName ${v}`))],
-  },
-  'checkbox': {
-    validations: [(v) => ((`VName ${v}`))],
-  },
-  'switch': {
-    validations: [(v) => ((`VName ${v}`))],
-  },
-  'slider': {
-    validations: [(v) => ((`VName ${v}`))],
-  },
-  'chkbxgrp': {
-    validations: [(v) => ((`VName ${JSON.stringify(v)}`))],
-  },
-};
-
 class App extends Component {
   constructor(props) {
     super(props);
   }
 
-  handleSubmit = (data) => {
-    console.log(data);
-  }
 
   render() {
     return (
       <div>
-        <Form
-          onSubmit={this.handleSubmit}
-          fieldsValidationConfig={fieldsValidationConfig}          
+        <form
+          onSubmit={this.props.handleSubmit}
         >
           <TextField
             name="emailAddress"
@@ -102,36 +79,24 @@ class App extends Component {
             label='Toggle Switch'
             {...styles}
           />
-          <Slider
-            name="slider"
-            label="slider"
+          <Select
+            name='Country'  
+            label='Country'
+            options={countryOptions}
             {...styles}
           />
 
-          <CheckBoxGroup
-            label='CheckBox Group'
-            name='chkbxgrp'
-            helperText={'Helper Text'}
-            required={true}
-            disabled={false}
-            checkBoxOptions={
-              [
-                { label: 'Rails', value: 'rails', disabled: false },
-                { label: 'Ruby', value: 'ruby', disabled: false },
-                { label: 'Electron', value: 'electron', disabled: true },
-                { label: 'React', value: 'react', disabled: false },
-              ]
-            }
-          />
           <div>
             <button>
               Submit
             </button>
           </div>
-        </Form>
+        </form>
       </div>
     )
   }
 }
 
-export default App;
+export default reduxForm({
+  form: 'demo',
+})(App);

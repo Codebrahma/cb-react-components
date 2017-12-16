@@ -1,8 +1,7 @@
 import React from 'react';
 import omit from 'lodash/omit';
-
-import { DatePickerUI } from '../Config/UIPicker.js';
-import FormInputHelperText from '../Components/Common/FormInputHelper.js';
+import { DatePickerUI } from '../../../UIComponents';
+import FormInputHelperText from '../Common/FormInputHelper.js';
 
 const InputDate = ({ 
   meta, 

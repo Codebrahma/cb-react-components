@@ -1,7 +1,7 @@
 import React from 'react'
-import { CheckBoxUI } from '../Config/UIPicker.js';
-import FormInputHelperText from '../Components/Common/FormInputHelper.js';
+import FormInputHelperText from '../Common/FormInputHelper.js';
 
+import { CheckBoxUI } from '../../../UIComponents';
 const InputCheckbox = ({ 
   label, 
   labelStyle,

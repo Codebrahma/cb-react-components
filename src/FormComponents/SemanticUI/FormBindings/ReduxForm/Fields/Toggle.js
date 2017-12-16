@@ -1,9 +1,7 @@
 import React from 'react'
-
-import { SelectUI } from '../Config/UIPicker.js';
-import FormInputHelperText from '../Components/Common/FormInputHelper.js';
-
-const InputSelect = ({ 
+import FormInputHelperText from '../Common/FormInputHelper.js';
+import { ToggleUI } from '../../../UIComponents';
+const InputCheckbox = ({ 
   label, 
   labelStyle,
   wrapperDivStyle,
@@ -11,28 +9,21 @@ const InputSelect = ({
   meta,
   wrapperHelperStyle,
   errorSpanStyle,
-  warningSpanStyle,  
+  warningSpanStyle,
   ...props
 }) => {
-  const handleChange = (e, result) => {
-    if (result && result.value) {
-      props.input.onChange(result.value);  
-    } else {
-      props.input.onChange(e)
-    }
-  } 
-
+  const handleChange = (e, { checked }) => {
+    props.input.onChange(checked);
+  }
   return (
     <div style={wrapperDivStyle}>
-      <label
-        style={labelStyle}
-      >
+      <label style={labelStyle}>
         {label}
       </label>
       <div style={inputDivStyle}>
-        <SelectUI
-          {...props}
+        <ToggleUI
           onChange={handleChange}
+          {...props}
         />
       </div>
       <div style={wrapperHelperStyle}>
@@ -49,4 +40,4 @@ const InputSelect = ({
   )
 }
 
-export default InputSelect;
+export default InputCheckbox;

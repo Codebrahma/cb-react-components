@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 
 import map from 'lodash/map';
 
-import Select from '../Fields/Select.js';
+import Select from './Fields/Select.js';
 
 class InputSelect extends Component {
   constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import Playground from './Playground.jsx';
+import Playground from './Demo';
 
 const Demo = () => {
   const onSubmit = (values) => {
@@ -7,8 +7,8 @@ const Demo = () => {
   }
   return (
     <Playground
-      onSubmit={onSubmit}
       name='DemoForm'
+      onSubmit={onSubmit}
     />
   )
 }
