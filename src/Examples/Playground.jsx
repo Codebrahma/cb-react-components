@@ -37,6 +37,22 @@ export const genderOptions = [{
   value: 'female',
 }];
 
+export const tShirtOptions = [{
+  key: 'L',
+  text: 'L',
+  value: 'L'
+},
+{
+  key: 'XL',
+  text: 'XL',
+  value: 'XL'
+},
+{
+  key: 'XXL',
+  text: 'XXL',
+  value: 'XXL'
+}
+]
 const styles = {
   wrapperDivStyle: {
     display: 'flex',
@@ -80,11 +96,13 @@ class App extends Component {
           <RadioButtonGroup 
             name="tshirtSize"
             label="T-shirt Size"
-            options={['S', 'M', 'L', 'XL', 'XXL']}
+            options={tShirtOptions}
+            {...styles}            
           />
           <Toggle 
             name="toggle"
             label="Include Special surprise?"
+            {...styles}
           />
           <CheckBox 
             name="acceptTerms"

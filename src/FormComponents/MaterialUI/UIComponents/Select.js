@@ -53,10 +53,7 @@ const MuiSelect = ({
     disabled,
   }
 
-  // const wrapperInputComponent = input ? input : (<Input id="select-input"/>);
-  // const optionComponents = children ? children : constructSelectOptions(selectOptions, native);
   const helperDescription = error ? errorMessage : helperText;
-  console.log('select options ', selectOptions);
   return (
     <FormControl error={wrapperFormProps.error} disabled={wrapperFormProps.disabled}>
       <InputLabel htmlFor="select-input">{label}</InputLabel>

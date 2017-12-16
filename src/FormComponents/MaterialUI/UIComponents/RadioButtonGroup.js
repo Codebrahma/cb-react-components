@@ -6,12 +6,12 @@ import { RadioGroup } from 'material-ui/Radio';
 import { omit, pick, concat } from 'lodash';
 
 const radioComponentsFromOptions = (options = [], selectedOption) => {
-  return options.map((option) => (
+  return options.map(({ key, value, text }) => (
     <MuiRadio 
-      label={option} 
-      value={option}
-      checked={option === selectedOption}
-      key={option}
+      label={text} 
+      value={value}
+      checked={value === selectedOption}
+      key={key}
     />
   )); 
 }
