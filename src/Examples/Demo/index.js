@@ -52,18 +52,19 @@ class App extends Component {
           {...styles}            
         />
         <Toggle 
-          name="toggle"
-          label="Include Special surprise?"
-          {...styles}
-        />
-        <CheckBox 
-          name="acceptTerms"
-          label="I accept the terms and conditions"
+          name="surprise"
+          label="Special surprise?"
           {...styles}
         />
         <Select
           name="country"
+          label="Country"
           options={countryOptions}
+          {...styles}
+        />
+        <CheckBox 
+          name="acceptTerms"
+          label="Accept Terms ?"
           {...styles}
         />
         <div>
@@ -71,7 +72,7 @@ class App extends Component {
             Submit
           </button>
         </div>
-      </form>
+      </Form>
       </div>
     )
   }
@@ -79,4 +80,5 @@ class App extends Component {
 
 export default reduxForm({
   form: 'demo',
+  fieldsValidationConfig: validationConfig,
 })(App);
