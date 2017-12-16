@@ -3,17 +3,11 @@ import { connect } from 'react-redux';
 import { reduxForm } from 'redux-form';
 import {
   TextField,
-  CheckBoxGroup,
   RadioButtonGroup,
   Toggle,
-  Slider,
+  CheckBox,
   Select,
-} from '../../FormComponents/SemanticUI/FormBindings/ReduxForm';
-
-import { 
-  Form, 
-  FormHOC 
-} from '../../FormComponents/SemanticUI/FormBindings/ReduxForm/api';
+} from '../../FormComponents/MaterialUI/FormBindings/ReduxForm';
 
 import { 
   styles
@@ -21,6 +15,7 @@ import {
 import {
   genderOptions,
   countryOptions,
+  tShirtOptions
 } from './mock';
 
 class App extends Component {
@@ -35,47 +30,47 @@ class App extends Component {
   render() {
     return (
       <div style={styles.formWrapperStyle}> 
-        <form
-          onSubmit={this.props.handleSubmit}
-        >
-          <TextField
-            name="name"
-            label="Name"
-            {...styles}
-          />
-          <TextField
-            name="email"
-            label="email"
-            {...styles}
-          />
-          <TextField
-            name="age"
-            label="Age"
-            {...styles}
-          />
-          <RadioButtonGroup
-            label="Gender"
-            name="gender"
-            options={genderOptions}
-            {...styles}
-          />
-          <Toggle
-            name='isMember'  
-            label='Already a member ?'
-            {...styles}
-          />
-          <Select
-            name="country"
-            label="country"
-            options={countryOptions}
-            {...styles}
-          />
-          <div>
-            <button>
-              Submit
-            </button>
-          </div>
-        </form>
+      <form
+        onSubmit={this.props.handleSubmit}
+      >
+        <TextField
+          name="emailAddress"
+          label="Email Address"
+          {...styles}
+        />
+        
+        <Toggle
+          name='switch'  
+          label='Toggle Switch'
+          {...styles}
+        />
+        <RadioButtonGroup 
+          name="tshirtSize"
+          label="T-shirt Size"
+          options={tShirtOptions}
+          {...styles}            
+        />
+        <Toggle 
+          name="toggle"
+          label="Include Special surprise?"
+          {...styles}
+        />
+        <CheckBox 
+          name="acceptTerms"
+          label="I accept the terms and conditions"
+          {...styles}
+        />
+        <Select
+          name="country"
+          options={countryOptions}
+          {...styles}
+        />
+        <div>
+          <button>
+            Submit
+          </button>
+        </div>
+      </form>
       </div>
     )
   }

@@ -10,12 +10,8 @@ import {
   Toggle,
   Slider,
   Select,
-} from '../FormComponents/MaterialUI/Formbindings/ReduxForm';
+} from '../FormComponents/SemanticUI/Formbindings/ReduxForm';
 
-import { 
-  Form,
-  FormHOC, 
-} from '../FormComponents/MaterialUI';
 
 export const countryOptions = [{
   key: 'India',
@@ -37,22 +33,7 @@ export const genderOptions = [{
   value: 'female',
 }];
 
-export const tShirtOptions = [{
-  key: 'L',
-  text: 'L',
-  value: 'L'
-},
-{
-  key: 'XL',
-  text: 'XL',
-  value: 'XL'
-},
-{
-  key: 'XXL',
-  text: 'XXL',
-  value: 'XXL'
-}
-]
+
 const styles = {
   wrapperDivStyle: {
     display: 'flex',

@@ -21,3 +21,20 @@ export const countryOptions = [{
   text: 'UK',
   value: 'UK',
 }];
+
+export const tShirtOptions = [{
+  key: 'L',
+  text: 'L',
+  value: 'L'
+},
+{
+  key: 'XL',
+  text: 'XL',
+  value: 'XL'
+},
+{
+  key: 'XXL',
+  text: 'XXL',
+  value: 'XXL'
+}
+]
