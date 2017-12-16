@@ -8,6 +8,7 @@ const Demo = () => {
   return (
     <Playground
       name='DemoForm'
+      onSubmit={onSubmit}
     />
   )
 }

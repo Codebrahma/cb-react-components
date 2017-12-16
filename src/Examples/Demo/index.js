@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-
+import { connect } from 'react-redux';
+import { reduxForm } from 'redux-form';
 import {
   TextField,
   CheckBoxGroup,
@@ -34,8 +35,8 @@ class App extends Component {
   render() {
     return (
       <div style={styles.formWrapperStyle}> 
-        <Form
-          handleSubmit={this.handleSubmit}
+        <form
+          onSubmit={this.props.handleSubmit}
         >
           <TextField
             name="name"
@@ -74,10 +75,12 @@ class App extends Component {
               Submit
             </button>
           </div>
-        </Form>
+        </form>
       </div>
     )
   }
 }
 
-export default FormHOC(App);
+export default reduxForm({
+  form: 'demo',
+})(App);
