@@ -1,4 +1,5 @@
 import React from 'react';
+import map from 'lodash/map';
 import PropTypes from 'prop-types';
 import Input, { InputLabel } from 'material-ui/Input';
 import { MenuItem } from 'material-ui/Menu';
@@ -7,30 +8,16 @@ import Select from 'material-ui/Select';
 import { concat } from 'lodash';
 // empty option from props
 
-const constructOption = (OptionTagComponent, optionPair) => {
-  return (
-    <MenuItem
-      component={'option'}
-      {...optionPair}
-      value={optionPair['value']}
-      key={optionPair['value']}
-      disabled={optionPair['disabled']}
+const constructSelectOptions = (selectOptions) => {
+  const result = map(selectOptions, ({ value, key, text }) => (
+    <MenuItem 
+      key={key}
+      value={value}
     >
-      {optionPair['label']}
+      {text}
     </MenuItem>
-  )
-}
-
-const constructSelectOptions = (selectOptions, isNative = false) => {
-  const OptionTagComponent = isNative ? (<React.DOM.option/>) : (<MenuItem/>);
-  const emptyOption = (
-    <MenuItem value='' key='empty-Option' />
-  );
-  const optionComponents = selectOptions.map((optionPair) => {
-    return constructOption(OptionTagComponent, optionPair);
-  });
-
-  return (concat([emptyOption], optionComponents));
+  ));
+  return result;
 }
 
 const MuiSelect = ({
@@ -39,7 +26,7 @@ const MuiSelect = ({
   onChange,
   input,
   renderValue,
-  selectOptions,
+  options: selectOptions,
   helperText,
   error,
   errorMessage,
@@ -66,22 +53,22 @@ const MuiSelect = ({
     disabled,
   }
 
-  const wrapperInputComponent = input ? input : (<Input id="select-input"/>);
-  const optionComponents = children ? children : constructSelectOptions(selectOptions, native);
+  // const wrapperInputComponent = input ? input : (<Input id="select-input"/>);
+  // const optionComponents = children ? children : constructSelectOptions(selectOptions, native);
   const helperDescription = error ? errorMessage : helperText;
-
+  console.log('select options ', selectOptions);
   return (
     <FormControl error={wrapperFormProps.error} disabled={wrapperFormProps.disabled}>
       <InputLabel htmlFor="select-input">{label}</InputLabel>
       <Select
-        {...restProps}
-        {...selectProps}
-        value={selectProps.value}
-        onChange={selectProps.onChange}
-        renderValue={selectProps.renderValue}
-        input={wrapperInputComponent}
+        value={input.value}
+        onChange={input.onChange}
+        input={<Input name="age" id="age-simple" />}
       >
-        {optionComponents}
+        <MenuItem value="">
+          <em>None</em>
+        </MenuItem>
+        {constructSelectOptions(selectOptions)}
       </Select>
       <FormHelperText>{helperDescription}</FormHelperText>
     </FormControl>

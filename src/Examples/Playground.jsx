@@ -10,7 +10,6 @@ import {
   Toggle,
   Slider,
   Select,
-  DatePicker,
 } from '../FormComponents/MaterialUI/Formbindings/ReduxForm';
 
 import { 
@@ -72,22 +71,12 @@ class App extends Component {
             label="Email Address"
             {...styles}
           />
-          <RadioButtonGroup
-            label="RadioGroup"
-            name="optionSelected"
-            options={countryOptions}
-            {...styles}
-          />
+          
           <Toggle
             name='switch'  
             label='Toggle Switch'
             {...styles}
           />
-          <Select
-            name='Country'  
-            label='Country'
-            options={countryOptions}
-            {...styles}
           <RadioButtonGroup 
             name="tshirtSize"
             label="T-shirt Size"
@@ -100,6 +89,11 @@ class App extends Component {
           <CheckBox 
             name="acceptTerms"
             label="I accept the terms and conditions"
+            {...styles}
+          />
+          <Select
+            name="country"
+            options={countryOptions}
             {...styles}
           />
           <div>
