@@ -1,29 +1,67 @@
-import React, { Component } from 'react'
-import { Menu } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import map from 'lodash/map';
 import MaterialUI from './Demo/MaterialUI';
 import SemanticUI from './Demo/SemanticUI';
+import { Button, Header, Image, Modal, Menu } from 'semantic-ui-react'
 
-const Demo = ({ activeItem }) => {
-  const onSubmit = (values) => {
-    console.log('submit is ', values);
-  }
-  return activeItem === 'material' ? (
-    <MaterialUI
-      name='DemoForm'
-      onSubmit={onSubmit}
-    />
-  ) : (
-    <SemanticUI
-      name='DemoForm'
-      onSubmit={onSubmit}
-    />
+const ModalWrapper = ({ open, onClose, children }) => {
+  console.log('children ', children)
+  return (
+    <Modal open={open} onClose={onClose}>
+      <Modal.Header>Submitted values</Modal.Header>
+      <Modal.Content>
+        {children}
+      </Modal.Content>
+    </Modal>
   )
 }
 
+class Demo extends React.Component {
+  constructor(props) {
+    super(props);
+
+  }
+  
+  render() {
+    if (this.props.showModal) {
+      return (
+        <ModalWrapper
+          open={this.props.modalOpen}
+        >
+          {
+            map(this.props.values, (value, key) => (
+              <div key={key}>
+                {key} : {value}
+              </div>
+            ))
+          }
+        </ModalWrapper>
+      )
+    } else {
+      return this.props.activeItem === 'material' ? (
+        <MaterialUI
+          name='DemoForm'
+          onSubmit={this.props.onSubmit}
+        />
+      ) : (
+        <SemanticUI
+          name='DemoForm'
+          onSubmit={this.props.onSubmit}
+        />
+      )
+    }
+    
+  }
+}
+
+
+  
+
 export default class MenuExampleBasic extends Component {
-  state = { activeItem: 'material' }
+  state = { activeItem: 'material', showModal: false, values: {} }
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  onSubmit = (values) => this.setState({ showModal: !this.state.showModal, values })
 
   render() {
     const { activeItem } = this.state
@@ -50,7 +88,10 @@ export default class MenuExampleBasic extends Component {
         
       </Menu>
       <Demo
+        showModal={this.state.showModal}
+        values={this.state.values}
         activeItem={activeItem}
+        onSubmit={this.onSubmit}
       />
     </div>
       
