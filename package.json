@@ -4,7 +4,8 @@
   "description": "Simple and lightweight Boilerplate for ReactJS projects",
   "scripts": {
     "lint": "eslint src",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack --config webpack.prod.js"
   },
   "repository": "https://github.com/noahlotzer/react-simple-boilerplate.git",
   "keywords": [

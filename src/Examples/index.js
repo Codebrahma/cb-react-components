@@ -23,21 +23,21 @@ class Demo extends React.Component {
   }
   
   render() {
-    if (this.props.showModal) {
-      return (
-        <ModalWrapper
-          open={this.props.modalOpen}
-        >
-          {
-            map(this.props.values, (value, key) => (
-              <div key={key}>
-                {key} : {value}
-              </div>
-            ))
-          }
-        </ModalWrapper>
-      )
-    } else {
+    // if (this.props.showModal) {
+    //   return (
+    //     <ModalWrapper
+    //       open={this.props.modalOpen}
+    //     >
+    //       {
+    //         map(this.props.values, (value, key) => (
+    //           <div key={key}>
+    //             {key} : {value}
+    //           </div>
+    //         ))
+    //       }
+    //     </ModalWrapper>
+    //   )
+    // } else {
       return this.props.activeItem === 'material' ? (
         <MaterialUI
           name='DemoForm'
@@ -51,21 +51,46 @@ class Demo extends React.Component {
       )
     }
     
-  }
+  // }
 }
 
 
   
 
 export default class MenuExampleBasic extends Component {
-  state = { activeItem: 'material', showModal: false, values: {} }
+  constructor(props) {
+    super(props);
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
-  onSubmit = (values) => this.setState({ showModal: !this.state.showModal, values })
+    this.state = { activeItem: 'material', showModal: false, values: {} };
+    this.handleItemClick = this.handleItemClick.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+  
+
+  handleItemClick (e, { name }) {
+    this.setState({ activeItem: name })
+  }
+
+  onSubmit (values) {
+    this.setState({ showModal: !this.state.showModal, values })
+  } 
 
   render() {
     const { activeItem } = this.state
-
+    
+    if (this.state.showModal) {
+      return (
+        <div show={this.state.showModal}>
+        {
+          map(this.state.values, (value, key) => (
+            <div key={key}>
+              {key} : {`${value}`}
+            </div>
+          ))
+        }
+        </div>
+      )
+    }
     return (
       <div>
       <Menu>
