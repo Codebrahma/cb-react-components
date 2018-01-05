@@ -5,3 +5,4 @@ dist
 package-lock.json
 .vscode
 src/Examples/Playground.jsx
+.idea/

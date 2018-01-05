@@ -6,7 +6,7 @@ Since slider is not implemented in latest beta version
 import lightBaseTheme from 'material-ui-stable/styles/baseThemes/lightBaseTheme';
 import MuiThemeProvider from 'material-ui-stable/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui-stable/styles/getMuiTheme';
-import Slider from 'material-ui-slider-label/Slider';
+// import Slider from 'material-ui-slider-label/Slider';
 import { FormHelperText } from 'material-ui/Form';
 
 const styles = {
