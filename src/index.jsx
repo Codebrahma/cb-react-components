@@ -19,7 +19,7 @@ import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import 'react-dates/initialize';
 
 // Root file
-import App from './Examples';
+import App from './Examples/index.js';
 
 // Required for Redux Forms
 const rootReducer = combineReducers({
