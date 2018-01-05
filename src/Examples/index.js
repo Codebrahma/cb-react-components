@@ -1,17 +1,12 @@
-import React, { Component } from 'react';
-
+import React from 'react';
 import PlayGroundForm from './PlayGroundForm.jsx';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-
-  }
-
+class App extends React.Component {
   render() {
     return (
       <div>
         <PlayGroundForm
+          onSubmit={() => { console.log('hello') }}
         />
       </div>
     )

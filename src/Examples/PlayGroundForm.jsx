@@ -1,13 +1,47 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class PlayGroundForm extends React.Component {
+import { omit } from 'lodash';
+
+import TextField from 'material-ui/TextField';
+import { reduxForm, Field } from 'redux-form';
+import { FormStructureHOC } from '../Root/MaterialUI_ReduxForm/Common/FormStructureHOC.js';
+
+
+const InputTextUI = (props) => (
+  <TextField
+    {...props}
+  />
+);
+
+const InputText = ({ name, ...props }) => (
+  <Field
+    name={name}
+    component={FormStructureHOC(InputTextUI)}
+    {...props}
+  />
+);
+
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
   render() {
     return (
       <div>
-        PlayGroundForm
+        <form>
+          <InputText
+            name="textinput"
+            label="Input Text"
+            removeFormLayout
+          />
+        </form>
       </div>
     )
   }
 }
 
-export default PlayGroundForm;
+export default reduxForm({
+  form: 'playground'
+})(App);
