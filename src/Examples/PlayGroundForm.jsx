@@ -1,25 +1,11 @@
+// Importing necessary libs
 import React, { Component } from 'react';
 
-import { omit } from 'lodash';
+import { reduxForm } from 'redux-form';
 
-import TextField from 'material-ui/TextField';
-import { reduxForm, Field } from 'redux-form';
-import { FormStructureHOC } from '../Root/MaterialUI_ReduxForm/Common/FormStructureHOC.js';
-
-
-const InputTextUI = (props) => (
-  <TextField
-    {...props}
-  />
-);
-
-const InputText = ({ name, ...props }) => (
-  <Field
-    name={name}
-    component={FormStructureHOC(InputTextUI)}
-    {...props}
-  />
-);
+import { 
+  InputText
+} from '../Root/MaterialUI_ReduxForm/Components/InputText';
 
 class App extends Component {
   constructor(props) {
@@ -34,7 +20,7 @@ class App extends Component {
           <InputText
             name="textinput"
             label="Input Text"
-            removeFormLayout
+            placeholder="Text Input"
           />
         </form>
       </div>
