@@ -51,6 +51,13 @@ const metaProps = [
 
 export const FormStructureHOC = (Component) => {
   return class WrapperComponent extends React.Component {
+
+    handleOnBlur = (event) => {
+      /* OnBlur emits undefined during onChange. So handle it separately */
+      if (event.target.value) {
+        this.props.input.onBlur(event.target.value);
+      }
+    }
     render() {
       // Get Props which are going to get consumed
       const consumableProps = pick(this.props, consumedDownProps);
@@ -90,6 +97,7 @@ export const FormStructureHOC = (Component) => {
                 <Component
                   {...passableProps}
                   {...consumableProps.input} 
+                  onBlur={this.handleOnBlur}
                 />
               </div>
               <ErrorDisplay

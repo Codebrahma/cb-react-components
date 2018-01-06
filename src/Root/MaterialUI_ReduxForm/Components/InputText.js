@@ -8,6 +8,7 @@ import { Field } from 'redux-form';
 const _InputTextUI = (props) => (
   <TextField
     {...props}
+    fullWidth
   />
 );
 

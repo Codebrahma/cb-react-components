@@ -13,13 +13,34 @@ import {
 const options = [
   {
     label: 'option-1',
-    value: 1,
+    value: 'Option 1',
   },
   {
     label: 'option-2',
-    value: 2,
+    value: 'Option 2',
   }
-]
+];
+
+const styles = {
+  wrapperDivStyle: {
+    
+  },
+  labelStyle: {
+    display: 'block',
+    float: 'left',
+    width: '100px',
+    height: '35px',
+    lineHeight: '35px',
+  },
+  inputDivStyle: {
+    float: 'left',
+    width: '200px',
+  },
+  errorDivStyle: {
+    clear: 'left',
+  },
+}
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -34,10 +55,13 @@ class App extends Component {
             name="textinput"
             label="Input Text"
             placeholder="Text Input"
+            {...styles}
           />
           <InputSelect
             name="select"
+            label="select box"
             options={options}
+            {...styles}
           />
         </form>
       </div>

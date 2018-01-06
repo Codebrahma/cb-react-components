@@ -6,25 +6,28 @@ import map from 'lodash/map';
 import Select from 'material-ui/Select';
 import { MenuItem } from 'material-ui/Menu'
 import { Field } from 'redux-form';
+import omit from 'lodash/omit';
 
 /* Simple InputSelect imported from Material UI */
-const _InputSelectUI = ({ input, ...props }) => {
-    return (
-      <Select
-        {...props}
-      >
-        {
-          map(props.options, ({ label, value }) => (
-            <MenuItem
-              key={value}
-              value={value}
-            >
-              {label}
-            </MenuItem>
-          ))
-        }        
-      </Select>
-    )
+const _InputSelectUI = (props) => {
+
+  return (
+    <Select
+      {...omit(props, ['options'])}
+      fullWidth
+    >
+      {
+        map(props.options, ({ label, value }) => (
+          <MenuItem
+            key={value}
+            value={value}
+          >
+            {label}
+          </MenuItem>
+        ))
+      }        
+    </Select>
+  )
 }
 
 /* A Higher order component which adds a layout for form */
