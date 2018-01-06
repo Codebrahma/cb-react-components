@@ -1,16 +1,24 @@
+/* This HOC structures each form element */
+/* If you are going to use MaterialUI Form structure replace this with a new HOC. Refer below *.
+/* https://material-ui-next.com/api/form-control/ */
+
 import React, { Fragment } from 'react';
 
 import pick from 'lodash/pick';
 import omit from 'lodash/omit';
 
+/* Custom Error Component */
+/* Change the error display depending upon the type of the error */
 const ErrorDisplay = ({
-  error = 'some error occured',
+  error,
   dirty,
   pristine,
   errorDivStyle,
 }) => {
-  // const isErrorAfterEdit = dirty && !pristine &&error;
-  const isErrorAfterEdit = true;
+
+  // Checks if there is an error
+  const isErrorAfterEdit = dirty && !pristine && error;
+  
   return (
     <div style={errorDivStyle}>
       {isErrorAfterEdit ? error : null}
@@ -30,7 +38,7 @@ const consumedDownProps = [
   'removeFormLayout',
 ];
 
-// Meta Props which are needed
+// Meta Props which are needed to get to know about the form elements
 const metaProps = [
   'pristine',
   'valid',
