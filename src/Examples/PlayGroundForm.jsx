@@ -4,11 +4,9 @@ import React, { Component } from 'react';
 import { reduxForm } from 'redux-form';
 
 import { 
-  InputText
-} from '../Root/MaterialUI_ReduxForm/Components/InputText';
-import { 
+  InputText,
   InputSelect
-} from '../Root/MaterialUI_ReduxForm/Components/InputSelect';
+} from '../Root/SemanticUI_ReduxForm/Components/index.js';
 
 const options = [
   {
