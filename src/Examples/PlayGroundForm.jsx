@@ -1,12 +1,12 @@
 // Importing necessary libs
 import React, { Component } from 'react';
-
 import { reduxForm } from 'redux-form';
 
-import { 
+import {
   InputText,
-  InputSelect
-} from '../Root/SemanticUI_ReduxForm/Components/index.js';
+  InputSelect,
+  MultiSelect
+} from '../Root/MaterialUI_ReduxForm/Components/index.js';
 
 const options = [
   {
@@ -19,9 +19,28 @@ const options = [
   }
 ];
 
+const multiSelectOptions = [
+  {
+    label: 'option-1',
+    value: 'Option 1',
+  },
+  {
+    label: 'option-2',
+    value: 'Option 2',
+  },
+  {
+    label: 'option-3',
+    value: 'Option 3',
+  },
+  {
+    label: 'option-4',
+    value: 'Option 4',
+  }
+];
+
 const styles = {
   wrapperDivStyle: {
-    
+
   },
   labelStyle: {
     display: 'block',
@@ -61,6 +80,14 @@ class App extends Component {
             options={options}
             {...styles}
           />
+          {
+            <MultiSelect
+              name="multiselect"
+              label="Multiselect Box"
+              options={multiSelectOptions}
+              {...styles}
+            />
+          }
         </form>
       </div>
     )
