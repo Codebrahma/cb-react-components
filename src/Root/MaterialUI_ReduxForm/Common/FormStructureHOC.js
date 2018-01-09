@@ -18,7 +18,7 @@ const ErrorDisplay = ({
 
   // Checks if there is an error
   const isErrorAfterEdit = dirty && !pristine && error;
-  
+
   return (
     <div style={errorDivStyle}>
       {isErrorAfterEdit ? error : null}
@@ -55,6 +55,7 @@ export const FormStructureHOC = (Component) => {
     handleOnBlur = (event) => {
       /* OnBlur emits undefined during onChange. So handle it separately */
       if (event.target.value) {
+        event.target.value !== "on" &&
         this.props.input.onBlur(event.target.value);
       }
     }
@@ -67,7 +68,7 @@ export const FormStructureHOC = (Component) => {
 
       // Pick up meta props
       const meta = pick(consumableProps.meta, metaProps);
-      
+
       // If the form layout is not required
       if (consumableProps.removeFormLayout) {
         return (
@@ -96,7 +97,7 @@ export const FormStructureHOC = (Component) => {
                 {/* Passing down all passable plus callbacks on input*/}
                 <Component
                   {...passableProps}
-                  {...consumableProps.input} 
+                  {...consumableProps.input}
                   onBlur={this.handleOnBlur}
                 />
               </div>
