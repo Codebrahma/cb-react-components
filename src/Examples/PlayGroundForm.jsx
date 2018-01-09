@@ -6,8 +6,10 @@ import {
   InputText,
   InputSelect,
   MultiSelect,
-  InputPassword
-} from '../Root/MaterialUI_ReduxForm/Components/index.js';
+  InputPassword,
+  InputCheckbox,
+  InputGroupCheckbox
+} from '../Root/SemanticUI_ReduxForm/Components/index.js';
 
 const options = [
   {
@@ -36,6 +38,24 @@ const multiSelectOptions = [
   {
     label: 'option-4',
     value: 'Option 4',
+  }
+];
+
+const checkBoxOptions = [
+  {
+    label: 'checkbox-1',
+    value: 'Checkbox-1',
+    name: 'checkbox1'
+  },
+  {
+    label: 'checkbox-2',
+    value: 'Checkbox-2',
+    name: 'checkbox2'
+  },
+  {
+    label: 'checkbox-3',
+    value: 'Checkbox-3',
+    name: 'checkbox3'
   }
 ];
 
@@ -68,7 +88,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <form>
+        <form onSubmit={this.props.handleSubmit}>
           <InputText
             name="textinput"
             label="Input Text"
@@ -92,6 +112,17 @@ class App extends Component {
             label="Password"
             placeholder="Password"
             {...styles}/>
+          <InputCheckbox
+            name="inputCheckbox"
+            label="Input CheckBox"
+            {...styles}
+          />
+          <InputGroupCheckbox
+            name="groupCheckbox"
+            options={checkBoxOptions}
+            {...styles}
+          />
+          <button type="submit">Submit</button>
         </form>
       </div>
     )

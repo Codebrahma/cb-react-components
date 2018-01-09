@@ -18,7 +18,7 @@ const ErrorDisplay = ({
 
   // Checks if there is an error
   const isErrorAfterEdit = dirty && !pristine && error;
-  
+
   return (
     <div style={errorDivStyle}>
       {isErrorAfterEdit ? error : null}
@@ -60,7 +60,11 @@ export const FormStructureHOC = (Component) => {
     }
     /* Handle change required for Semantic UI since the callback has value as second paramter */
     handleChange = (a, b) => {
-      this.props.input.onBlur(b.value);
+      if(b.type === "checkbox") {
+        this.props.input.onBlur(b.checked);
+      } else {
+        this.props.input.onBlur(b.value);
+      }
     }
     render() {
       // Get Props which are going to get consumed
@@ -71,7 +75,7 @@ export const FormStructureHOC = (Component) => {
 
       // Pick up meta props
       const meta = pick(consumableProps.meta, metaProps);
-      
+
       // If the form layout is not required
       if (consumableProps.removeFormLayout) {
         return (
@@ -100,7 +104,7 @@ export const FormStructureHOC = (Component) => {
                 {/* Passing down all passable plus callbacks on input*/}
                 <Component
                   {...passableProps}
-                  {...consumableProps.input} 
+                  {...consumableProps.input}
                   onBlur={this.handleOnBlur}
                   onChange={this.handleChange}
                 />
