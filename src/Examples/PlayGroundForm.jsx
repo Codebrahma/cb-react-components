@@ -5,7 +5,8 @@ import { reduxForm } from 'redux-form';
 import {
   InputText,
   InputSelect,
-  MultiSelect
+  MultiSelect,
+  InputPassword
 } from '../Root/MaterialUI_ReduxForm/Components/index.js';
 
 const options = [
@@ -80,14 +81,17 @@ class App extends Component {
             options={options}
             {...styles}
           />
-          {
-            <MultiSelect
-              name="multiselect"
-              label="Multiselect Box"
-              options={multiSelectOptions}
-              {...styles}
-            />
-          }
+          <MultiSelect
+            name="multiselect"
+            label="Multiselect Box"
+            options={multiSelectOptions}
+            {...styles}
+          />
+          <InputPassword
+            name="password"
+            label="Password"
+            placeholder="Password"
+            {...styles}/>
         </form>
       </div>
     )
