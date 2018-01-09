@@ -6,6 +6,7 @@ import { InputCheckbox } from './InputCheckbox.js';
 import { InputGroupCheckbox } from './InputGroupCheckbox.js';
 import { InputRadioButtons } from './InputRadioButtons.js';
 import { InputSwitch } from './InputSwitch.js';
+import { CustomButton } from './CustomButton.js';
 
 export {
   InputText,
@@ -15,5 +16,6 @@ export {
   InputCheckbox,
   InputGroupCheckbox,
   InputRadioButtons,
-  InputSwitch
+  InputSwitch,
+  CustomButton
 }
