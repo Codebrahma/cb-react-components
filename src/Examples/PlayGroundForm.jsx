@@ -10,8 +10,10 @@ import {
   InputCheckbox,
   InputGroupCheckbox,
   InputRadioButtons,
-  InputSwitch
+  InputSwitch,
+  CustomButton
 } from '../Root/SemanticUI_ReduxForm/Components';
+
 
 const options = [
   {
@@ -94,6 +96,11 @@ const styles = {
   errorDivStyle: {
     clear: 'left',
   },
+  buttonstyle: {
+    backgroundColor: 'blue',
+    color: 'black',
+    fontSize: '14px'
+  }
 }
 
 class App extends Component {
@@ -149,7 +156,14 @@ class App extends Component {
             name="inputSwitch"
             label="Input Switch"
             {...styles}/>
-          <button type="submit">Submit</button>
+          <CustomButton
+            content="Click here"
+            actionType="submit"
+            buttonType={{primary: true}}
+            handleAction={() => {console.log("button clicked!")}}
+            {...styles}
+            removeFormLayout={true}
+          />
         </form>
       </div>
     )
