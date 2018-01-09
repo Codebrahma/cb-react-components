@@ -9,8 +9,9 @@ import {
   InputPassword,
   InputCheckbox,
   InputGroupCheckbox,
+  InputRadioButtons,
   InputSwitch
-} from '../Root/MaterialUI_ReduxForm/Components/index.js';
+} from '../Root/SemanticUI_ReduxForm/Components';
 
 const options = [
   {
@@ -57,6 +58,21 @@ const checkBoxOptions = [
     label: 'checkbox-3',
     value: 'Checkbox-3',
     name: 'checkbox3'
+  }
+];
+
+const radioOptions = [
+  {
+    label: 'radioButton-1',
+    value: 'radioButton-1'
+  },
+  {
+    label: 'radioButton-2',
+    value: 'radioButton-2'
+  },
+  {
+    label: 'radioButton-3',
+    value: 'radioButton-3'
   }
 ];
 
@@ -121,6 +137,12 @@ class App extends Component {
           <InputGroupCheckbox
             name="groupCheckbox"
             options={checkBoxOptions}
+            {...styles}
+          />
+          <InputRadioButtons
+            name="inputRadioButton"
+            label="RadioButtons"
+            options={radioOptions}
             {...styles}
           />
           <InputSwitch

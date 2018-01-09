@@ -35,7 +35,7 @@ const consumedDownProps = [
   'labelStyle',
   'inputDivStyle',
   'errorDivStyle',
-  'removeFormLayout',
+  'removeFormLayout'
 ];
 
 // Meta Props which are needed to get to know about the form elements
@@ -60,7 +60,7 @@ export const FormStructureHOC = (Component) => {
     }
     /* Handle change required for Semantic UI since the callback has value as second paramter */
     handleChange = (a, b) => {
-      if(b.type === "checkbox") {
+      if(b.type === "checkbox" && !b.radio) {
         this.props.input.onBlur(b.checked);
       } else {
         this.props.input.onBlur(b.value);
