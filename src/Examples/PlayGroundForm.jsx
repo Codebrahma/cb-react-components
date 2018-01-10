@@ -8,8 +8,9 @@ import {
   MultiSelect,
   InputPassword,
   InputCheckbox,
-  InputGroupCheckbox
-} from '../Root/SemanticUI_ReduxForm/Components/index.js';
+  InputGroupCheckbox,
+  InputSwitch
+} from '../Root/MaterialUI_ReduxForm/Components/index.js';
 
 const options = [
   {
@@ -122,6 +123,10 @@ class App extends Component {
             options={checkBoxOptions}
             {...styles}
           />
+          <InputSwitch
+            name="inputSwitch"
+            label="Input Switch"
+            {...styles}/>
           <button type="submit">Submit</button>
         </form>
       </div>
