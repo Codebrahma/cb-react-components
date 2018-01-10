@@ -114,8 +114,11 @@ const styles = {
   },
   errorDivStyle: {
     clear: 'left',
-  },
-  buttonstyle: {
+  }
+}
+
+const buttonStyles = {
+  buttonStyle: {
     backgroundColor: 'blue',
     color: 'black',
     fontSize: '14px'
@@ -212,11 +215,9 @@ class App extends Component {
           CustomButton &&
           <CustomButton
             content="Click here"
-            actionType="submit"
-            buttonType={{raised: true}}
-            handleAction={() => {console.log("button clicked!")}}
-            {...styles}
-            removeFormLayout={true}
+            actionType="button"
+            classType="btn btn-secondary"
+            {...buttonStyles}
           />
         }
         </form>

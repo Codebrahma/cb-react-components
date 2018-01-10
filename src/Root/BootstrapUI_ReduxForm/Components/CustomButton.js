@@ -1,26 +1,26 @@
 import React from 'react';
-import { Button } from 'material-ui';
-import omit from 'lodash/omit';
 
 export const CustomButton = ({
   content,
   actionType,
   buttonType,
   buttonStyle,
+  classType,
   removeFormLayout,
   handleAction,
   ...props
 }) => {
-  const styles = removeFormLayout? buttonStyle : {};
+  const styles = removeFormLayout? {} : buttonStyle;
   return (
-    <Button
+    <button
       {...buttonType}
       type={actionType}
+      className={classType}
       onClick={actionType === "submit"? null : handleAction}
       style={styles}
-      {...omit(props, ['classType'])}
+      {...props}
       >
       { content }
-    </Button>
+    </button>
   );
 }
