@@ -4,7 +4,7 @@ import { FormStructureHOC } from '../Common/FormStructureHOC.js';
 import { Input as TextField } from 'semantic-ui-react';
 import { Field } from 'redux-form';
 
-/* Simple InputText imported from Material UI */
+/* Simple InputText imported from Semantic UI */
 const _InputTextUI = (props) => (
   <TextField
     {...props}
