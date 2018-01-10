@@ -5,6 +5,7 @@ import { InputPassword as _InputPassword } from './InputPassword.js';
 import { InputCheckbox as _InputCheckbox} from './InputCheckbox.js';
 import { InputGroupCheckbox as _InputGroupCheckbox} from
   './InputGroupCheckbox.js';
+import { InputSwitch } from './InputSwitch.js';
 
 export {
   _InputText as InputText,
@@ -12,5 +13,6 @@ export {
   _MultiSelect as MultiSelect,
   _InputPassword as InputPassword,
   _InputCheckbox as InputCheckbox,
-  _InputGroupCheckbox as InputGroupCheckbox
+  _InputGroupCheckbox as InputGroupCheckbox,
+  InputSwitch
 }
