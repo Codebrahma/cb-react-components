@@ -25,7 +25,7 @@ const _InputSelectUI = (props) => {
             {label}
           </MenuItem>
         ))
-      }        
+      }
     </Select>
   )
 }

@@ -11,9 +11,9 @@ import {
   InputGroupCheckbox,
   InputRadioButtons,
   InputSwitch,
-  CustomButton
-} from '../Root/SemanticUI_ReduxForm/Components';
-
+  CustomButton,
+  InputTypeableSelect
+} from '../Root/MaterialUI_ReduxForm/Components';
 
 const options = [
   {
@@ -27,6 +27,25 @@ const options = [
 ];
 
 const multiSelectOptions = [
+  {
+    label: 'option-1',
+    value: 'Option 1',
+  },
+  {
+    label: 'option-2',
+    value: 'Option 2',
+  },
+  {
+    label: 'option-3',
+    value: 'Option 3',
+  },
+  {
+    label: 'option-4',
+    value: 'Option 4',
+  }
+];
+
+const typeableSelectOptions = [
   {
     label: 'option-1',
     value: 'Option 1',
@@ -156,10 +175,19 @@ class App extends Component {
             name="inputSwitch"
             label="Input Switch"
             {...styles}/>
+          {
+            InputTypeableSelect &&
+            <InputTypeableSelect
+              name="inputTypeableSelect"
+              label="Typeable Select"
+              options={typeableSelectOptions}
+              placeholder="Search for options"
+              {...styles}/>
+          }
           <CustomButton
             content="Click here"
             actionType="submit"
-            buttonType={{primary: true}}
+            buttonType={{raised: true}}
             handleAction={() => {console.log("button clicked!")}}
             {...styles}
             removeFormLayout={true}
