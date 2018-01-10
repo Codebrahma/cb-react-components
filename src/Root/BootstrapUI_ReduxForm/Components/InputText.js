@@ -1,15 +1,17 @@
 import React from 'react';
 import { FormStructureHOC } from '../Common/FormStructureHOC.js';
-import TextField from 'material-ui/TextField';
 import { Field } from 'redux-form';
 
-/* Simple InputText imported from Material UI */
-const _InputTextUI = (props) => (
-  <TextField
-    {...props}
-    fullWidth
-  />
-);
+/* Simple input using bootstrap class */
+const _InputTextUI = (props) => {
+  return (
+    <input
+      type="text"
+      className="form-control"
+      {...props}
+      />
+  );
+}
 
 /* A Higher order component which adds a layout for form */
 /* Look at the corresponding HOC to know more */

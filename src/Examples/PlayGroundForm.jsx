@@ -13,7 +13,7 @@ import {
   InputSwitch,
   CustomButton,
   InputTypeableSelect
-} from '../Root/MaterialUI_ReduxForm/Components';
+} from '../Root/BootstrapUI_ReduxForm/Components';
 
 const options = [
   {
@@ -132,58 +132,84 @@ class App extends Component {
     return (
       <div>
         <form onSubmit={this.props.handleSubmit}>
+        {
+          InputText &&
           <InputText
             name="textinput"
             label="Input Text"
             placeholder="Text Input"
             {...styles}
           />
+        }
+        {
+          InputSelect &&
           <InputSelect
             name="select"
             label="select box"
             options={options}
             {...styles}
           />
+        }
+        {
+          MultiSelect &&
           <MultiSelect
             name="multiselect"
             label="Multiselect Box"
             options={multiSelectOptions}
             {...styles}
           />
+        }
+        {
+          InputPassword &&
           <InputPassword
             name="password"
             label="Password"
             placeholder="Password"
             {...styles}/>
+        }
+        {
+          InputCheckbox &&
           <InputCheckbox
             name="inputCheckbox"
             label="Input CheckBox"
             {...styles}
           />
+        }
+        {
+          InputGroupCheckbox &&
           <InputGroupCheckbox
             name="groupCheckbox"
             options={checkBoxOptions}
             {...styles}
           />
+        }
+        {
+          InputRadioButtons &&
           <InputRadioButtons
             name="inputRadioButton"
             label="RadioButtons"
             options={radioOptions}
             {...styles}
           />
+        }
+        {
+          InputSwitch &&
           <InputSwitch
             name="inputSwitch"
             label="Input Switch"
             {...styles}/>
-          {
-            InputTypeableSelect &&
-            <InputTypeableSelect
-              name="inputTypeableSelect"
-              label="Typeable Select"
-              options={typeableSelectOptions}
-              placeholder="Search for options"
-              {...styles}/>
-          }
+        }
+        {
+          InputTypeableSelect &&
+          <InputTypeableSelect
+            name="inputTypeableSelect"
+            label="Typeable Select"
+            options={typeableSelectOptions}
+            placeholder="Search for options"
+            {...styles}/>
+        }
+        {
+          CustomButton &&
           <CustomButton
             content="Click here"
             actionType="submit"
@@ -192,6 +218,7 @@ class App extends Component {
             {...styles}
             removeFormLayout={true}
           />
+        }
         </form>
       </div>
     )
