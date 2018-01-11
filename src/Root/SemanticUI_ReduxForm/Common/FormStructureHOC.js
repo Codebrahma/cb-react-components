@@ -13,12 +13,11 @@ const ErrorDisplay = ({
   error,
   dirty,
   pristine,
-  errorDivStyle,
+  submitFailed,
+  errorDivStyle
 }) => {
-
   // Checks if there is an error
-  const isErrorAfterEdit = dirty && !pristine && error;
-
+  const isErrorAfterEdit = (submitFailed && error) || (dirty && error);
   return (
     <div style={errorDivStyle}>
       {isErrorAfterEdit ? error : null}
@@ -47,6 +46,7 @@ const metaProps = [
   'dirty',
   'error',
   'warning',
+  'submitFailed'
 ]
 
 export const FormStructureHOC = (Component) => {
