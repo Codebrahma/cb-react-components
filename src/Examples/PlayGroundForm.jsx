@@ -104,7 +104,7 @@ const styles = {
   labelStyle: {
     display: 'block',
     float: 'left',
-    width: '100px',
+    width: '150px',
     height: '35px',
     lineHeight: '35px',
   },
