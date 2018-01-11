@@ -59,6 +59,11 @@ export const FormStructureHOC = (Component) => {
         this.props.input.onBlur(event.target.value);
       }
     }
+
+    handleOnClick = (value) => {
+      this.props.input.onBlur(value);
+    }
+
     render() {
       // Get Props which are going to get consumed
       const consumableProps = pick(this.props, consumedDownProps);
@@ -96,6 +101,7 @@ export const FormStructureHOC = (Component) => {
               <div style={consumableProps.inputDivStyle}>
                 {/* Passing down all passable plus callbacks on input*/}
                 <Component
+                  onClick={this.handleOnClick}
                   {...passableProps}
                   {...consumableProps.input}
                   onBlur={this.handleOnBlur}

@@ -200,6 +200,11 @@ class App extends Component {
           <InputSwitch
             name="inputSwitch"
             label="Input Switch"
+            on={<h5>ON</h5>}
+            off={<h5>OFF</h5>}
+            size="xs"
+            offstyle="danger"
+            defaultValue = {true}
             {...styles}/>
         }
         {
