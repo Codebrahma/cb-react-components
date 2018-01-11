@@ -5,11 +5,11 @@ import { Field } from 'redux-form';
 import omit from 'lodash/omit';
 
 /* Simple Checkbox imported from Semantic UI */
-const _InputSwitchUI = (props) => {
+const _InputSwitchUI = ({value, defaultValue, ...props}) => {
   return (
     <Checkbox
       toggle
-      {...omit(props, 'value')}
+      {...props}
     />
   )
 }

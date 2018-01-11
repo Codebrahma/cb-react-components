@@ -1,14 +1,15 @@
 import React from 'react';
 import { FormStructureHOC } from '../Common/FormStructureHOC.js';
-import { Switch } from 'material-ui';
+import Toggle from 'react-bootstrap-toggle';
 import { Field } from 'redux-form';
 import omit from 'lodash/omit';
 
-/* Simple Switch imported from Material UI */
+/* Simple Toggle imported from react-bootstrap-toggle */
 const _InputSwitchUI = ({value, defaultValue, ...props}) => {
+  const active = (value === true || value === false)?  value : defaultValue;
   return (
-    <Switch
-      checked={value}
+    <Toggle
+      active={active}
       {...props}
     />
   )
