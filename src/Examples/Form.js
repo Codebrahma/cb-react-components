@@ -1,7 +1,6 @@
 import React from 'react';
 import FieldValidationInjector from './FieldValidationInjector.jsx';
 
-
 const Form = ({ handleSubmit, children, fieldsValidationConfig }) => (
   <form
     onSubmit={handleSubmit}

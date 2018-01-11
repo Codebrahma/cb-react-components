@@ -13,7 +13,12 @@ import {
   InputSwitch,
   CustomButton,
   InputTypeableSelect
-} from '../Root/BootstrapUI_ReduxForm/Components';
+} from '../Root/SemanticUI_ReduxForm/Components';
+
+import Form from './Form';
+import {
+  validationConfig
+} from './validation';
 
 const options = [
   {
@@ -114,6 +119,8 @@ const styles = {
   },
   errorDivStyle: {
     clear: 'left',
+    fontSize: '10px',
+    color: "red"
   }
 }
 
@@ -134,11 +141,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit}>
+        <Form {...this.props}
+          fieldsValidationConfig={validationConfig}>
         {
           InputText &&
           <InputText
-            name="textinput"
+            name="text"
             label="Input Text"
             placeholder="Text Input"
             {...styles}
@@ -220,17 +228,18 @@ class App extends Component {
           CustomButton &&
           <CustomButton
             content="Click here"
-            actionType="button"
+            actionType="submit"
             classType="btn btn-secondary"
             {...buttonStyles}
           />
         }
-        </form>
+        </Form>
       </div>
     )
   }
 }
 
 export default reduxForm({
-  form: 'playground'
+  form: 'playground',
+  fieldsValidationConfig: validationConfig,
 })(App);
