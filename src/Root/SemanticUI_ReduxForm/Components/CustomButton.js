@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button } from 'semantic-ui-react';
 import omit from 'lodash/omit';
 
@@ -23,4 +24,12 @@ export const CustomButton = ({
       { content }
     </Button>
   );
+}
+
+CustomButton.propTypes = {
+  actionType: PropTypes.string
+}
+
+CustomButton.defaultProps = {
+  actionType: "button"
 }

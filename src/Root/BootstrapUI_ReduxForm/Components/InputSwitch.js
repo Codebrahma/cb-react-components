@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FormStructureHOC } from '../Common/FormStructureHOC.js';
 import Toggle from 'react-bootstrap-toggle';
 import { Field } from 'redux-form';
@@ -29,4 +30,20 @@ export const InputSwitch = ({ name, ...props }) => {
       {...props}
     />
   );
+}
+
+InputSwitch.propTypes = {
+  on: PropTypes.element,
+  off: PropTypes.element,
+  size: PropTypes.string,
+  offstyle: PropTypes.string,
+  defaultValue: PropTypes.boolean
+}
+
+InputSwitch.defaultProps = {
+  on: <h5>ON</h5>,
+  off: <h5>OFF</h5>,
+  size: "xs",
+  offstyle: "danger",
+  defaultValue: true
 }

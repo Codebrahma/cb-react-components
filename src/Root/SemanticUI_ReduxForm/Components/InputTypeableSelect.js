@@ -31,10 +31,15 @@ const InputTypeableSelectUI = FormStructureHOC(_InputTypeableSelectUI);
 
 /* If you are passing removeFormLayoutProp then you get the stand alone component binded with the form */
 /* If you are working on custom form element wrapper either write a new HOC */
-export const InputTypeableSelect = ({ name, ...props }) => (
-  <Field
-    name={name}
-    component={InputTypeableSelectUI}
-    {...props}
-  />
-);
+export const InputTypeableSelect = ({ name, placeholder, label, ...props }) => {
+  placeholder = placeholder || label;
+  return (
+    <Field
+      name={name}
+      label={label}
+      placeholder={placeholder}
+      component={InputTypeableSelectUI}
+      {...props}
+    />
+  );
+}
