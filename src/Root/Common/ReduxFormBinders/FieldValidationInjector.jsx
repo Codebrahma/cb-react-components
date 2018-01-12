@@ -8,7 +8,6 @@ const CouldNotLoadComponent = ({ componentName }) => (
 
 const FieldValidationInjector = (formChildren, fieldsValidationConfig = {}) => 
   React.Children.map(formChildren, (child) => {
-    console.log('child ', child);
     if (child.type) {
       return React.cloneElement(
         child,
