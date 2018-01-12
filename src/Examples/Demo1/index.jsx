@@ -45,18 +45,22 @@ const App = (props) => (
         placeholder="Text Input"
         {...styles}
       />
-      <InputSelect
-        name="select"
-        label="select box"
-        options={options}
-        {...styles}
-      />
-      <MultiSelect
-        name="multiselect"
-        label="Multiselect Box"
-        options={multiSelectOptions}
-        {...styles}
-      />
+      {
+        /*
+        <InputSelect
+          name="select"
+          label="select box"
+          options={options}
+          {...styles}
+        />
+        <MultiSelect
+          name="multiselect"
+          label="Multiselect Box"
+          options={multiSelectOptions}
+          {...styles}
+        />
+        */
+      }
       <InputPassword
         name="password"
         label="Password"
@@ -80,7 +84,27 @@ const App = (props) => (
         {...styles}
       />
 
-      
+      <InputSwitch
+        name="inputSwitch"
+        label="Input Switch"
+        on={<h5>ON</h5>}
+        off={<h5>OFF</h5>}
+        size="xs"
+        offstyle="danger"
+        defaultValue = {true}
+        {...styles}
+      />  
+      {
+        /*
+        <InputTypeableSelect
+          name="inputTypeableSelect"
+          label="Typeable Select"
+          options={typeableSelectOptions}
+          placeholder="Search for options"
+          {...styles}
+        />
+        */
+      }
       <CustomButton
         content="Click here"
         actionType="submit"
