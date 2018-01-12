@@ -19,10 +19,15 @@ const InputTextUI = FormStructureHOC(_InputTextUI);
 
 /* If you are passing removeFormLayoutProp then you get the stand alone component binded with the form */
 /* If you are working on custom form element wrapper either write a new HOC */
-export const InputText = ({ name, ...props }) => (
-  <Field
-    name={name}
-    component={InputTextUI}
-    {...props}
-  />
-);
+export const InputText = ({ name, placeholder, label, ...props }) => {
+  placeholder = placeholder || label;
+  return (
+    <Field
+      name={name}
+      label={label}
+      placeholder={placeholder}
+      component={InputTextUI}
+      {...props}
+    />
+  );
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export const CustomButton = ({
   content,
@@ -23,4 +24,14 @@ export const CustomButton = ({
       { content }
     </button>
   );
+}
+
+CustomButton.propTypes = {
+  actionType: PropTypes.string,
+  classType: PropTypes.string
+}
+
+CustomButton.defaultProps = {
+  actionType: "button",
+  classType: "btn btn-primary"
 }
