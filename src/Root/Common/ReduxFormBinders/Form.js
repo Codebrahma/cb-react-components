@@ -5,12 +5,13 @@ const Form = ({
   handleSubmit, 
   children, 
   fieldsValidationConfig,
+  styles,
 }) => (
   <form
     onSubmit={handleSubmit}
     children={children}
   >
-    { FieldValidationInjector(children, fieldsValidationConfig) }
+    { FieldValidationInjector(children, fieldsValidationConfig, styles) }
   </form>
 )
 

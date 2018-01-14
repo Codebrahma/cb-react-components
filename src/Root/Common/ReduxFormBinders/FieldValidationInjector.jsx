@@ -6,12 +6,13 @@ const CouldNotLoadComponent = ({ componentName }) => (
   </div>
 );
 
-const FieldValidationInjector = (formChildren, fieldsValidationConfig = {}) =>
+const FieldValidationInjector = (formChildren, fieldsValidationConfig = {}, styles = {}) =>
   React.Children.map(formChildren, (child) => {
     if (child.type) {
       return React.cloneElement(
         child,
         {
+          ...styles,
           validate: (fieldsValidationConfig[child.props.name] || {}).validations,
           warn: (fieldsValidationConfig[child.props.name] || {}).warnings,
         }
