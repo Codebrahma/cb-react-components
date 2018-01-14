@@ -87,5 +87,4 @@ const App = (props) => (
 )
 
 export default reduxForm({
-  form: 'app1'
 })(App);

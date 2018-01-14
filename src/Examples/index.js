@@ -18,6 +18,7 @@ class App extends React.Component {
     return (
       <div>
         <DemoApp
+          form="app1"
           onSubmit={(values) => { console.log('values', values) }}
         />
       </div>
