@@ -11,9 +11,8 @@ import {
   InputGroupCheckbox,
   InputRadioButtons,
   InputSwitch,
-  CustomButton,
   InputTypeableSelect
-} from '../../Root/MaterialUI_ReduxForm/Components';
+} from '../../Root/SemanticUI_ReduxForm/Components';
 
 import Form from '../../Root/Common/ReduxFormBinders/Form.js';
 
@@ -38,7 +37,7 @@ const App = (props) => (
     <Form
       {...props}
       styles={styles}
-      fieldsValidationConfig={validationConfig}
+      validations={validationConfig}
     >
       <InputText
         name="text"
@@ -88,5 +87,5 @@ const App = (props) => (
 )
 
 export default reduxForm({
-  form: 'playground',
+  form: 'app1'
 })(App);
