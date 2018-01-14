@@ -4,14 +4,14 @@ import FieldValidationInjector from './FieldValidationInjector.jsx';
 const Form = ({ 
   handleSubmit, 
   children, 
-  fieldsValidationConfig,
+  validations,
   styles,
 }) => (
   <form
     onSubmit={handleSubmit}
     children={children}
   >
-    { FieldValidationInjector(children, fieldsValidationConfig, styles) }
+    { FieldValidationInjector(children, validations, styles) }
   </form>
 )
 
