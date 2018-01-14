@@ -6,24 +6,30 @@ const CouldNotLoadComponent = ({ componentName }) => (
   </div>
 );
 
-const FieldValidationInjector = (formChildren, fieldsValidationConfig = {}) =>
+const InjectPropsToChildren = (formChildren, fieldsValidationConfig = {}, styles = {}) =>
   React.Children.map(formChildren, (child) => {
-    if (child.type) {
+    /* Inject only if it has type and name */
+    /* Checking type because if type is not there it means it is not present in the UI lib */
+    /* Checking name to prevent injection in un intended components */
+    if (child.type && child.props.name) {
       return React.cloneElement(
         child,
         {
+          ...styles,
           validate: (fieldsValidationConfig[child.props.name] || {}).validations,
           warn: (fieldsValidationConfig[child.props.name] || {}).warnings,
         }
       );
-    } else {
+    } else if (child.props.name) {
       return (
         <CouldNotLoadComponent
           componentName={child.props.name}
         />
       );
+    } else {
+      return React.cloneElement(child);
     }
   }
 );
 
-export default FieldValidationInjector;
+export default InjectPropsToChildren;

@@ -1,16 +1,17 @@
 import React from 'react';
-import FieldValidationInjector from './FieldValidationInjector.jsx';
+import InjectPropsToChildren from './InjectPropsToChildren.jsx';
 
 const Form = ({ 
   handleSubmit, 
   children, 
-  fieldsValidationConfig,
+  validations,
+  styles,
 }) => (
   <form
     onSubmit={handleSubmit}
     children={children}
   >
-    { FieldValidationInjector(children, fieldsValidationConfig) }
+    { InjectPropsToChildren(children, validations, styles) }
   </form>
 )
 
