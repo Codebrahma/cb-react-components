@@ -13,9 +13,9 @@ import {
   InputSwitch,
   CustomButton,
   InputTypeableSelect
-} from '../../Root/BootstrapUI_ReduxForm/Components';
+} from '../../Root/MaterialUI_ReduxForm/Components';
 
-import Form from '../../Root/common/ReduxFormBinders/Form.js';
+import Form from '../../Root/Common/ReduxFormBinders/Form.js';
 
 import {
   validationConfig
@@ -36,13 +36,12 @@ import {
 
 const App = (props) => (
   <div>
-    <Form 
+    <Form
       {...props}
     >
       <InputText
         name="text"
         label="Input Text"
-        placeholder="Text Input"
         {...styles}
       />
       <InputSelect
@@ -60,7 +59,6 @@ const App = (props) => (
       <InputPassword
         name="password"
         label="Password"
-        placeholder="Password"
         {...styles}
       />
       <InputCheckbox
@@ -72,7 +70,7 @@ const App = (props) => (
         name="groupCheckbox"
         options={checkBoxOptions}
         {...styles}
-      />  
+      />
       <InputRadioButtons
         name="inputRadioButton"
         label="RadioButtons"
@@ -82,24 +80,16 @@ const App = (props) => (
       <InputSwitch
         name="inputSwitch"
         label="Input Switch"
-        on={<h5>ON</h5>}
-        off={<h5>OFF</h5>}
-        size="xs"
-        offstyle="danger"
-        defaultValue = {true}
         {...styles}
-      />  
+      />
       <InputTypeableSelect
         name="inputTypeableSelect"
         label="Typeable Select"
         options={typeableSelectOptions}
-        placeholder="Search for options"
         {...styles}
       />
       <CustomButton
         content="Click here"
-        actionType="submit"
-        classType="btn btn-secondary"
         {...buttonStyles}
       />
     </Form>
