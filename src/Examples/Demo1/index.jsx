@@ -31,72 +31,62 @@ import {
 
 import {
   styles,
-  buttonStyles,
 } from './styles';
 
 const App = (props) => (
   <div>
     <Form
       {...props}
+      styles={styles}
+      fieldsValidationConfig={validationConfig}
     >
       <InputText
         name="text"
         label="Input Text"
-        {...styles}
       />
       <InputSelect
         name="select"
         label="select box"
         options={options}
-        {...styles}
       />
       <MultiSelect
         name="multiselect"
         label="Multiselect Box"
         options={multiSelectOptions}
-        {...styles}
       />
       <InputPassword
         name="password"
         label="Password"
-        {...styles}
       />
       <InputCheckbox
         name="inputCheckbox"
         label="Input CheckBox"
-        {...styles}
       />
       <InputGroupCheckbox
         name="groupCheckbox"
         options={checkBoxOptions}
-        {...styles}
       />
       <InputRadioButtons
         name="inputRadioButton"
         label="RadioButtons"
         options={radioOptions}
-        {...styles}
       />
       <InputSwitch
         name="inputSwitch"
         label="Input Switch"
-        {...styles}
       />
       <InputTypeableSelect
         name="inputTypeableSelect"
         label="Typeable Select"
         options={typeableSelectOptions}
-        {...styles}
       />
-      <CustomButton
-        content="Click here"
-        {...buttonStyles}
-      />
+      <button>
+        Submit
+      </button>
     </Form>
   </div>
 )
 
 export default reduxForm({
   form: 'playground',
-  fieldsValidationConfig: validationConfig,
 })(App);
