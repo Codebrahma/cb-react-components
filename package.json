@@ -51,6 +51,7 @@
     "react-bootstrap-toggle": "^2.2.5",
     "react-dates": "^15.1.0",
     "react-dom": "^16.2.0",
+    "react-input-mask": "^1.1.1",
     "react-mdl": "^1.10.3",
     "react-mdl-extra": "^1.5.0",
     "react-mdl-select": "^1.1.5",

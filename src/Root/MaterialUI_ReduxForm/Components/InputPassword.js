@@ -25,6 +25,7 @@ export const InputPassword = ({ name, placeholder, label, ...props }) => {
       label={label}
       placeholder={placeholder}
       component={InputPasswordUI}
+      type='password'
       {...props}
     />
   );

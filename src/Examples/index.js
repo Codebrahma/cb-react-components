@@ -1,5 +1,5 @@
 import React from 'react';
-import DemoApp from './Demo1/index.jsx';
+import DemoApp from './Google-registration-form/index.jsx';
 
 class App extends React.Component {
   state = {}

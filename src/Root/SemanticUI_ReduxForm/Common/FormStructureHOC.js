@@ -96,9 +96,13 @@ export const FormStructureHOC = (Component) => {
             {/* Wrapper <div> contains the entire Form element*/}
             <div style={consumableProps.wrapperDivStyle}>
               {/* Label <div> contains the entire label */}
-              <label style={consumableProps.labelStyle}>
-                {consumableProps.label}
-              </label>
+
+              {
+                consumableProps.label &&
+                <label style={consumableProps.labelStyle}>
+                  {consumableProps.label}
+                </label>
+              }
               {/* Input <div> wraps the entire input element from UI library */}
               <div style={consumableProps.inputDivStyle}>
                 {/* Passing down all passable plus callbacks on input*/}
