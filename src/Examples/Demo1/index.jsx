@@ -16,7 +16,7 @@ import {
   InputDateRangePicker,
   InputRangeSlider,
   CustomButton
-} from '../../Root/AntDesignUI_ReduxForm/Components';
+} from '../../Root/OtherLibrariesUI_ReduxForm/RangeSlider/Components';
 
 import Form from '../../Root/Common/ReduxFormBinders/Form.js';
 
@@ -43,67 +43,70 @@ const App = (props) => (
       {...props}
       styles={styles}
       validations={validationConfig}
-    >
-      <InputText
-        name="text"
-        label="Input Text"
-      />
-      <InputSelect
-        name="select"
-        label="select box"
-        options={options}
-        style={{width: '200px'}}
-      />
-      <MultiSelect
-        name="multiselect"
-        label="Multiselect Box"
-        options={multiSelectOptions}
-        style={{width: '200px'}}
-      />
-      <InputPassword
-        name="password"
-        label="Password"
-      />
-      <InputCheckbox
-        name="inputCheckbox"
-        label="Input CheckBox"
-      />
-      <InputGroupCheckbox
-        name="groupCheckbox"
-        options={checkBoxOptions}
-      />
-      <InputRadioButtons
-        name="inputRadioButton"
-        label="RadioButtons"
-        options={radioOptions}
-      />
-      <InputSwitch
-        name="inputSwitch"
-        label="Input Switch"
-      />
-      <InputTypeableSelect
-        name="inputTypeableSelect"
-        label="Typeable Select"
-        options={typeableSelectOptions}
-        style={{width: '200px'}}
-      />
-      <InputDateTimePicker
-        name="DateTimePicker"
-        label="Input DateTime Picker"
-        formatType="YYYY-MM-DD HH:mm:ss"
-      />
-      <InputDateRangePicker
-        name="DateRangePicker"
-        label="Input DateRange Picker"
-      />
+    >{
+      // <InputText
+      //   name="text"
+      //   label="Input Text"
+      // />
+      // <InputSelect
+      //   name="select"
+      //   label="select box"
+      //   options={options}
+      //   style={{width: '200px'}}
+      // />
+      // <MultiSelect
+      //   name="multiselect"
+      //   label="Multiselect Box"
+      //   options={multiSelectOptions}
+      //   style={{width: '200px'}}
+      // />
+      // <InputPassword
+      //   name="password"
+      //   label="Password"
+      // />
+      // <InputCheckbox
+      //   name="inputCheckbox"
+      //   label="Input CheckBox"
+      // />
+      // <InputGroupCheckbox
+      //   name="groupCheckbox"
+      //   options={checkBoxOptions}
+      // />
+      // <InputRadioButtons
+      //   name="inputRadioButton"
+      //   label="RadioButtons"
+      //   options={radioOptions}
+      // />
+      // <InputSwitch
+      //   name="inputSwitch"
+      //   label="Input Switch"
+      // />
+      // <InputTypeableSelect
+      //   name="inputTypeableSelect"
+      //   label="Typeable Select"
+      //   options={typeableSelectOptions}
+      //   style={{width: '200px'}}
+      // />
+      // <InputDateTimePicker
+      //   name="DateTimePicker"
+      //   label="Input DateTime Picker"
+      //   formatType="YYYY-MM-DD HH:mm:ss"
+      // />
+      // <CustomButton
+      //   content="Click here"
+      //   actionType="submit"
+      //   {...buttonStyles}
+      // />
+      // <InputDateRangePicker
+      //   name="inputDateRange"
+      //   label="Input date range picker"
+      // />
+      }
       <InputRangeSlider
         name="InputRangeSlider"
         label="Input Range Slider"
-      />
-      <CustomButton
-        content="Click here"
-        actionType="submit"
-        {...buttonStyles}
+        maxValue={20}
+        minValue={0}
       />
     </Form>
   </div>
