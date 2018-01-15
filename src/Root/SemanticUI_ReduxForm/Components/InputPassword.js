@@ -6,6 +6,7 @@ import { Field } from 'redux-form';
 /* Simple Input imported from Semantic UI for password field*/
 const _InputPasswordUI = (props) => (
   <PasswordField
+    type='password'
     {...props}
     fluid
   />
