@@ -39,16 +39,10 @@ const App = (props) => (
       styles={styles}
       validations={validationConfig}
     >
-      <div className="1">
-        <div className="2">
-          <InputText
-            name="text"
-            label="Input Text"
-            
-          />
-        </div>
-        <div className="3" />
-      </div>
+      <InputText
+        name="text"
+        label="Input Text"
+      />
       <InputSelect
         name="select"
         label="select box"
