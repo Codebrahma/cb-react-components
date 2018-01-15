@@ -6,30 +6,34 @@ const CouldNotLoadComponent = ({ componentName }) => (
   </div>
 );
 
-const InjectPropsToChildren = (formChildren, fieldsValidationConfig = {}, styles = {}) =>
-  React.Children.map(formChildren, (child) => {
-    /* Inject only if it has type and name */
-    /* Checking type because if type is not there it means it is not present in the UI lib */
-    /* Checking name to prevent injection in un intended components */
+const deeplyCloneChildren = (formChildren, fieldsValidationConfig, styles) => {
+  return formChildren;
+}
+
+const giveClonedChild = (child, fieldsValidationConfig, styles) => (
+  React.cloneElement(
+    child,
+    {
+      ...styles,
+      validate: (fieldsValidationConfig[child.props.name] || {}).validations,
+      warn: (fieldsValidationConfig[child.props.name] || {}).warnings,
+    }
+  )
+);
+
+const InjectPropsToChildren = (formChildren, fieldsValidationConfig = {}, styles = {}) => {
+  const clonedChildren = deeplyCloneChildren(formChildren, fieldsValidationConfig, styles);
+  return React.Children.map(clonedChildren, (child) => {
     if (child.type && child.props.name) {
-      return React.cloneElement(
-        child,
-        {
-          ...styles,
-          validate: (fieldsValidationConfig[child.props.name] || {}).validations,
-          warn: (fieldsValidationConfig[child.props.name] || {}).warnings,
-        }
-      );
+      return child;
     } else if (child.props.name) {
       return (
         <CouldNotLoadComponent
           componentName={child.props.name}
         />
       );
-    } else {
-      return React.cloneElement(child);
     }
-  }
-);
+  });
+}
 
 export default InjectPropsToChildren;
