@@ -6,6 +6,7 @@ import { Field } from 'redux-form';
 /* Simple TextField imported from Material UI for password field*/
 const _InputPasswordUI = (props) => (
   <TextField
+    type='password'
     {...props}
     fullWidth
   />
