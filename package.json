@@ -47,6 +47,7 @@
     "lodash": "^4.17.4",
     "material-ui": "^1.0.0-beta.23",
     "material-ui-stable": "^0.19.5",
+    "moment": "^2.20.1",
     "rc-datepicker": "^5.0.10",
     "react": "^16.2.0",
     "react-addons-shallow-compare": "^15.6.2",

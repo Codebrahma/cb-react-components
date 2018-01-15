@@ -12,6 +12,9 @@ import {
   InputRadioButtons,
   InputSwitch,
   InputTypeableSelect,
+  InputDateTimePicker,
+  InputDateRangePicker,
+  InputRangeSlider,
   CustomButton
 } from '../../Root/AntDesignUI_ReduxForm/Components';
 
@@ -83,6 +86,19 @@ const App = (props) => (
         label="Typeable Select"
         options={typeableSelectOptions}
         style={{width: '200px'}}
+      />
+      <InputDateTimePicker
+        name="DateTimePicker"
+        label="Input DateTime Picker"
+        formatType="YYYY-MM-DD HH:mm:ss"
+      />
+      <InputDateRangePicker
+        name="DateRangePicker"
+        label="Input DateRange Picker"
+      />
+      <InputRangeSlider
+        name="InputRangeSlider"
+        label="Input Range Slider"
       />
       <CustomButton
         content="Click here"

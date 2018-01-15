@@ -8,6 +8,9 @@ import { InputRadioButtons } from './InputRadioButtons.js';
 import { InputSwitch } from './InputSwitch.js';
 import { CustomButton } from './CustomButton.js';
 import { InputTypeableSelect } from './InputTypeableSelect.js';
+import { InputDateTimePicker } from './InputDateTimePicker.js';
+import { InputDateRangePicker } from './InputDateRangePicker.js';
+import { InputRangeSlider } from './InputRangeSlider.js';
 
 export {
   InputText,
@@ -19,5 +22,8 @@ export {
   InputRadioButtons,
   InputSwitch,
   CustomButton,
-  InputTypeableSelect
+  InputTypeableSelect,
+  InputDateTimePicker,
+  InputDateRangePicker,
+  InputRangeSlider
 }
