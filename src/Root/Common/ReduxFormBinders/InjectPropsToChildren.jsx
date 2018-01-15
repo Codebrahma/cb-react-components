@@ -71,7 +71,15 @@ const deeplyCloneChildren = (formChildren, fieldsValidationConfig, styles) => {
 
 const InjectPropsToChildren = (formChildren, fieldsValidationConfig = {}, styles = {}) => {
   const clonedChildren = deeplyCloneChildren(formChildren, fieldsValidationConfig, styles);
-  return clonedChildren;
+  return React.Children.map(clonedChildren, (child) => {
+    if (child.type) {
+      return child;
+    } else return (
+      <CouldNotLoadComponent 
+        componentName={child.props.name}
+      />
+    )
+  })
 }
 
 export default InjectPropsToChildren;
