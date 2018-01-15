@@ -11,8 +11,9 @@ import {
   InputGroupCheckbox,
   InputRadioButtons,
   InputSwitch,
-  InputTypeableSelect
-} from '../../Root/SemanticUI_ReduxForm/Components';
+  InputTypeableSelect,
+  CustomButton
+} from '../../Root/AntDesignUI_ReduxForm/Components';
 
 import Form from '../../Root/Common/ReduxFormBinders/Form.js';
 
@@ -30,6 +31,7 @@ import {
 
 import {
   styles,
+  buttonStyles
 } from './styles';
 
 const App = (props) => (
@@ -47,11 +49,13 @@ const App = (props) => (
         name="select"
         label="select box"
         options={options}
+        style={{width: '200px'}}
       />
       <MultiSelect
         name="multiselect"
         label="Multiselect Box"
         options={multiSelectOptions}
+        style={{width: '200px'}}
       />
       <InputPassword
         name="password"
@@ -78,10 +82,13 @@ const App = (props) => (
         name="inputTypeableSelect"
         label="Typeable Select"
         options={typeableSelectOptions}
+        style={{width: '200px'}}
       />
-      <button>
-        Submit
-      </button>
+      <CustomButton
+        content="Click here"
+        actionType="submit"
+        {...buttonStyles}
+      />
     </Form>
   </div>
 )
