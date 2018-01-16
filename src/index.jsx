@@ -16,7 +16,7 @@ import 'react-mdl/extra/material.js';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 // Required for DatePicker
-import 'react-dates/initialize';
+// import 'react-dates/initialize';
 
 // Root file
 import App from './Examples/index.js';
@@ -36,4 +36,3 @@ ReactDOM.render(<Provider store={store}>
       />
     </MuiThemeProvider>
   </Provider>, document.getElementById('react-root'));
-

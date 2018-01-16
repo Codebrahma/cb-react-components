@@ -16,7 +16,7 @@ import {
   InputDateRangePicker,
   InputRangeSlider,
   CustomButton
-} from '../../Root/AntDesignUI_ReduxForm/Components';
+} from '../../Root/BluePrintUI_ReduxForm/Components';
 
 import Form from '../../Root/Common/ReduxFormBinders/Form.js';
 
@@ -52,7 +52,6 @@ const App = (props) => (
         name="select"
         label="select box"
         options={options}
-        style={{width: '200px'}}
       />
       <MultiSelect
         name="multiselect"
