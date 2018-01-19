@@ -11,6 +11,8 @@ import { reducer as formReducer } from 'redux-form';
 // Required for React MDL
 import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
+import 'react-dates/lib/css/_datepicker.css';
+import 'react-input-range/lib/css/index.css';
 
 // Required for Material UI
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';

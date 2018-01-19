@@ -16,7 +16,8 @@ import {
   InputDateRangePicker,
   InputRangeSlider,
   CustomButton
-} from '../../Root/BluePrintUI_ReduxForm/Components';
+} from '../../Root/MaterialUI_ReduxForm/Components';
+
 
 import Form from '../../Root/Common/ReduxFormBinders/Form.js';
 
@@ -92,8 +93,8 @@ const App = (props) => (
         formatType="YYYY-MM-DD HH:mm:ss"
       />
       <InputDateRangePicker
-        name="DateRangePicker"
-        label="Input DateRange Picker"
+        name="inputDateRange"
+        label="Input date range picker"
       />
       <InputRangeSlider
         name="InputRangeSlider"

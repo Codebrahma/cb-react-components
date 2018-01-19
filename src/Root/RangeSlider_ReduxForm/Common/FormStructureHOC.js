@@ -52,12 +52,10 @@ const metaProps = [
 export const FormStructureHOC = (Component) => {
   return class WrapperComponent extends React.Component {
 
-    handleOnBlur = (event) => {
+    handleOnBlur = (value) => {
       /* OnBlur emits undefined during onChange. So handle it separately */
-      if (event && event.target && event.target.value) {
-        event.target.type !== 'checkbox' &&
-        event.target.className !== 'ant-calendar-range-picker-input' &&
-        this.props.input.onBlur(event.target.value);
+      if (value) {
+        this.props.input.onBlur(value);
       }
     }
     /* Handle change required for Semantic UI since the callback has value as second paramter */

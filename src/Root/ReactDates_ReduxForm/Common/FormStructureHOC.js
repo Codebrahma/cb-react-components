@@ -52,18 +52,10 @@ const metaProps = [
 export const FormStructureHOC = (Component) => {
   return class WrapperComponent extends React.Component {
 
-    handleOnBlur = (event) => {
-      /* OnBlur emits undefined during onChange. So handle it separately */
-      if (event && event.target && event.target.value) {
-        event.target.type !== 'checkbox' &&
-        event.target.className !== 'ant-calendar-range-picker-input' &&
-        this.props.input.onBlur(event.target.value);
-      }
-    }
-    /* Handle change required for Semantic UI since the callback has value as second paramter */
-    handleChange = (value) => {
+    handleOnDatesChange = (value) => {
       this.props.input.onBlur(value);
     }
+
     render() {
       // Get Props which are going to get consumed
       const consumableProps = pick(this.props, consumedDownProps);
@@ -103,8 +95,7 @@ export const FormStructureHOC = (Component) => {
                 <Component
                   {...passableProps}
                   {...consumableProps.input}
-                  onBlur={this.handleOnBlur}
-                  onChange={this.handleChange}
+                  onDatesChange={this.handleOnDatesChange}
                 />
               </div>
               <ErrorDisplay
