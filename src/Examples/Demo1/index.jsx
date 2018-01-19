@@ -16,7 +16,8 @@ import {
   InputDateRangePicker,
   InputRangeSlider,
   CustomButton
-} from '../../Root/RangeSlider_ReduxForm/Components';
+} from '../../Root/MaterialUI_ReduxForm/Components';
+
 
 import Form from '../../Root/Common/ReduxFormBinders/Form.js';
 
@@ -52,7 +53,6 @@ const App = (props) => (
         name="select"
         label="select box"
         options={options}
-        style={{width: '200px'}}
       />
       <MultiSelect
         name="multiselect"

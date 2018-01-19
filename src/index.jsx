@@ -18,7 +18,7 @@ import 'react-input-range/lib/css/index.css';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
 // Required for DatePicker
-import 'react-dates/initialize';
+// import 'react-dates/initialize';
 
 // Root file
 import App from './Examples/index.js';
