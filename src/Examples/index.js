@@ -1,5 +1,5 @@
 import React from 'react';
-import DemoApp from './Demo1/index.jsx';
+import SignIn from './SimpleSignup/index.js';
 
 class App extends React.Component {
   state = {}
@@ -17,8 +17,8 @@ class App extends React.Component {
     }
     return (
       <div>
-        <DemoApp
-          form="app1"
+        <SignIn
+          form="signIn"
           validation
           onSubmit={(values) => { console.log('values', values) }}
         />

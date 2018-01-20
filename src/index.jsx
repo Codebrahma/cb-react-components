@@ -13,7 +13,7 @@ import 'react-mdl/extra/material.css';
 import 'react-mdl/extra/material.js';
 import 'react-dates/lib/css/_datepicker.css';
 import 'react-input-range/lib/css/index.css';
-
+import 'react-dates/initialize'
 // Required for Material UI
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 
