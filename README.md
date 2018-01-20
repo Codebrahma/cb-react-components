@@ -17,7 +17,6 @@ You can build 70% of your forms with this and style it with custom styling.
 1. Name, label, options (in case of select / checkbox) should be provided by default.
 2. By default it will have out of box styling.
 3. Want to overwrite ? Simply pass the props which you would have passed to the actual components.
-4. 
 
 Currently it supports
 
