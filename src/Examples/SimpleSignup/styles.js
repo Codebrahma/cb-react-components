@@ -1,6 +1,6 @@
 export const styles = {
   wrapperDivStyle: {
-
+    marginBottom: '20px',
   },
   labelStyle: {
     display: 'block',
@@ -41,4 +41,14 @@ export const formLayoutStyle = {
 export const customizedDateStyle = {
   width: '200px',
   height: '35px',
+}
+
+export const subsctiptionStyles = {
+  position: 'relative',
+  top: '7px'
+}
+
+export const sizeStyles = {
+  position: 'relative',
+  top: '7px'
 }
